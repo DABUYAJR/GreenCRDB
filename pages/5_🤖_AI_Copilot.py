@@ -43,9 +43,9 @@ with st.sidebar:
     api_key = st.text_input("Gemini API Key", value=_secret_key, type="password", placeholder="AIza...")
     model_choice = st.selectbox(
         "Model",
-        ["gemini-2.0-flash (Fast, Free)", "gemini-2.5-flash (Best Quality, Free)"],
+        ["gemini-2.0-flash (Fast, Free)", "gemini-2.5-flash-preview-05-20 (Best Quality, Free)"],
     )
-    model_name = "gemini-2.0-flash" if "2.0-flash" in model_choice else "gemini-2.5-flash"
+    model_name = "gemini-2.0-flash" if "2.0-flash" in model_choice else "gemini-2.5-flash-preview-05-20"
 
     st.markdown("---")
     st.markdown(
