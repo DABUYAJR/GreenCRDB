@@ -608,8 +608,9 @@ with tab_ai:
     st.markdown("#### AI-Powered Data Review")
 
     with st.sidebar:
-        ai_api_key = st.text_input("Gemini API Key (for AI review)", type="password",
-                                    key="upload_gemini_key", placeholder="AIza...")
+        _secret_key = st.secrets.get("GEMINI_API_KEY", "") if hasattr(st, "secrets") else ""
+        ai_api_key = st.text_input("Gemini API Key (for AI review)", value=_secret_key,
+                                    type="password", key="upload_gemini_key", placeholder="AIza...")
         ai_claude_key = st.text_input("Claude API Key (optional)", type="password",
                                        key="upload_claude_key", placeholder="sk-ant-...")
 
