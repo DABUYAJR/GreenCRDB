@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import streamlit as st
 import web_data as wd
-from auth import require_login, sidebar_user_card
+from auth import require_login, sidebar_user_card, DEMO_CREDENTIALS, ROLES
 
 st.set_page_config(page_title="About GreenCRDB", page_icon="ℹ️", layout="wide")
 
@@ -707,7 +707,6 @@ with tab_team:
 
     with team_col2:
         st.markdown("#### Demo Users for Presentation")
-        from auth import DEMO_CREDENTIALS, ROLES
         for uname, pw, title, colour in DEMO_CREDENTIALS:
             role_key = [k for k, v in ROLES.items() if v["label"].startswith(title.split()[0])]
             role_desc = ROLES.get(role_key[0] if role_key else "data_analyst", {}).get("description", "")
