@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import streamlit as st
 
 import web_data as wd
-from auth import require_login, sidebar_user_card, require_module_access
+from auth import require_login, sidebar_user_card, require_module_access, can_access_module
 
 st.set_page_config(page_title="AI Copilot | GreenCRDB", page_icon="🤖", layout="wide")
 
