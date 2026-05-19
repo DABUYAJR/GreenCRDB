@@ -55,13 +55,19 @@ st.markdown(
 )
 
 # ── Load data ─────────────────────────────────────────────────────────────────
-sr = wd.sector_risk()
-gp = wd.green_pipeline()
-tc = wd.tcfd()
-sc = wd.scenarios()
-fe = wd.financed_emissions_df()
-itr = wd.portfolio_itr()
-gar_current = wd.green_asset_ratio_current()
+@st.cache_data
+def _load_home_data():
+    return (
+        wd.sector_risk(),
+        wd.green_pipeline(),
+        wd.tcfd(),
+        wd.scenarios(),
+        wd.financed_emissions_df(),
+        wd.portfolio_itr(),
+        wd.green_asset_ratio_current(),
+    )
+
+sr, gp, tc, sc, fe, itr, gar_current = _load_home_data()
 gar_target = wd.CRDB_TARGETS["green_asset_ratio_2030"]
 
 
