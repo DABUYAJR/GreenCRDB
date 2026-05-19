@@ -32,11 +32,13 @@ st.markdown(
 )
 
 # Load data and apply user portfolio restrictions
-bw_base = wd.borrowers()
-bw_base = filter_by_user(bw_base)   # restrict to user's assigned sectors/regions
+@st.cache_data
+def _load_data():
+    return wd.borrowers(), wd.class_summary(), wd.sector_esg()
+
+bw_base, cs, se = _load_data()
+bw_base = filter_by_user(bw_base)
 bw = merge_with_processed(bw_base, "borrowers", join_col="borrower_id") if not bw_base.empty else bw_base
-cs = wd.class_summary()
-se = wd.sector_esg()
 
 if bw.empty:
     st.error("Module 2 data not found. Run scripts/02_TZCRIP_Module2_Borrower_ESG_Scoring_Engine.py first.")

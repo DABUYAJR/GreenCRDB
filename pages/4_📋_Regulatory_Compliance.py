@@ -31,9 +31,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-fe = wd.financed_emissions_df()
-itr = wd.portfolio_itr()
-gar_current = wd.green_asset_ratio_current()
+@st.cache_data
+def _load_data():
+    return wd.financed_emissions_df(), wd.portfolio_itr(), wd.green_asset_ratio_current()
+
+fe, itr, gar_current = _load_data()
 fr = wd.FINANCIAL_RATIOS
 
 # ── KPI row ───────────────────────────────────────────────────────────────────

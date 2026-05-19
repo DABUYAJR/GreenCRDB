@@ -32,10 +32,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Merge web-entered records on top of processed CSV
-sr_base = wd.sector_risk()
+@st.cache_data
+def _load_data():
+    return wd.sector_risk(), wd.regional()
+
+sr_base, reg = _load_data()
 sr = merge_with_processed(sr_base, "sectors", join_col="sector") if not sr_base.empty else sr_base
-reg = wd.regional()
 
 if sr.empty:
     st.error("Module 1 data not found. Run scripts/01_TZCRIP_Module1_Sector_Climate_Risk.py first.")

@@ -32,11 +32,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-dec_full = wd.decisions()
-gp_full = wd.green_pipeline()
-tc = wd.tcfd()
-sc = wd.scenarios()
-ic = wd.ifc()
+@st.cache_data
+def _load_data():
+    return wd.decisions(), wd.green_pipeline(), wd.tcfd(), wd.scenarios(), wd.ifc()
+
+dec_full, gp_full, tc, sc, ic = _load_data()
 _gar_actual = wd.CRDB_TARGETS["green_asset_ratio_2024_actual"]   # 7.0%
 _gar_2030 = wd.CRDB_TARGETS["green_asset_ratio_2030"]            # 15.0%
 _gar_2050 = wd.CRDB_TARGETS["green_asset_ratio_2050"]            # 30.0%
