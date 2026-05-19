@@ -6,6 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+import pandas as pd
 import streamlit as st
 
 from auth import require_login, sidebar_user_card, can_manage_users, USERS, ROLES
@@ -101,8 +102,6 @@ st.markdown("---")
 
 # ── Role Permissions Matrix ────────────────────────────────────────────────────
 st.markdown("### Role Permissions Matrix")
-
-import pandas as pd
 
 module_keys = ["sector_risk", "borrower_esg", "finance_decisions", "regulatory", "ai_copilot", "data_upload"]
 module_names = ["Sector Risk", "Borrower ESG", "Finance Decisions", "Regulatory", "AI Copilot", "Data Upload"]
