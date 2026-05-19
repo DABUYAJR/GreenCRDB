@@ -1,0 +1,15 @@
+borrower_name,sector,region,loan_size_tzs_mn,esg_composite,sector_climate_risk,final_score,product_recommendation
+SME Owner 544,Personal Loans,Mwanza,67.5,5.87,2.27,6.71,Green Business Loan
+SME Owner 996,Personal Loans,Mwanza,151.6,5.84,2.27,6.69,Green Business Loan
+Individual Borrower 709,Personal Loans,Tanga,81.8,4.66,2.27,6.04,Sustainability-Linked Loan
+Retail Chain Co 429,Trade & Commerce,Morogoro,58.7,6.1,4.65,5.76,Sustainability-Linked Loan
+Wholesale Dist 834,Trade & Commerce,Kilimanjaro,27.2,5.91,4.65,5.66,Sustainability-Linked Loan
+Hydro Plant Co 801,Energy,Tabora,246.7,6.9,6.16,5.53,Sustainability-Linked Loan
+Eco-Tourism Co 941,Tourism & Hotels,Kilimanjaro,200.0,6.25,5.42,5.5,Sustainability-Linked Loan
+Wholesale Dist 718,Trade & Commerce,Mwanza,111.6,5.58,4.65,5.48,Sustainability-Linked Loan
+Wholesale Dist 306,Trade & Commerce,Kilimanjaro,153.8,5.54,4.65,5.46,Sustainability-Linked Loan
+Logistics Ltd 925,Transport,Mbeya,124.1,5.77,5.03,5.41,Sustainability-Linked Loan
+Hydro Plant Co 662,Energy,Iringa,615.3,6.64,6.16,5.38,Sustainability-Linked Loan
+Retail Chain Co 238,Trade & Commerce,Tanga,145.4,5.27,4.65,5.31,Sustainability-Linked Loan
+Solar Developer 794,Energy,Mbeya,80.0,6.5,6.16,5.3,Sustainability-Linked Loan
+Wholesale Dist 495,Trade & Commerce,Tabora,41.8,5.2,4.65,5.27,Sustainability-Linked Loan

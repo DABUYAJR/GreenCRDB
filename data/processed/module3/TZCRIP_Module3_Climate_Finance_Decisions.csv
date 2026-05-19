@@ -1,0 +1,61 @@
+application_id,borrower_id,sector_risk_score,esg_score,composite_decision_score,decision,product_recommendation
+APP-001,BRW-032,22.7,58.7,67.1,Approve,Green Business Loan
+APP-002,BRW-023,22.7,58.4,66.9,Approve,Green Business Loan
+APP-003,BRW-006,22.7,46.6,60.4,Conditional Approval,Sustainability-Linked Loan
+APP-004,BRW-015,46.5,61.0,57.6,Conditional Approval,Sustainability-Linked Loan
+APP-005,BRW-010,46.5,59.1,56.6,Conditional Approval,Sustainability-Linked Loan
+APP-006,BRW-021,61.6,69.0,55.2,Conditional Approval,Sustainability-Linked Loan
+APP-007,BRW-003,54.2,62.5,55.0,Conditional Approval,Sustainability-Linked Loan
+APP-008,BRW-034,46.5,55.8,54.8,Conditional Approval,Sustainability-Linked Loan
+APP-009,BRW-002,46.5,55.4,54.5,Conditional Approval,Sustainability-Linked Loan
+APP-010,BRW-056,50.3,57.7,54.1,Conditional Approval,Sustainability-Linked Loan
+APP-011,BRW-031,61.6,66.4,53.8,Conditional Approval,Sustainability-Linked Loan
+APP-012,BRW-011,46.5,52.7,53.1,Conditional Approval,Sustainability-Linked Loan
+APP-013,BRW-004,61.6,65.0,53.0,Conditional Approval,Sustainability-Linked Loan
+APP-014,BRW-041,46.5,52.0,52.7,Conditional Approval,Sustainability-Linked Loan
+APP-015,BRW-035,50.1,53.6,51.9,Review Required,Transition Support Facility
+APP-016,BRW-019,50.3,53.5,51.8,Review Required,Transition Support Facility
+APP-017,BRW-007,61.6,62.8,51.8,Review Required,Transition Support Facility
+APP-018,BRW-047,46.5,50.2,51.7,Review Required,Transition Support Facility
+APP-019,BRW-033,46.5,50.0,51.6,Review Required,Transition Support Facility
+APP-020,BRW-044,46.5,49.5,51.3,Review Required,Transition Support Facility
+APP-021,BRW-025,50.3,52.0,51.0,Review Required,Transition Support Facility
+APP-022,BRW-046,50.3,51.7,50.8,Review Required,Transition Support Facility
+APP-023,BRW-055,61.6,60.7,50.7,Review Required,Transition Support Facility
+APP-024,BRW-057,50.1,51.2,50.6,Review Required,Transition Support Facility
+APP-025,BRW-022,46.5,48.0,50.5,Review Required,Transition Support Facility
+APP-026,BRW-008,50.3,50.5,50.1,Review Required,Transition Support Facility
+APP-027,BRW-049,58.3,56.8,50.0,Review Required,Transition Support Facility
+APP-028,BRW-024,54.2,53.2,49.9,Review Required,Transition Support Facility
+APP-030,BRW-042,50.3,48.9,49.3,Review Required,Transition Support Facility
+APP-029,BRW-058,50.1,48.7,49.2,Review Required,Transition Support Facility
+APP-031,BRW-043,61.6,57.3,48.8,Review Required,Transition Support Facility
+APP-032,BRW-001,50.3,47.2,48.3,Review Required,Transition Support Facility
+APP-033,BRW-027,50.1,46.7,48.1,Review Required,Transition Support Facility
+APP-034,BRW-014,50.3,46.3,47.8,Review Required,Transition Support Facility
+APP-035,BRW-017,50.1,45.7,47.6,Review Required,Transition Support Facility
+APP-036,BRW-045,50.3,45.6,47.4,Review Required,Transition Support Facility
+APP-037,BRW-048,46.5,42.3,47.3,Review Required,Transition Support Facility
+APP-038,BRW-053,50.3,44.7,47.0,Review Required,Transition Support Facility
+APP-039,BRW-012,52.5,46.3,46.8,Review Required,Transition Support Facility
+APP-040,BRW-030,58.3,50.1,46.3,Review Required,Transition Support Facility
+APP-041,BRW-040,58.3,49.3,45.9,Review Required,Transition Support Facility
+APP-042,BRW-054,58.3,48.2,45.3,Review Required,Transition Support Facility
+APP-043,BRW-038,50.1,41.3,45.2,Review Required,Transition Support Facility
+APP-044,BRW-020,58.3,47.1,44.7,Review Required,Transition Support Facility
+APP-045,BRW-013,58.3,45.9,44.0,Review Required,Transition Support Facility
+APP-046,BRW-028,81.3,56.7,39.6,Decline,Decline / Remediation Plan
+APP-047,BRW-060,81.3,53.1,37.6,Decline,Decline / Remediation Plan
+APP-048,BRW-016,81.3,50.2,36.0,Decline,Decline / Remediation Plan
+APP-049,BRW-005,81.3,48.3,35.0,Decline,Decline / Remediation Plan
+APP-050,BRW-037,81.3,47.8,34.7,Decline,Decline / Remediation Plan
+APP-051,BRW-018,81.3,45.6,33.5,Decline,Decline / Remediation Plan
+APP-052,BRW-050,81.3,44.7,33.0,Decline,Decline / Remediation Plan
+APP-053,BRW-039,81.3,43.9,32.6,Decline,Decline / Remediation Plan
+APP-054,BRW-026,81.3,42.3,31.7,Decline,Decline / Remediation Plan
+APP-055,BRW-052,81.3,42.1,31.6,Decline,Decline / Remediation Plan
+APP-056,BRW-059,81.3,41.4,31.2,Decline,Decline / Remediation Plan
+APP-057,BRW-051,81.3,40.7,30.8,Decline,Decline / Remediation Plan
+APP-058,BRW-009,81.3,37.6,29.1,Decline,Decline / Remediation Plan
+APP-059,BRW-036,81.3,36.7,28.6,Decline,Decline / Remediation Plan
+APP-060,BRW-029,81.3,36.0,28.2,Decline,Decline / Remediation Plan

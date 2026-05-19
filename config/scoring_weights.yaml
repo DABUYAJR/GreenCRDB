@@ -1,0 +1,12 @@
+module1:
+  climate_weighting_note: "Update when moving from prototype to production"
+module2:
+  E_WEIGHT: 0.40
+  S_WEIGHT: 0.30
+  G_WEIGHT: 0.30
+  ESG_WEIGHT: 0.55
+  CLIMATE_WEIGHT: 0.45
+module3:
+  ESG_WEIGHT: 0.55
+  SECTOR_RISK_WEIGHT: 0.45
+  composite_score_note: "composite = ESG_WEIGHT * esg_score + SECTOR_RISK_WEIGHT * sector_risk_score (both on 0-100 scale)"

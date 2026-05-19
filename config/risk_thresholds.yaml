@@ -1,0 +1,17 @@
+module1:
+  medium: 4.5
+  high: 6.0
+  critical: 7.5
+module2:
+  green_esg_min: 5.5
+  green_climate_max: 6.5
+  standard_esg_min: 4.5
+  standard_climate_max: 7.0
+  high_risk_esg_max: 3.8
+  high_risk_climate_min: 8.0
+module3:
+  approve_min: 65.0
+  conditional_approval_min: 52.0
+  review_required_min: 40.0
+  decline_max: 40.0
+  decision_note: "composite_decision_score = 0.55*esg_score + 0.45*sector_risk_score (0-100 scale)"

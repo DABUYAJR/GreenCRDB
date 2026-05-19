@@ -1,0 +1,61 @@
+rank,borrower_id,borrower_name,sector,region,loan_size_tzs_mn,env_management,pollution_control,climate_adaptation,renewable_energy,labour_practices,community_impact,gender_inclusion,board_oversight,transparency,compliance_record,E_score,S_score,G_score,esg_composite,sector_climate_risk,climate_performance,final_score,classification,green_loan_eligible
+1,BRW-032,SME Owner 544,Personal Loans,Mwanza,67.5,6.42,6.2,7.33,5.55,5.57,6.98,5.34,6.9,2.45,5.4,6.51,5.99,4.89,5.87,2.27,7.73,6.71,Green Eligible,True
+2,BRW-023,SME Owner 996,Personal Loans,Mwanza,151.6,5.58,4.49,6.39,6.05,6.21,7.44,6.14,6.3,4.14,5.63,5.62,6.62,5.34,5.84,2.27,7.73,6.69,Green Eligible,True
+3,BRW-006,Individual Borrower 709,Personal Loans,Tanga,81.8,2.42,5.13,4.44,3.17,4.68,5.8,7.17,3.51,5.25,5.17,3.82,5.82,4.62,4.66,2.27,7.73,6.04,Standard,False
+4,BRW-015,Retail Chain Co 429,Trade & Commerce,Morogoro,58.7,4.51,4.61,3.62,4.0,7.75,6.97,8.2,7.27,5.86,8.52,4.19,7.61,7.15,6.1,4.65,5.35,5.76,Green Eligible,True
+5,BRW-010,Wholesale Dist 834,Trade & Commerce,Kilimanjaro,27.2,9.36,2.94,4.65,5.01,8.39,4.62,5.23,6.67,5.85,5.34,5.69,6.12,5.98,5.91,4.65,5.35,5.66,Green Eligible,True
+6,BRW-021,Hydro Plant Co 801,Energy,Tabora,246.7,7.77,6.22,8.69,7.29,6.76,6.63,8.79,5.69,2.69,8.81,7.59,7.33,5.58,6.9,6.16,3.84,5.53,Green Eligible,True
+7,BRW-003,Eco-Tourism Co 941,Tourism & Hotels,Kilimanjaro,200.0,6.67,5.02,4.36,3.58,6.76,9.17,6.54,5.62,5.93,8.16,5.1,7.54,6.49,6.25,5.42,4.58,5.5,Green Eligible,True
+8,BRW-034,Wholesale Dist 718,Trade & Commerce,Mwanza,111.6,2.66,4.25,5.35,4.37,6.99,6.62,6.6,4.47,6.55,8.34,4.12,6.74,6.36,5.58,4.65,5.35,5.48,Green Eligible,True
+9,BRW-002,Wholesale Dist 306,Trade & Commerce,Kilimanjaro,153.8,3.55,3.61,8.39,3.27,7.06,4.75,7.0,6.08,4.97,5.84,4.98,6.23,5.62,5.54,4.65,5.35,5.46,Green Eligible,True
+10,BRW-056,Logistics Ltd 925,Transport,Mbeya,124.1,2.48,6.77,6.88,5.2,3.82,6.78,5.96,6.16,7.07,6.85,5.28,5.5,6.69,5.77,5.03,4.97,5.41,Green Eligible,True
+11,BRW-031,Hydro Plant Co 662,Energy,Iringa,615.3,10.0,6.53,8.85,6.14,6.37,5.71,5.04,4.83,6.35,5.12,8.21,5.74,5.45,6.64,6.16,3.84,5.38,Green Eligible,True
+12,BRW-011,Retail Chain Co 238,Trade & Commerce,Tanga,145.4,2.94,4.34,4.8,4.85,4.97,6.81,7.12,5.73,5.73,5.98,4.13,6.26,5.81,5.27,4.65,5.35,5.31,Standard,False
+13,BRW-004,Solar Developer 794,Energy,Mbeya,80.0,5.88,7.86,7.34,8.3,5.77,3.96,3.25,8.48,8.29,6.13,7.18,4.38,7.71,6.5,6.16,3.84,5.3,Green Eligible,True
+14,BRW-041,Wholesale Dist 495,Trade & Commerce,Tabora,41.8,3.74,5.05,7.62,2.67,6.17,8.83,3.12,3.58,4.56,5.12,5.07,6.19,4.39,5.2,4.65,5.35,5.27,Standard,False
+15,BRW-035,Commercial REIT 599,Real Estate,Mbeya,117.2,3.47,6.5,4.71,6.41,3.84,6.98,4.5,5.59,7.25,5.06,5.04,5.14,6.01,5.36,5.01,4.99,5.19,Standard,False
+16,BRW-019,Logistics Ltd 937,Transport,Dodoma,28.8,4.89,1.33,6.41,4.05,6.47,4.64,6.22,7.1,5.55,6.25,4.33,5.76,6.3,5.35,5.03,4.97,5.18,Standard,False
+17,BRW-007,Fuel Dist Ltd 370,Energy,Dar es Salaam,11.9,8.0,7.01,8.71,5.77,4.46,5.46,5.66,6.26,4.07,6.54,7.63,5.17,5.58,6.28,6.16,3.84,5.18,Green Eligible,True
+18,BRW-047,Import/Export Ltd 428,Trade & Commerce,Dodoma,15.4,3.34,5.58,5.68,3.2,6.07,7.92,5.11,2.96,5.17,4.55,4.58,6.43,4.21,5.02,4.65,5.35,5.17,Standard,False
+19,BRW-033,Retail Chain Co 843,Trade & Commerce,Tabora,26.4,2.76,6.75,6.54,3.42,3.55,1.65,4.78,9.13,5.85,5.06,4.99,3.26,6.76,5.0,4.65,5.35,5.16,Standard,False
+20,BRW-044,Import/Export Ltd 659,Trade & Commerce,Mbeya,17.3,4.34,4.75,5.6,3.57,6.51,5.3,4.98,7.54,3.64,2.28,4.71,5.63,4.6,4.95,4.65,5.35,5.13,Standard,False
+21,BRW-025,Logistics Ltd 151,Transport,Tabora,44.1,5.12,3.27,4.5,5.13,7.19,5.4,7.03,5.64,3.94,5.01,4.47,6.51,4.86,5.2,5.03,4.97,5.09,Standard,False
+22,BRW-046,Bus Operator 825,Transport,Iringa,68.9,7.08,3.96,3.69,3.29,6.12,2.9,5.25,4.91,7.97,5.64,4.71,4.73,6.2,5.17,5.03,4.97,5.08,Standard,False
+23,BRW-055,Hydro Plant Co 317,Energy,Kilimanjaro,7.0,8.28,4.67,3.91,6.15,6.9,8.5,6.07,5.44,4.36,6.42,5.75,7.21,5.36,6.07,6.16,3.84,5.07,Green Eligible,True
+24,BRW-057,Housing Trust 385,Real Estate,Morogoro,33.9,5.76,5.01,2.32,4.43,3.67,2.88,6.82,7.79,6.94,5.98,4.34,4.34,6.95,5.12,5.01,4.99,5.06,Standard,False
+25,BRW-022,Import/Export Ltd 716,Trade & Commerce,Mwanza,11.3,5.16,6.66,2.8,2.62,3.4,4.91,6.26,6.29,5.61,3.78,4.45,4.79,5.3,4.8,4.65,5.35,5.05,Standard,False
+26,BRW-008,Freight Co 476,Transport,Morogoro,15.9,7.78,6.52,2.92,3.07,3.0,4.61,5.47,7.31,4.11,4.92,5.3,4.31,5.47,5.05,5.03,4.97,5.01,Standard,False
+27,BRW-049,Food Processing 389,Manufacturing,Dodoma,131.1,4.72,7.47,5.03,4.28,4.75,6.53,5.74,7.68,4.72,5.55,5.44,5.67,6.0,5.68,5.83,4.17,5.0,Green Eligible,True
+28,BRW-024,Eco-Tourism Co 798,Tourism & Hotels,Mbeya,119.7,7.23,5.11,6.98,5.1,6.32,8.04,3.31,3.86,3.28,2.7,6.31,6.02,3.31,5.32,5.42,4.58,4.99,Standard,False
+29,BRW-058,Property Dev Ltd 633,Real Estate,Arusha,54.7,4.82,4.8,3.36,4.9,4.59,2.85,4.22,5.08,7.6,6.94,4.39,3.87,6.52,4.87,5.01,4.99,4.93,Standard,False
+30,BRW-042,Freight Co 986,Transport,Kilimanjaro,29.6,4.36,1.04,4.97,2.63,7.11,4.56,4.05,6.31,6.34,6.57,3.46,5.3,6.4,4.89,5.03,4.97,4.92,Standard,False
+31,BRW-043,Solar Developer 435,Energy,Mbeya,56.4,7.31,4.65,7.05,3.86,6.17,4.59,3.38,7.07,6.06,5.48,6.05,4.78,6.24,5.73,6.16,3.84,4.88,Green Eligible,True
+32,BRW-001,Bus Operator 842,Transport,Mbeya,160.3,4.24,3.46,2.65,1.0,4.47,5.42,7.65,5.7,6.67,5.15,3.08,5.76,5.87,4.72,5.03,4.97,4.83,Standard,False
+33,BRW-027,Housing Trust 255,Real Estate,Dar es Salaam,98.2,3.89,3.7,3.4,3.32,5.14,4.52,4.79,5.74,6.88,5.09,3.61,4.82,5.94,4.67,5.01,4.99,4.82,Standard,False
+34,BRW-014,Logistics Ltd 562,Transport,Tanga,428.0,6.21,1.0,3.84,3.76,5.64,4.94,2.36,5.99,7.79,3.6,3.83,4.41,5.9,4.63,5.03,4.97,4.78,Standard,False
+35,BRW-017,Housing Trust 752,Real Estate,Kilimanjaro,29.4,5.9,2.14,4.9,2.54,3.72,7.07,5.26,4.15,3.38,5.65,4.16,5.35,4.33,4.57,5.01,4.99,4.76,Standard,False
+36,BRW-045,Bus Operator 412,Transport,Mbeya,192.9,7.82,3.09,1.29,3.03,4.77,5.22,3.33,6.37,5.99,3.66,3.96,4.49,5.42,4.56,5.03,4.97,4.74,Standard,False
+37,BRW-048,Wholesale Dist 355,Trade & Commerce,Arusha,26.6,4.88,2.14,2.78,5.22,5.02,2.25,6.78,5.91,4.13,3.92,3.62,4.58,4.69,4.23,4.65,5.35,4.73,Watch List,False
+38,BRW-053,Bus Operator 801,Transport,Morogoro,148.0,2.47,3.56,5.89,1.0,2.96,4.12,7.19,5.92,6.35,4.19,3.55,4.63,5.55,4.47,5.03,4.97,4.7,Watch List,False
+39,BRW-012,Building Co 886,Construction,Tanga,30.4,2.72,3.97,3.85,6.44,7.16,5.68,3.46,2.83,5.99,5.29,3.93,5.53,4.67,4.63,5.25,4.75,4.69,Standard,False
+40,BRW-030,Textile Mill 526,Manufacturing,Dar es Salaam,92.4,5.86,2.46,4.92,3.09,4.57,5.58,5.73,5.29,7.1,4.49,4.31,5.27,5.68,5.01,5.83,4.17,4.63,Standard,False
+41,BRW-040,Packaging Co 982,Manufacturing,Morogoro,21.6,6.2,5.77,4.02,4.25,1.39,3.57,4.36,4.19,6.57,9.2,5.15,3.04,6.53,4.93,5.83,4.17,4.59,Standard,False
+42,BRW-054,Textile Mill 514,Manufacturing,Morogoro,27.5,4.87,3.99,5.22,3.42,5.42,5.54,5.97,7.01,3.07,2.83,4.54,5.62,4.38,4.82,5.83,4.17,4.53,Standard,False
+43,BRW-038,Commercial REIT 865,Real Estate,Tanga,138.1,4.67,4.04,3.87,2.75,2.63,3.47,4.19,5.7,4.98,4.45,3.98,3.39,5.07,4.13,5.01,4.99,4.52,Watch List,False
+44,BRW-020,Textile Mill 343,Manufacturing,Mbeya,59.9,2.9,3.68,4.17,4.28,6.5,3.71,4.61,8.02,4.38,4.97,3.68,4.96,5.83,4.71,5.83,4.17,4.47,Standard,False
+45,BRW-013,Textile Mill 931,Manufacturing,Dar es Salaam,57.2,1.58,5.29,5.08,2.03,4.29,5.7,4.88,5.36,5.34,5.82,3.63,4.96,5.49,4.59,5.83,4.17,4.4,Standard,False
+46,BRW-028,Agribusiness Ltd 619,Agriculture,Mwanza,47.7,6.1,3.7,6.37,4.58,5.3,6.32,8.23,7.12,3.8,4.64,5.35,6.54,5.21,5.67,8.13,1.87,3.96,High Risk,False
+47,BRW-060,Smallholder Coop 116,Agriculture,Tanga,76.0,5.99,5.79,6.24,4.06,4.23,4.17,5.82,4.57,5.63,6.05,5.73,4.69,5.38,5.31,8.13,1.87,3.76,High Risk,False
+48,BRW-016,Agribusiness Ltd 686,Agriculture,Dodoma,218.1,5.74,3.76,4.8,2.95,6.98,4.03,6.47,3.71,5.46,5.53,4.54,5.8,4.87,5.02,8.13,1.87,3.6,High Risk,False
+49,BRW-005,Farm Inputs Co 261,Agriculture,Iringa,54.2,6.69,2.54,3.36,4.96,4.91,5.79,5.05,4.51,5.81,4.54,4.39,5.26,4.97,4.83,8.13,1.87,3.5,High Risk,False
+50,BRW-037,Farm Inputs Co 673,Agriculture,Arusha,245.2,4.23,3.82,4.46,4.31,3.99,6.86,6.29,4.58,4.53,4.84,4.21,5.68,4.64,4.78,8.13,1.87,3.47,High Risk,False
+51,BRW-018,Farm Inputs Co 630,Agriculture,Dar es Salaam,70.3,3.49,4.67,6.43,4.91,2.06,6.26,5.41,4.62,6.12,1.31,4.88,4.53,4.15,4.56,8.13,1.87,3.35,High Risk,False
+52,BRW-050,Agribusiness Ltd 266,Agriculture,Dar es Salaam,246.1,5.69,6.45,4.01,3.36,5.97,5.43,6.73,1.0,2.46,3.23,5.03,6.01,2.18,4.47,8.13,1.87,3.3,High Risk,False
+53,BRW-039,Smallholder Coop 404,Agriculture,Tanga,521.1,5.61,3.96,3.72,4.82,5.78,3.63,5.2,4.39,2.35,4.68,4.51,4.85,3.77,4.39,8.13,1.87,3.26,High Risk,False
+54,BRW-026,Farm Inputs Co 760,Agriculture,Iringa,15.9,3.17,3.66,5.91,6.58,3.43,6.39,3.74,4.71,3.5,1.65,4.62,4.56,3.37,4.23,8.13,1.87,3.17,High Risk,False
+55,BRW-052,Farm Inputs Co 371,Agriculture,Dar es Salaam,2000.0,4.17,5.17,4.68,5.05,3.95,5.78,4.98,2.18,1.35,5.43,4.7,4.9,2.86,4.21,8.13,1.87,3.16,High Risk,False
+56,BRW-059,Agribusiness Ltd 214,Agriculture,Tabora,43.2,4.87,4.27,4.4,2.38,5.27,4.68,3.42,4.77,4.29,1.72,4.2,4.51,3.68,4.14,8.13,1.87,3.12,High Risk,False
+57,BRW-051,Smallholder Coop 321,Agriculture,Arusha,988.4,3.05,2.83,4.4,5.67,5.13,4.25,5.21,5.57,2.24,3.03,3.79,4.85,3.64,4.07,8.13,1.87,3.08,High Risk,False
+58,BRW-009,Agribusiness Ltd 309,Agriculture,Tanga,18.4,4.26,2.61,3.91,2.68,5.36,3.16,3.1,7.19,1.77,2.75,3.5,3.91,3.96,3.76,8.13,1.87,2.91,High Risk,False
+59,BRW-036,Smallholder Coop 262,Agriculture,Kilimanjaro,459.9,3.83,4.88,2.35,4.96,4.69,7.52,1.71,2.82,1.17,3.16,3.82,4.79,2.34,3.67,8.13,1.87,2.86,High Risk,False
+60,BRW-029,Smallholder Coop 373,Agriculture,Iringa,119.0,3.23,4.7,4.66,4.47,4.25,3.42,2.19,2.32,3.01,3.96,4.21,3.34,3.06,3.6,8.13,1.87,2.82,High Risk,False
