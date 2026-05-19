@@ -883,7 +883,7 @@ with tab_faq:
         },
         {
             "q": "Is all the portfolio data real?",
-            "a": "No — the portfolio data (borrower names, loan sizes, sector exposures, ESG scores) is simulated and illustrative. The CRDB Bank financial figures (total assets, PAT, ROE, green ratio, Kijani Bond, etc.) ARE real and sourced from the 2024 Integrated Annual Report. This is an academic prototype — real deployment requires integration with Temenos T24 core banking.",
+            "a": "No — the portfolio data (borrower names, loan sizes, sector exposures, ESG scores) is simulated and illustrative. The CRDB Bank financial figures (total assets, PAT, ROE, green ratio, Kijani Bond, etc.) ARE real and sourced from the 2024 Integrated Annual Report. Real deployment would require integration with Temenos T24 core banking.",
             "cat": "Data",
         },
     ]

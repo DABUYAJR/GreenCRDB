@@ -25,7 +25,7 @@ st.markdown(
     f'<p style="color:#a5d6a7;margin:6px 0 2px 0;font-size:16px;font-weight:500;">'
     f'Tanzania Climate-Finance Risk Intelligence Platform</p>'
     f'<p style="color:#6ee7b7;margin:0;font-size:13px;">'
-    f'Built for CRDB Bank · Sustainable Finance Unit · MSc Finance & Investment Prototype</p>'
+    f'Built for CRDB Bank · Sustainable Finance Unit · Developed by Dishon Abuya</p>'
     f'</div>'
     f'<div style="text-align:right;">'
     f'<div style="background:rgba(255,255,255,0.15);padding:12px 20px;border-radius:10px;">'
@@ -141,14 +141,14 @@ with tab_overview:
             )
 
         st.markdown("---")
-        st.markdown("### Academic Context")
+        st.markdown("### About This Project")
         st.markdown(
             f'<div style="background:#EFF6FF;border-left:4px solid #2563EB;'
             f'padding:14px;border-radius:0 8px 8px 0;">'
-            f'<b>MSc Finance & Investment Prototype</b><br>'
+            f'<b>Independent Personal Project — Dishon Abuya</b><br>'
             f'<p style="font-size:12px;color:#555;margin:6px 0 0 0;">'
-            f'GreenCRDB was developed as an academic prototype for an MSc Finance & Investment programme, '
-            f'designed to demonstrate how CRDB Bank can operationalise its climate finance strategy. '
+            f'GreenCRDB is a personal project built to demonstrate how CRDB Bank can operationalise '
+            f'its climate finance strategy using modern data analytics. '
             f'All portfolio values and climate risk scores are <b>simulated and illustrative</b> — '
             f'based on publicly available data and CRDB\'s 2024 Integrated Annual Report.'
             f'</p>'
@@ -673,13 +673,13 @@ with tab_team:
         st.markdown("#### Platform Development")
         st.markdown(
             f'<div style="background:{wd.CRDB_GREEN};color:white;padding:20px;border-radius:10px;margin-bottom:12px;">'
-            f'<h3 style="margin:0 0 4px 0;font-size:18px;">GreenCRDB Research & Development Team</h3>'
-            f'<p style="margin:0;font-size:13px;opacity:0.85;">MSc Finance & Investment · Academic Prototype</p>'
+            f'<h3 style="margin:0 0 4px 0;font-size:18px;">Dishon Abuya</h3>'
+            f'<p style="margin:0;font-size:13px;opacity:0.85;">Independent Developer · Climate Finance Intelligence</p>'
             f'<hr style="border-color:rgba(255,255,255,0.3);margin:12px 0;">'
             f'<p style="font-size:13px;margin:0;line-height:1.7;">'
-            f'This platform was developed as part of an MSc Finance & Investment academic programme, '
-            f'focusing on the practical application of climate finance risk management in emerging market banking. '
-            f'The research was conducted in the context of CRDB Bank\'s 2024 sustainability strategy and '
+            f'GreenCRDB is a personal project built by Dishon Abuya to demonstrate how CRDB Bank '
+            f'can operationalise its climate finance strategy using modern data analytics. '
+            f'Built on top of CRDB Bank\'s 2024 sustainability strategy and '
             f'the Bank of Tanzania\'s 2025 Climate Risk Guidelines.'
             f'</p>'
             f'</div>',
@@ -730,14 +730,19 @@ with tab_team:
         st.markdown(
             f'<div style="background:#f0f9f4;border:1px solid {wd.CRDB_GREEN}44;'
             f'border-radius:8px;padding:14px;">'
-            f'<p style="font-size:13px;margin:0;"><b>Platform enquiries:</b><br>'
-            f'📧 Sustainable Finance Unit — CRDB Bank Plc<br>'
+            f'<p style="font-size:13px;margin:0;"><b>Developer:</b><br>'
+            f'👤 Dishon Abuya · Independent Developer<br>'
+            f'📧 <a href="mailto:dishonabuyajr@gmail.com" style="color:{wd.CRDB_GREEN};">dishonabuyajr@gmail.com</a>'
+            f'</p>'
+            f'<hr style="border-color:{wd.CRDB_GREEN}22;margin:10px 0;">'
+            f'<p style="font-size:13px;margin:0;"><b>Platform subject:</b><br>'
+            f'🏦 CRDB Bank Plc — Sustainable Finance Unit<br>'
             f'📍 Azikiwe Street, Dar es Salaam, Tanzania<br>'
             f'🌐 <a href="https://www.crdbbank.co.tz" style="color:{wd.CRDB_GREEN};">www.crdbbank.co.tz</a>'
             f'</p>'
             f'<hr style="border-color:{wd.CRDB_GREEN}22;margin:10px 0;">'
             f'<p style="font-size:11px;color:#888;margin:0;">'
-            f'GreenCRDB v1.0 · Academic Prototype · All portfolio data is simulated/illustrative. '
+            f'GreenCRDB v1.0 · Personal Project · All portfolio data is simulated/illustrative. '
             f'CRDB Bank financial data sourced from the 2024 Integrated Annual Report (actual figures).'
             f'</p>'
             f'</div>',
@@ -746,6 +751,6 @@ with tab_team:
 
 st.markdown("---")
 st.caption(
-    "GreenCRDB About Page · Platform v1.0 · MSc Finance & Investment Academic Prototype · "
+    "GreenCRDB About Page · Platform v1.0 · Personal Project by Dishon Abuya · "
     "Frameworks: TCFD · ISSB S2 · PRB · SASB FN-CB · IFC PS · PCAF · BoT 2025 · TNFD · UN SDGs"
 )
