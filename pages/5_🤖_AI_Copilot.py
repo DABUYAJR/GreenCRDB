@@ -39,7 +39,8 @@ with st.sidebar:
         "4. Paste it below\n\n"
         "Free tier: 1,000,000 tokens/day — more than enough.",
     )
-    api_key = st.text_input("Gemini API Key", type="password", placeholder="AIza...")
+    _secret_key = st.secrets.get("GEMINI_API_KEY", "") if hasattr(st, "secrets") else ""
+    api_key = st.text_input("Gemini API Key", value=_secret_key, type="password", placeholder="AIza...")
     model_choice = st.selectbox(
         "Model",
         ["gemini-1.5-flash (Fast, Free)", "gemini-1.5-pro (Best Quality, Free)"],
