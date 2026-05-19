@@ -10,7 +10,7 @@ import streamlit as st
 import web_data as wd
 from auth import require_login, sidebar_user_card, DEMO_CREDENTIALS, ROLES
 
-st.set_page_config(page_title="About GreenCRDB", page_icon="ℹ️", layout="wide")
+st.set_page_config(page_title="About | GreenCRDB", page_icon="ℹ️", layout="wide")
 
 require_login()
 sidebar_user_card()
