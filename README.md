@@ -1,10 +1,12 @@
 # GreenCRDB — Tanzania Climate-Finance Risk Intelligence Platform
 
-A climate-finance intelligence platform built for **CRDB Bank**, Tanzania's largest commercial bank. GreenCRDB integrates sector climate risk scoring, borrower ESG assessment, lending decisions, and regulatory compliance reporting into a single Streamlit web application.
+## About this project
 
-Built by **Dishon Abuya** as an independent personal project, demonstrating how CRDB Bank can operationalise its climate finance strategy against Bank of Tanzania 2025 Guidelines, TCFD, PCAF, PRB, and IFC Performance Standards.
+GreenCRDB was built independently by **Dishon Abuya**, an MSc Finance and Investment student at the University of Dundee, as a learning exercise and conversation starter with CRDB Bank on climate-finance disclosure and implementation gaps identified from its 2024 Sustainability Report.
 
-> All portfolio values and borrower data are **simulated and illustrative**. CRDB Bank financial figures are sourced from the 2024 Integrated Annual Report (actual).
+The application combines sector climate risk scoring, borrower ESG assessment, lending decisions, and regulatory compliance reporting in a Streamlit demonstrator.
+
+All portfolio values and borrower data are **simulated and illustrative**. CRDB Group aggregate figures are sourced from the **2024 Integrated Annual Report**.
 
 ---
 

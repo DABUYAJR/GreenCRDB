@@ -1,5 +1,5 @@
 """GreenCRDB — Tanzania Climate-Finance Risk Intelligence Platform
-Home dashboard for CRDB Bank.
+Independent Streamlit demonstrator using simulated portfolio data.
 """
 from __future__ import annotations
 
@@ -20,6 +20,10 @@ st.set_page_config(
 # ── Authentication gate ────────────────────────────────────────────────────────
 user = require_login()
 sidebar_user_card()
+
+st.info(
+    "Independent MSc learning project and conversation starter; portfolio data is simulated, with CRDB Group aggregate figures sourced from the 2024 Integrated Annual Report."
+)
 
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown(
