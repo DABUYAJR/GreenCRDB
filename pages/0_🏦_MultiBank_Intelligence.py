@@ -48,6 +48,10 @@ st.markdown(
     f'</div>',
     unsafe_allow_html=True,
 )
+wd.render_crdb_finding(
+    "Addresses CRDB 2024 Sustainability Report finding:",
+    "Fragmented subsidiary ESG data across CRDB Tanzania, Burundi, and DRC.",
+)
 
 # ── Group consolidated KPI strip ──────────────────────────────────────────────
 c1, c2, c3, c4, c5, c6 = st.columns(6)

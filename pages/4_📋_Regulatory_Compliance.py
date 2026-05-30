@@ -30,6 +30,10 @@ st.markdown(
     "</p></div>",
     unsafe_allow_html=True,
 )
+wd.render_crdb_finding(
+    "Addresses CRDB 2024 Sustainability Report finding:",
+    "Manual report assembly across GRI, IFRS S1/S2, GCF PPMS, IFC, and BoT 2025 frameworks.",
+)
 
 @st.cache_data
 def _load_data():

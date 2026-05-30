@@ -31,6 +31,10 @@ st.markdown(
     "</p></div>",
     unsafe_allow_html=True,
 )
+wd.render_crdb_finding(
+    "Addresses CRDB 2024 Sustainability Report finding:",
+    "Physical climate risk not quantified at sector level.",
+)
 
 @st.cache_data
 def _load_data():

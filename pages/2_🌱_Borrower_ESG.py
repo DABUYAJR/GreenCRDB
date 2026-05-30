@@ -30,6 +30,10 @@ st.markdown(
     "</p></div>",
     unsafe_allow_html=True,
 )
+wd.render_crdb_finding(
+    "Addresses CRDB 2024 Sustainability Report finding:",
+    "Unmeasured Scope 3 Category 15 financed emissions at borrower level.",
+)
 
 # Load data and apply user portfolio restrictions
 @st.cache_data

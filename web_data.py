@@ -1,6 +1,7 @@
 """Cached data loaders and computed metrics for the GreenCRDB Streamlit web app."""
 from __future__ import annotations
 
+from html import escape
 from pathlib import Path
 
 import pandas as pd
@@ -12,6 +13,19 @@ _ROOT = Path(__file__).resolve().parent
 CRDB_GREEN = "#006B3C"
 CRDB_GOLD = "#C8A84B"
 CRDB_LIGHT = "#EEF4EE"
+
+
+def render_crdb_finding(title: str, body: str) -> None:
+    """Render a CRDB report finding callout."""
+    st.markdown(
+        f'<div style="background:{CRDB_LIGHT};border-left:4px solid {CRDB_GREEN};'
+        f'padding:10px 14px;border-radius:0 6px 6px 0;margin:0 0 14px 0;">'
+        f'<div style="font-size:13px;color:#1f2937;">'
+        f'<span style="font-weight:700;">{escape(title)}</span> '
+        f'<span style="font-weight:400;">{escape(body)}</span>'
+        f'</div></div>',
+        unsafe_allow_html=True,
+    )
 
 RISK_COLOURS = {
     "Critical": "#7b241c",
