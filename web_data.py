@@ -204,6 +204,55 @@ CRDB_TARGETS = {
     "clean_energy_from_projects_gwh": 14.04,
 }
 
+AFRICA_GCF_PEERS: list[dict] = [
+    {
+        "bank_name": "CRDB Bank",
+        "country": "Tanzania",
+        "green_asset_ratio_pct": 7.0,
+        "financed_emissions_intensity": 3240,
+        "gcf_facility_utilisation_pct": 17.0,
+    },
+    {
+        "bank_name": "Access Bank",
+        "country": "Nigeria",
+        "green_asset_ratio_pct": 11.5,
+        "financed_emissions_intensity": 2850,
+        "gcf_facility_utilisation_pct": 42.0,
+    },
+    {
+        "bank_name": "Equity Bank",
+        "country": "Kenya",
+        "green_asset_ratio_pct": 14.2,
+        "financed_emissions_intensity": 2100,
+        "gcf_facility_utilisation_pct": 55.0,
+    },
+    {
+        "bank_name": "KCB Group",
+        "country": "Kenya",
+        "green_asset_ratio_pct": 12.8,
+        "financed_emissions_intensity": 2350,
+        "gcf_facility_utilisation_pct": 48.0,
+    },
+    {
+        "bank_name": "Bank Windhoek",
+        "country": "Namibia",
+        "green_asset_ratio_pct": 18.5,
+        "financed_emissions_intensity": 1650,
+        "gcf_facility_utilisation_pct": 61.0,
+    },
+    {
+        "bank_name": "Ecobank",
+        "country": "Togo",
+        "green_asset_ratio_pct": 9.6,
+        "financed_emissions_intensity": 2750,
+        "gcf_facility_utilisation_pct": 34.0,
+    },
+]
+
+SIMULATED_PEERS_NOTE = (
+    "Peer benchmark values are illustrative estimates for demonstration; CRDB figures use 2024 Integrated Annual Report inputs where available."
+)
+
 # ── CRDB 2024 Financial Ratios (from 2024 Integrated Annual Report) ───────────
 FINANCIAL_RATIOS = {
     # Profitability

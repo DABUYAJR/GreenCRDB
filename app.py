@@ -58,6 +58,103 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# ── Pan-African GCF peer benchmarking hero ────────────────────────────────────
+st.markdown("### How CRDB compares across Africa")
+peer_data = sorted(wd.AFRICA_GCF_PEERS, key=lambda row: row["green_asset_ratio_pct"], reverse=True)
+crdb_peer = next(row for row in peer_data if row["bank_name"] == "CRDB Bank")
+peer_count = len(peer_data)
+crdb_rank = next(
+    index + 1
+    for index, row in enumerate(peer_data)
+    if row["bank_name"] == "CRDB Bank"
+)
+non_crdb_intensities = sorted(
+    row["financed_emissions_intensity"]
+    for row in peer_data
+    if row["bank_name"] != "CRDB Bank"
+)
+midpoint = len(non_crdb_intensities) // 2
+peer_median_intensity = non_crdb_intensities[midpoint]
+emissions_delta_pct = (
+    (crdb_peer["financed_emissions_intensity"] - peer_median_intensity)
+    / peer_median_intensity
+    * 100
+)
+bar_colours = [
+    wd.CRDB_GREEN if row["bank_name"] == "CRDB Bank" else "#9CA3AF"
+    for row in peer_data
+]
+peer_labels = [f'{row["bank_name"]} ({row["country"]})' for row in peer_data]
+
+fig_peers = go.Figure(
+    go.Bar(
+        x=[row["green_asset_ratio_pct"] for row in peer_data],
+        y=peer_labels,
+        orientation="h",
+        marker_color=bar_colours,
+        text=[f'{row["green_asset_ratio_pct"]:.1f}%' for row in peer_data],
+        textposition="outside",
+        hovertemplate="%{y}<br>Green asset ratio: %{x:.1f}%<extra></extra>",
+    )
+)
+fig_peers.update_layout(
+    height=330,
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    margin=dict(l=10, r=50, t=10, b=10),
+    xaxis_title="Green asset ratio (%)",
+    yaxis_title="",
+    showlegend=False,
+)
+fig_peers.update_yaxes(categoryorder="array", categoryarray=list(reversed(peer_labels)))
+fig_peers.add_vline(
+    x=wd.CRDB_TARGETS["green_asset_ratio_2030"],
+    line_dash="dot",
+    line_color=wd.CRDB_GOLD,
+    annotation_text="CRDB 2030 target",
+)
+st.plotly_chart(fig_peers, use_container_width=True)
+
+k1, k2, k3 = st.columns(3)
+k1.metric("Green Asset Ratio Rank", f"{crdb_rank} of {peer_count}", f"{crdb_peer['green_asset_ratio_pct']:.1f}%")
+k2.metric(
+    "Financed Emissions Intensity",
+    f"{crdb_peer['financed_emissions_intensity']:,.0f} tCO₂e / USDm",
+    f"{emissions_delta_pct:+.1f}% vs peer median",
+    delta_color="inverse",
+)
+k3.metric(
+    "GCF Facility Utilisation",
+    f"{crdb_peer['gcf_facility_utilisation_pct']:.0f}%",
+    "2024 proxy",
+)
+st.markdown(
+    f"**CRDB ranks {crdb_rank} of {peer_count} on green asset ratio among this illustrative GCF-accredited African peer set, making capital deployment the clearest competitive gap.**"
+)
+st.markdown(f"<p style='font-size:12px;color:#6B7280;'><em>{wd.SIMULATED_PEERS_NOTE}</em></p>", unsafe_allow_html=True)
+
+st.markdown("---")
+st.markdown("### Explore the platform")
+n1, n2, n3, n4, n5 = st.columns(5)
+nav_items = [
+    (n1, "📊", "Module 1", "Sector Climate\nRisk Engine", wd.CRDB_GREEN),
+    (n2, "🌱", "Module 2", "Borrower ESG\nScoring Engine", "#1D9E75"),
+    (n3, "💡", "Module 3", "Climate Finance\nDecision Engine", "#2563EB"),
+    (n4, "📋", "Module 4", "Regulatory &\nPCAF Compliance", "#D97706"),
+    (n5, "🤖", "AI Copilot", "Sustainability\nReport Generator", "#7C3AED"),
+]
+for col, icon, mod, desc, colour in nav_items:
+    with col:
+        st.markdown(
+            f'<div style="background:{colour};color:white;padding:16px;border-radius:8px;text-align:center;">'
+            f'<h4 style="margin:0;">{icon} {mod}</h4>'
+            f'<p style="margin:6px 0 0 0;font-size:12px;white-space:pre-line;">{desc}</p>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+st.markdown("---")
+
 # ── Load data ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def _load_home_data():
@@ -455,28 +552,6 @@ with aw_col:
             unsafe_allow_html=True,
         )
     st.caption(f"Showing 6 of {len(wd.AWARDS_2024)}+ awards. Full list in Regulatory Compliance module.")
-
-st.markdown("---")
-
-# ── Module navigation ─────────────────────────────────────────────────────────
-st.markdown("### Platform Modules")
-n1, n2, n3, n4, n5 = st.columns(5)
-nav_items = [
-    (n1, "📊", "Module 1", "Sector Climate\nRisk Engine", wd.CRDB_GREEN),
-    (n2, "🌱", "Module 2", "Borrower ESG\nScoring Engine", "#1D9E75"),
-    (n3, "💡", "Module 3", "Climate Finance\nDecision Engine", "#2563EB"),
-    (n4, "📋", "Module 4", "Regulatory &\nPCAF Compliance", "#D97706"),
-    (n5, "🤖", "AI Copilot", "Sustainability\nReport Generator", "#7C3AED"),
-]
-for col, icon, mod, desc, colour in nav_items:
-    with col:
-        st.markdown(
-            f'<div style="background:{colour};color:white;padding:16px;border-radius:8px;text-align:center;">'
-            f'<h4 style="margin:0;">{icon} {mod}</h4>'
-            f'<p style="margin:6px 0 0 0;font-size:12px;white-space:pre-line;">{desc}</p>'
-            f'</div>',
-            unsafe_allow_html=True,
-        )
 
 st.markdown(
     "<p style='color:#888;font-size:11px;margin-top:20px;text-align:center;'>"
