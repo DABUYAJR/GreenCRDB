@@ -251,7 +251,7 @@ with tab_roles:
         f'<li>They can only <b>view and enter data</b> for their <b>assigned sectors</b> (e.g., Agriculture, Energy, Mining)</li>'
         f'<li>They can only view borrowers in their <b>assigned regions</b> (e.g., Dar es Salaam, Arusha)</li>'
         f'<li>All tables and forms in Modules 2 & 3 automatically filter to their scope</li>'
-        f'<li>Example: David Osei (dosei) can only see borrowers in Agriculture/Energy/Manufacturing/Mining in Dar/Arusha/Mwanza</li>'
+        f'<li>Example: an ESG officer role can be restricted to Agriculture/Energy/Manufacturing/Mining in Dar/Arusha/Mwanza</li>'
         f'</ul>'
         f'The CSO can assign sectors and regions per user in the User Management page.'
         f'</div>',

@@ -41,7 +41,7 @@ st.info(f"Logged in as: **{user['name']}** · {user['title']} · Full management
 
 # ── Summary KPIs ───────────────────────────────────────────────────────────────
 total_users = len(USERS)
-roles_count = len(set(u["role"] for u in USERS.values()))
+roles_count = len(ROLES)
 
 c1, c2, c3 = st.columns(3)
 c1.metric("Total Users", total_users)
@@ -102,6 +102,9 @@ st.markdown("---")
 
 # ── Role Permissions Matrix ────────────────────────────────────────────────────
 st.markdown("### Role Permissions Matrix")
+st.markdown(
+    "Six roles are defined in the platform; in this demonstrator a single shared account is used for access."
+)
 
 module_keys = ["sector_risk", "borrower_esg", "finance_decisions", "regulatory", "ai_copilot", "data_upload"]
 module_names = ["Sector Risk", "Borrower ESG", "Finance Decisions", "Regulatory", "AI Copilot", "Data Upload"]

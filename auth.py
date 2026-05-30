@@ -14,120 +14,20 @@ def _hash(pw: str) -> str:
 
 
 # ── User Database ─────────────────────────────────────────────────────────────
-# Demo fallback for local development when no Streamlit secrets are configured.
-DEFAULT_USERS: dict[str, dict[str, Any]] = {
-    "jkimaro": {
-        "name": "John Kimaro",
+# Single shared demonstrator account.
+USERS: dict[str, dict[str, Any]] = {
+    "democrdb": {
+        "name": "DemoCRDB",
         "title": "Chief Sustainability Officer",
-        "department": "Sustainable Finance Unit",
+        "department": "Demonstrator",
         "role": "cso",
         "password_hash": hashlib.sha256(b"GreenCRDB@2025").hexdigest(),
         "sectors": "all",
         "regions": "all",
-        "email": "j.kimaro@crdbbank.co.tz",
-        "avatar": "JK",
-    },
-    "smwangi": {
-        "name": "Sarah Mwangi",
-        "title": "Climate Risk Manager",
-        "department": "Sustainable Finance Unit",
-        "role": "climate_risk_manager",
-        "password_hash": hashlib.sha256(b"Climate@2025").hexdigest(),
-        "sectors": "all",
-        "regions": "all",
-        "email": "s.mwangi@crdbbank.co.tz",
-        "avatar": "SM",
-    },
-    "dosei": {
-        "name": "David Osei",
-        "title": "ESG Assessment Officer",
-        "department": "Sustainable Finance Unit",
-        "role": "esg_officer",
-        "password_hash": hashlib.sha256(b"ESGAssess@25").hexdigest(),
-        "sectors": ["Agriculture", "Energy", "Manufacturing", "Mining"],
-        "regions": ["Dar es Salaam", "Arusha", "Mwanza"],
-        "email": "d.osei@crdbbank.co.tz",
-        "avatar": "DO",
-    },
-    "mtanzania": {
-        "name": "Mary Tanzania",
-        "title": "Green Finance Officer",
-        "department": "Sustainable Finance Unit",
-        "role": "green_finance_officer",
-        "password_hash": hashlib.sha256(b"GreenFin@25").hexdigest(),
-        "sectors": "all",
-        "regions": "all",
-        "email": "m.tanzania@crdbbank.co.tz",
-        "avatar": "MT",
-    },
-    "akassim": {
-        "name": "Ahmed Kassim",
-        "title": "Compliance & Reporting Officer",
-        "department": "Risk & Compliance",
-        "role": "compliance_officer",
-        "password_hash": hashlib.sha256(b"Comply@2025").hexdigest(),
-        "sectors": "all",
-        "regions": "all",
-        "email": "a.kassim@crdbbank.co.tz",
-        "avatar": "AK",
-    },
-    "gmoshi": {
-        "name": "Grace Moshi",
-        "title": "Data Analyst",
-        "department": "Strategy & Analytics",
-        "role": "data_analyst",
-        "password_hash": hashlib.sha256(b"Analyst@25").hexdigest(),
-        "sectors": "all",
-        "regions": "all",
-        "email": "g.moshi@crdbbank.co.tz",
-        "avatar": "GM",
+        "email": "demo@greencrdb.local",
+        "avatar": "DC",
     },
 }
-
-
-def _normalise_scope(value: Any) -> list[str] | str:
-    if value == "all" or value is None:
-        return "all"
-    if isinstance(value, str):
-        return [item.strip() for item in value.split(",") if item.strip()]
-    return list(value)
-
-
-def _load_users_from_secrets() -> dict[str, dict[str, Any]]:
-    try:
-        secret_users = st.secrets["users"]
-    except Exception:
-        return DEFAULT_USERS
-
-    if not secret_users:
-        return DEFAULT_USERS
-
-    users: dict[str, dict[str, Any]] = {}
-    for username, secret_user in secret_users.items():
-        user_data = dict(secret_user)
-        base = DEFAULT_USERS.get(username, {})
-        password_hash = user_data.get("password_hash")
-        if not password_hash and user_data.get("password"):
-            password_hash = _hash(str(user_data["password"]))
-        if not password_hash:
-            continue
-
-        users[username.strip().lower()] = {
-            "name": user_data.get("name", base.get("name", username)),
-            "title": user_data.get("title", base.get("title", "")),
-            "department": user_data.get("department", base.get("department", "")),
-            "role": user_data.get("role", base.get("role", "data_analyst")),
-            "password_hash": password_hash,
-            "sectors": _normalise_scope(user_data.get("sectors", base.get("sectors", "all"))),
-            "regions": _normalise_scope(user_data.get("regions", base.get("regions", "all"))),
-            "email": user_data.get("email", base.get("email", "")),
-            "avatar": user_data.get("avatar", base.get("avatar", username[:2].upper())),
-        }
-
-    return users or DEFAULT_USERS
-
-
-USERS: dict[str, dict[str, Any]] = _load_users_from_secrets()
 
 # ── Role Definitions & Permissions ────────────────────────────────────────────
 ROLES: dict[str, dict[str, Any]] = {
@@ -249,12 +149,7 @@ ROLES: dict[str, dict[str, Any]] = {
 
 # ── Convenience helpers ────────────────────────────────────────────────────────
 DEMO_CREDENTIALS = [
-    ("jkimaro", "Available on request", "Chief Sustainability Officer", "#7C3AED"),
-    ("smwangi", "Available on request", "Climate Risk Manager", "#D97706"),
-    ("dosei", "Available on request", "ESG Assessment Officer", "#1D9E75"),
-    ("mtanzania", "Available on request", "Green Finance Officer", "#2563EB"),
-    ("akassim", "Available on request", "Compliance & Reporting Officer", "#0F766E"),
-    ("gmoshi", "Available on request", "Data Analyst", "#6B7280"),
+    ("DemoCRDB", "GreenCRDB@2025", "Chief Sustainability Officer", "#7C3AED"),
 ]
 
 
@@ -471,7 +366,7 @@ def _show_login_page() -> None:
     col_l, col_form, col_r = st.columns([1, 2, 1])
     with col_form:
         with st.form("login_form", clear_on_submit=False):
-            username = st.text_input("Username", placeholder="e.g. jkimaro")
+            username = st.text_input("Username", placeholder="DemoCRDB")
             password = st.text_input("Password", type="password", placeholder="Your portal password")
             submitted = st.form_submit_button("Sign In →", use_container_width=True, type="primary")
 
