@@ -35,6 +35,21 @@ wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
     "Green asset ratio below internal target; Kijani Bond proceeds largely undeployed.",
 )
+wd.render_gap_demonstration(
+    "CRDB's 2024 Sustainability Report references the Kijani Bond and green lending ambitions but does not break out how proceeds are allocated by sector or borrower type, and does not show the trajectory of the green asset ratio against an internal target. There is no auditable trail from borrower assessment to lending decision.",
+    [
+        "Decision score (0–100) combining ESG (55% weight) and sector climate readiness (45% weight).",
+        "Four-tier outcome: Approve (≥65), Conditional (≥52), Review (≥40), Decline (<40).",
+        "Kijani Bond proceeds allocation tracker showing deployed vs undeployed.",
+        "Green asset ratio trajectory chart with internal target line.",
+        "TCFD-aligned metrics, IFC PS alignment, and stressed scenario analysis per application.",
+    ],
+    [
+        "Faster, defensible decisions on green loan applications.",
+        "Auditable trail from borrower ESG score, sector context, and final decision for every approval.",
+        "Board-level visibility on Kijani Bond deployment progress.",
+    ],
+)
 
 @st.cache_data
 def _load_data():

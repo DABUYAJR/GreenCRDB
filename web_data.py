@@ -27,6 +27,60 @@ def render_crdb_finding(title: str, body: str) -> None:
         unsafe_allow_html=True,
     )
 
+
+def render_gap_demonstration(gap: str, solution: list[str], enables: list[str]) -> None:
+    """Render a consistent module-level gap demonstration section."""
+    panel_style = (
+        "background:#F8F9FA;border:1px solid #E5E7EB;"
+        "padding:16px;border-radius:8px;min-height:230px;height:100%;"
+    )
+
+    st.markdown(
+        f'<h3 style="color:{CRDB_GREEN};font-size:18px;margin:4px 0 12px 0;">'
+        f'How this module closes the gap</h3>',
+        unsafe_allow_html=True,
+    )
+
+    col_gap, col_solution, col_enables = st.columns(3)
+    with col_gap:
+        st.markdown(
+            f'<div style="{panel_style}">'
+            f'<div style="font-weight:700;color:#111827;margin-bottom:8px;">The gap in CRDB 2024</div>'
+            f'<p style="font-size:13px;line-height:1.55;color:#374151;margin:0;">{escape(gap)}</p>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+    with col_solution:
+        solution_items = "".join(
+            f'<li style="margin-bottom:6px;">{escape(item)}</li>' for item in solution
+        )
+        st.markdown(
+            f'<div style="{panel_style}">'
+            f'<div style="font-weight:700;color:#111827;margin-bottom:8px;">How this module closes it</div>'
+            f'<ul style="font-size:13px;line-height:1.45;color:#374151;margin:0;padding-left:18px;">'
+            f'{solution_items}</ul></div>',
+            unsafe_allow_html=True,
+        )
+
+    with col_enables:
+        enables_items = "".join(
+            f'<li style="margin-bottom:6px;">{escape(item)}</li>' for item in enables
+        )
+        st.markdown(
+            f'<div style="{panel_style}">'
+            f'<div style="font-weight:700;color:#111827;margin-bottom:8px;">What this enables</div>'
+            f'<ul style="font-size:13px;line-height:1.45;color:#374151;margin:0;padding-left:18px;">'
+            f'{enables_items}</ul></div>',
+            unsafe_allow_html=True,
+        )
+
+    st.markdown(
+        '<p style="font-size:12px;color:#6B7280;font-style:italic;margin:10px 0 18px 0;">'
+        'Walk through this module to see the methodology in action.</p>',
+        unsafe_allow_html=True,
+    )
+
 RISK_COLOURS = {
     "Critical": "#7b241c",
     "High": "#e74c3c",

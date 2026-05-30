@@ -34,6 +34,20 @@ wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
     "Unmeasured Scope 3 Category 15 financed emissions at borrower level.",
 )
+wd.render_gap_demonstration(
+    "CRDB's 2024 Sustainability Report discloses Group operational emissions (Scope 1 and 2) but does not measure financed emissions. PCAF Scope 3 Category 15 — the dominant emissions category for any bank — is not implemented at borrower level. Without it, CRDB cannot accurately report its climate footprint or set science-based targets.",
+    [
+        "Borrower-level scoring on Environmental (40%), Social (30%), and Governance (30%) pillars on a 0–10 scale.",
+        "Four-tier classification: Green Eligible (≥7.5), Standard (5.5–7.4), Watch List (4.0–5.4), High Risk (<4.0).",
+        "PCAF Scope 3 Category 15 financed emissions calculation per borrower, attributed to CRDB by outstanding loan amount.",
+        "Sector-filtered views and exportable borrower profiles.",
+    ],
+    [
+        "ESG-linked pricing for Green Eligible borrowers becomes operational rather than aspirational.",
+        "Quarterly PCAF Category 15 disclosure ready out of the box.",
+        "Watch List borrowers flagged for active engagement rather than discovered after a default.",
+    ],
+)
 
 # Load data and apply user portfolio restrictions
 @st.cache_data

@@ -34,6 +34,20 @@ wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
     "Manual report assembly across GRI, IFRS S1/S2, GCF PPMS, IFC, and BoT 2025 frameworks.",
 )
+wd.render_gap_demonstration(
+    "CRDB's 2024 Sustainability Report references multiple disclosure frameworks (GRI, IFRS S1/S2, GCF PPMS, IFC, BoT 2025) but produces them through parallel manual processes. The same data point is collected, reformatted, and reported five different ways, which duplicates effort and creates inconsistencies between disclosures.",
+    [
+        "Collect-once-report-many engine: a single data refresh produces aligned outputs for GRI 305, IFRS S1/S2, TCFD, GCF PPMS, BoT 2025 (13 items), PRB, SASB FN-CB, and TNFD v1.0 readiness.",
+        "Cross-framework data-point mapping so each metric is entered once and routed to every framework that needs it.",
+        "BoT 2025 compliance tracker against the 13-item checklist with real-time status.",
+        "Exportable submission packs per framework.",
+    ],
+    [
+        "Sustainability team produces one quarterly data refresh instead of five parallel reports.",
+        "Inconsistencies between frameworks eliminated at source.",
+        "Audit trail from raw data to final disclosure for every metric.",
+    ],
+)
 
 @st.cache_data
 def _load_data():

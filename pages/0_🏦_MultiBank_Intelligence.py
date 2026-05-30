@@ -52,6 +52,20 @@ wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
     "Fragmented subsidiary ESG data across CRDB Tanzania, Burundi, and DRC.",
 )
+wd.render_gap_demonstration(
+    "CRDB's 2024 Sustainability Report consolidates Group sustainability metrics but does not disclose subsidiary-level breakdowns. Climate risk, green portfolio share, and financed emissions intensity are reported only at consolidated Group level, hiding where the gap sits geographically across CRDB Tanzania, CRDB Bank Burundi, and CRDB Bank DRC.",
+    [
+        "Side-by-side subsidiary view: green portfolio share, climate risk exposure, and financed emissions intensity per entity.",
+        "Pan-African league table benchmarking CRDB against five other GCF-accredited African banks on the same metrics.",
+        "DFI facility tracker showing committed vs drawn amounts across GCF, AFD, IFC, KfW, and other partners.",
+        "Single consolidated view replacing fragmented internal reporting from subsidiary finance teams.",
+    ],
+    [
+        "Group sustainability officers can pinpoint which subsidiary drags the Group green ratio.",
+        "DFI relationship managers see facility utilisation in one place when preparing drawdown requests.",
+        "External reviewers can verify subsidiary-level disclosures against Group claims.",
+    ],
+)
 
 # ── Group consolidated KPI strip ──────────────────────────────────────────────
 c1, c2, c3, c4, c5, c6 = st.columns(6)

@@ -35,6 +35,20 @@ wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
     "Physical climate risk not quantified at sector level.",
 )
+wd.render_gap_demonstration(
+    "CRDB's 2024 Sustainability Report acknowledges climate exposure across its lending sectors but does not quantify physical climate risk at sector level. Risk is described narratively rather than scored, leaving credit officers without a tool to apply sector-level adjustments when underwriting.",
+    [
+        "5-hazard composite scoring across 12 Tanzania sectors using drought, flood, temperature, transition risk, and water stress.",
+        "Transparent weighting: drought 0.25, flood 0.20, temperature 0.20, transition 0.20, water stress 0.15.",
+        "0–10 score per sector with tier classification (Low, Medium, High, Critical).",
+        "Sector heat map and downloadable score table.",
+    ],
+    [
+        "Credit officers apply a sector multiplier when pricing loans rather than relying on intuition.",
+        "Risk committees set portfolio concentration limits on Critical-tier sectors.",
+        "Quarterly refresh of sector scores feeds directly into the Borrower ESG and Finance Decisions modules.",
+    ],
+)
 
 @st.cache_data
 def _load_data():
