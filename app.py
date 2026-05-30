@@ -25,39 +25,6 @@ st.info(
     "Independent MSc learning project and conversation starter; portfolio data is simulated, with CRDB Group aggregate figures sourced from the 2024 Integrated Annual Report."
 )
 
-# ── Header ────────────────────────────────────────────────────────────────────
-st.markdown(
-    f"""
-    <div style="background:{wd.CRDB_GREEN};padding:20px 28px;border-radius:10px;margin-bottom:8px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-            <div>
-                <h1 style="color:white;margin:0;font-size:26px;letter-spacing:0.5px;">
-                    🌍 GreenCRDB
-                </h1>
-                <p style="color:#c8e6c9;margin:4px 0 0 0;font-size:13px;">
-                    Tanzania Climate-Finance Risk Intelligence Platform &nbsp;·&nbsp; CRDB Bank
-                </p>
-            </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <span style="background:{wd.CRDB_GOLD};color:#1a1a1a;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
-                    BoT 2025 Compliant
-                </span>
-                <span style="background:#1D9E75;color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
-                    GCF Accredited
-                </span>
-                <span style="background:#2563EB;color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
-                    Kijani Bond Issuer
-                </span>
-                <span style="background:#7C3AED;color:white;padding:4px 12px;border-radius:20px;font-size:11px;">
-                    Illustrative Prototype
-                </span>
-            </div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
 # ── Pan-African GCF peer benchmarking hero ────────────────────────────────────
 st.markdown("### How CRDB compares across Africa")
 peer_data = sorted(wd.AFRICA_GCF_PEERS, key=lambda row: row["green_asset_ratio_pct"], reverse=True)
@@ -132,6 +99,39 @@ st.markdown(
     f"**CRDB ranks {crdb_rank} of {peer_count} on green asset ratio among this illustrative GCF-accredited African peer set, making capital deployment the clearest competitive gap.**"
 )
 st.markdown(f"<p style='font-size:12px;color:#6B7280;'><em>{wd.SIMULATED_PEERS_NOTE}</em></p>", unsafe_allow_html=True)
+
+# ── Header ────────────────────────────────────────────────────────────────────
+st.markdown(
+    f"""
+    <div style="background:{wd.CRDB_GREEN};padding:20px 28px;border-radius:10px;margin:18px 0 8px 0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+            <div>
+                <h1 style="color:white;margin:0;font-size:26px;letter-spacing:0.5px;">
+                    🌍 GreenCRDB
+                </h1>
+                <p style="color:#c8e6c9;margin:4px 0 0 0;font-size:13px;">
+                    Tanzania Climate-Finance Risk Intelligence Platform &nbsp;·&nbsp; CRDB Bank
+                </p>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <span style="background:{wd.CRDB_GOLD};color:#1a1a1a;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
+                    BoT 2025 Compliant
+                </span>
+                <span style="background:#1D9E75;color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
+                    GCF Accredited
+                </span>
+                <span style="background:#2563EB;color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
+                    Kijani Bond Issuer
+                </span>
+                <span style="background:#7C3AED;color:white;padding:4px 12px;border-radius:20px;font-size:11px;">
+                    Illustrative Prototype
+                </span>
+            </div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.markdown("---")
 st.markdown("### Explore the platform")

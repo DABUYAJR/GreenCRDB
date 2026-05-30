@@ -60,14 +60,16 @@ Thresholds: Approve ≥65 · Conditional ≥52 · Review ≥40 · Decline <40
 
 ## Role-Based Access
 
-| Role | Username | Access |
-|------|----------|--------|
-| Chief Sustainability Officer | `jkimaro` | Full — all modules, user management |
-| Climate Risk Manager | `smwangi` | Module 1 + Regulatory full; others read |
-| ESG Assessment Officer | `dosei` | Module 2 full; sector/region restricted |
-| Green Finance Officer | `mtanzania` | Module 3 full; others read |
-| Compliance & Reporting Officer | `akassim` | All read + report generation |
-| Data Analyst | `gmoshi` | Modules 1–3 read only |
+| Role | Access |
+|------|--------|
+| Chief Sustainability Officer | Full — all modules, user management |
+| Climate Risk Manager | Module 1 + Regulatory full; others read |
+| ESG Assessment Officer | Module 2 full; sector/region restricted |
+| Green Finance Officer | Module 3 full; others read |
+| Compliance & Reporting Officer | All read + report generation |
+| Data Analyst | Modules 1–3 read only |
+
+Demo usernames are not published. Contact Dishon Abuya (dishonabuyajr@gmail.com) for access.
 
 ---
 
@@ -131,7 +133,7 @@ GreenCRDB/
 │   ├── 5_🤖_AI_Copilot.py
 │   ├── 6_📂_Data_Upload.py
 │   ├── 7_👥_User_Management.py
-│   ├── 8_ℹ️_About.py
+│   ├── 8_ℹ️_Why_This_Exists.py      # Why this project exists
 │   └── 9_📖_User_Guide.py
 ├── scripts/                        # Offline data pipeline (Module 1–3)
 ├── config/                         # risk_thresholds.yaml, scoring_weights.yaml
