@@ -162,7 +162,7 @@ with tab_nav:
         ("🤖", "5 · AI Sustainability Copilot", "CSO, Climate RM, GFO, Compliance", "Ask questions about the portfolio in plain English. Generate 4 formal reports: TCFD Climate Report, ESG Summary, Green Finance Report, Board Brief. Requires Gemini API key.", "#7C3AED"),
         ("📂", "6 · Data Upload Studio", "CSO, Climate RM, ESG Officer, Compliance", "Upload borrower CSV files, sector data, and portfolio snapshots. Template provided. Validates columns before saving.", "#059669"),
         ("👥", "7 · User Management", "CSO only", "View all platform users, roles, sectors, and regions. Add or modify users (in production build).", "#D85A30"),
-        ("ℹ️", "8 · About GreenCRDB", "All roles", "Platform overview, CRDB Bank background, module architecture, frameworks (TCFD, PRB, PCAF etc.), technology stack, data sources, roadmap, team.", "#555"),
+        ("ℹ️", "8 · Why This Exists", "All roles", "Who built GreenCRDB, why CRDB was chosen, what the demonstrator shows, and what kind of conversation the author is seeking.", "#555"),
         ("📖", "9 · User Guide (this page)", "All roles", "Complete user manual. Getting started, module walkthroughs, scoring formulas, role permissions, data entry workflows, FAQ.", "#2563EB"),
     ]
 
