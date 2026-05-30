@@ -14,7 +14,7 @@ All portfolio values and borrower data are **simulated and illustrative**. CRDB 
 
 **[greencrdb.streamlit.app](https://greencrdb.streamlit.app)**
 
-Demo login (full access): `jkimaro` / `GreenCRDB@2025`
+Demo access available on request — contact Dishon Abuya (dishonabuyajr@gmail.com).
 
 ---
 

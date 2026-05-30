@@ -8,9 +8,14 @@ import streamlit as st
 
 CRDB_GREEN = "#006B3C"
 
+
+def _hash(pw: str) -> str:
+    return hashlib.sha256(pw.encode()).hexdigest()
+
+
 # ── User Database ─────────────────────────────────────────────────────────────
-# In production: replace with database lookup + bcrypt hashing
-USERS: dict[str, dict[str, Any]] = {
+# Demo fallback for local development when no Streamlit secrets are configured.
+DEFAULT_USERS: dict[str, dict[str, Any]] = {
     "jkimaro": {
         "name": "John Kimaro",
         "title": "Chief Sustainability Officer",
@@ -78,6 +83,51 @@ USERS: dict[str, dict[str, Any]] = {
         "avatar": "GM",
     },
 }
+
+
+def _normalise_scope(value: Any) -> list[str] | str:
+    if value == "all" or value is None:
+        return "all"
+    if isinstance(value, str):
+        return [item.strip() for item in value.split(",") if item.strip()]
+    return list(value)
+
+
+def _load_users_from_secrets() -> dict[str, dict[str, Any]]:
+    try:
+        secret_users = st.secrets["users"]
+    except Exception:
+        return DEFAULT_USERS
+
+    if not secret_users:
+        return DEFAULT_USERS
+
+    users: dict[str, dict[str, Any]] = {}
+    for username, secret_user in secret_users.items():
+        user_data = dict(secret_user)
+        base = DEFAULT_USERS.get(username, {})
+        password_hash = user_data.get("password_hash")
+        if not password_hash and user_data.get("password"):
+            password_hash = _hash(str(user_data["password"]))
+        if not password_hash:
+            continue
+
+        users[username.strip().lower()] = {
+            "name": user_data.get("name", base.get("name", username)),
+            "title": user_data.get("title", base.get("title", "")),
+            "department": user_data.get("department", base.get("department", "")),
+            "role": user_data.get("role", base.get("role", "data_analyst")),
+            "password_hash": password_hash,
+            "sectors": _normalise_scope(user_data.get("sectors", base.get("sectors", "all"))),
+            "regions": _normalise_scope(user_data.get("regions", base.get("regions", "all"))),
+            "email": user_data.get("email", base.get("email", "")),
+            "avatar": user_data.get("avatar", base.get("avatar", username[:2].upper())),
+        }
+
+    return users or DEFAULT_USERS
+
+
+USERS: dict[str, dict[str, Any]] = _load_users_from_secrets()
 
 # ── Role Definitions & Permissions ────────────────────────────────────────────
 ROLES: dict[str, dict[str, Any]] = {
@@ -199,17 +249,13 @@ ROLES: dict[str, dict[str, Any]] = {
 
 # ── Convenience helpers ────────────────────────────────────────────────────────
 DEMO_CREDENTIALS = [
-    ("jkimaro", "GreenCRDB@2025", "Chief Sustainability Officer", "#7C3AED"),
-    ("smwangi", "Climate@2025", "Climate Risk Manager", "#D97706"),
-    ("dosei", "ESGAssess@25", "ESG Assessment Officer", "#1D9E75"),
-    ("mtanzania", "GreenFin@25", "Green Finance Officer", "#2563EB"),
-    ("akassim", "Comply@2025", "Compliance & Reporting Officer", "#0F766E"),
-    ("gmoshi", "Analyst@25", "Data Analyst", "#6B7280"),
+    ("jkimaro", "Available on request", "Chief Sustainability Officer", "#7C3AED"),
+    ("smwangi", "Available on request", "Climate Risk Manager", "#D97706"),
+    ("dosei", "Available on request", "ESG Assessment Officer", "#1D9E75"),
+    ("mtanzania", "Available on request", "Green Finance Officer", "#2563EB"),
+    ("akassim", "Available on request", "Compliance & Reporting Officer", "#0F766E"),
+    ("gmoshi", "Available on request", "Data Analyst", "#6B7280"),
 ]
-
-
-def _hash(pw: str) -> str:
-    return hashlib.sha256(pw.encode()).hexdigest()
 
 
 def authenticate(username: str, password: str) -> dict | None:

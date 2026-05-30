@@ -555,6 +555,7 @@ with aw_col:
 
 st.markdown(
     "<p style='color:#888;font-size:11px;margin-top:20px;text-align:center;'>"
+    "<em>Demonstrator only. Not for handling real borrower data.</em><br>"
     "All portfolio values and climate risk scores are simulated / illustrative. "
     "Built by Dishon Abuya · Independent Developer. "
     "Framework references: TCFD · ISSB S1/S2 · PRB · SASB FN-CB · PCAF · IFC PS · Bank of Tanzania 2025 Guidelines"
