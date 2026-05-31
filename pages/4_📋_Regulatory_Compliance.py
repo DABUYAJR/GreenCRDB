@@ -25,21 +25,21 @@ st.markdown(
     '<div style="background:#D97706;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
     '<h2 style="color:white;margin:0;font-size:22px;">📋 Module 4 — Regulatory Compliance & PCAF Analytics</h2>'
     '<p style="color:#fef3c7;margin:2px 0 0 0;font-size:13px;">'
-    "Bank of Tanzania 2025 Guidelines · PCAF Financed Emissions (Scope 3) · "
+    "Bank of Tanzania Climate Risk Guideline · PCAF Financed Emissions (Scope 3) · "
     "Portfolio Temperature Alignment · SASB FN-CB · PRB · UN SDG Mapping"
     "</p></div>",
     unsafe_allow_html=True,
 )
 wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
-    "Manual report assembly across GRI, IFRS S1/S2, GCF PPMS, IFC, and BoT 2025 frameworks.",
+    "CRDB aligns disclosure with IFRS S1, IFRS S2, TCFD, Bank of Tanzania Climate Risk Guideline, DSE ESG Guidelines and GRI Standards. The frameworks run in parallel — no collect-once-report-many data flow ties them together. Citation: Sustainability Report 2024, p. 7.",
 )
 wd.render_gap_demonstration(
-    "CRDB's 2024 Sustainability Report references multiple disclosure frameworks (GRI, IFRS S1/S2, GCF PPMS, IFC, BoT 2025) but produces them through parallel manual processes. The same data point is collected, reformatted, and reported five different ways, which duplicates effort and creates inconsistencies between disclosures.",
+    "CRDB's 2024 Sustainability Report references multiple disclosure frameworks (GRI, IFRS S1/S2, GCF PPMS, IFC, Bank of Tanzania Climate Risk Guideline) but produces them through parallel manual processes. The same data point is collected, reformatted, and reported five different ways, which duplicates effort and creates inconsistencies between disclosures.",
     [
-        "Collect-once-report-many engine: a single data refresh produces aligned outputs for GRI 305, IFRS S1/S2, TCFD, GCF PPMS, BoT 2025 (13 items), PRB, SASB FN-CB, and TNFD v1.0 readiness.",
+        "Collect-once-report-many engine: a single data refresh produces aligned outputs for GRI 305, IFRS S1/S2, TCFD, GCF PPMS, Bank of Tanzania Climate Risk Guideline (13 items), PRB, SASB FN-CB, and TNFD v1.0 readiness.",
         "Cross-framework data-point mapping so each metric is entered once and routed to every framework that needs it.",
-        "BoT 2025 compliance tracker against the 13-item checklist with real-time status.",
+        "Bank of Tanzania Climate Risk Guideline compliance tracker against the 13-item checklist with real-time status.",
         "Exportable submission packs per framework.",
     ],
     [
@@ -62,7 +62,7 @@ total_fe = fe["financed_emissions_ktco2e"].sum() if not fe.empty else 0
 c1.metric("Portfolio ITR", f"{itr:.2f} °C", f"{itr - 1.5:.2f}°C above 1.5°C target", delta_color="inverse")
 c2.metric("Financed Emissions", f"{total_fe:,.0f} ktCO₂e", "PCAF Scope 3 Category 15")
 c3.metric("Green Asset Ratio", f"{gar_current:.0f}%", f"Target: {wd.CRDB_TARGETS['green_asset_ratio_2030']:.0f}% by 2030 · 2024 Actual")
-c4.metric("BoT 2025 Compliance", "12 / 13 items", "1 in progress", delta_color="off")
+c4.metric("Bank of Tanzania Climate Risk Guideline Compliance", "12 / 13 items", "1 in progress", delta_color="off")
 c5.metric("Moody's Rating", fr["moodys_rating"], f"Stable · prev {fr['moodys_prev_rating']} · first TZ bank B1")
 
 st.markdown("---")
@@ -92,7 +92,7 @@ st.markdown("---")
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tab_bot, tab_pcaf, tab_sasb, tab_prb, tab_sdg, tab_mat, tab_social, tab_tnfd = st.tabs([
-    "🏛️ BoT 2025 Compliance",
+    "🏛️ Bank of Tanzania Climate Risk Guideline",
     "🌡️ PCAF Emissions",
     "📊 SASB FN-CB",
     "🤝 PRB Principles",
@@ -102,12 +102,12 @@ tab_bot, tab_pcaf, tab_sasb, tab_prb, tab_sdg, tab_mat, tab_social, tab_tnfd = s
     "🌿 TNFD Readiness",
 ])
 
-# ── TAB 1: BoT 2025 Compliance ─────────────────────────────────────────────────
+# ── TAB 1: Bank of Tanzania Climate Risk Guideline Compliance ─────────────────
 with tab_bot:
-    st.markdown("#### Bank of Tanzania Guidelines on Climate-Related Financial Risks (2025)")
+    st.markdown("#### Bank of Tanzania Climate Risk Guideline")
     st.markdown(
         "Climate risk reporting is now **mandatory** for all licensed banks in Tanzania under the "
-        "Bank of Tanzania Guidelines 2025, aligned to TCFD / ISSB S2 framework."
+        "Bank of Tanzania Climate Risk Guideline, aligned to TCFD / ISSB S2 framework."
     )
 
     bot_df = pd.DataFrame(wd.BOT_COMPLIANCE)
@@ -144,7 +144,7 @@ with tab_pcaf:
     st.info(
         "**Methodology:** IPCC AR6 Africa sector emission intensity proxies. "
         "PCAF Data Quality Score: **4** (economic-activity-based estimates — standard for emerging markets). "
-        "This is CRDB's acknowledged gap in its 2024 TCFD Report; this module provides a pathway to full PCAF compliance."
+        "This is CRDB's acknowledged gap in the Sustainability Report 2024, with TCFD 2024 as supporting reference; this module provides a pathway to full PCAF compliance."
     )
 
     col_a, col_b = st.columns([1.4, 1])
@@ -615,7 +615,7 @@ with tab_tnfd:
     st.markdown(
         "The **Taskforce on Nature-related Financial Disclosures (TNFD)** framework (v1.0, September 2023) "
         "follows TCFD's four-pillar structure. It is increasingly required by DFI partners (GCF, AfDB, IFC). "
-        "CRDB's 2024 TCFD Report notes TNFD readiness as a 2025–2026 priority. "
+        "CRDB's Sustainability Report 2024 notes TNFD readiness as a 2025–2026 priority, with TCFD 2024 as supporting reference. "
         "The assessment below tracks current maturity against the TNFD LEAP approach."
     )
 
@@ -685,11 +685,11 @@ with tab_tnfd:
             f'</div>',
             unsafe_allow_html=True,
         )
-    st.caption("TNFD v1.0 (September 2023) · LEAP = Locate, Evaluate, Assess, Prepare. Source: CRDB 2024 TCFD Report + TNFD framework.")
+    st.caption("TNFD v1.0 (September 2023) · LEAP = Locate, Evaluate, Assess, Prepare. Source: Sustainability Report 2024, with TCFD 2024 and TNFD framework as supporting references.")
 
 wd.render_data_methodology(
     [
-        "Bank of Tanzania Climate-Related Financial Risk Guidelines 2025 (13 supervisory expectations)",
+        "Bank of Tanzania Climate Risk Guideline (13 supervisory expectations)",
         "GRI Sustainability Reporting Standards (GRI 1, GRI 2, GRI 3, GRI 305) — 2021 update",
         "IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information (2023)",
         "IFRS S2 Climate-related Disclosures (2023)",
@@ -706,11 +706,11 @@ wd.render_data_methodology(
         "Data point inventory aligned with EFRAG ESRS-IFRS S2 interoperability table where applicable for global consistency",
     ],
     [
-        "BoT 2025 compliance tracker is binary per item (Compliant / Non-Compliant / In Progress) — no weighting applied.",
+        "Bank of Tanzania Climate Risk Guideline compliance tracker is binary per item (Compliant / Non-Compliant / In Progress) — no weighting applied.",
         "Framework readiness scores use a 0–100 completeness scale based on the proportion of required data points populated for that framework.",
     ],
     [
-        "Compliance status per BoT 2025 item is illustrative for the demonstrator (e.g. 12/13 compliant). Real status would be determined by CRDB internal audit against the actual guidelines.",
+        "Compliance status per Bank of Tanzania Climate Risk Guideline item is illustrative for the demonstrator (e.g. 12/13 compliant). Real status would be determined by CRDB internal audit against the actual guidelines.",
         "Framework readiness percentages reflect what the demonstrator can produce, not what CRDB's live reporting system currently produces.",
     ],
 )

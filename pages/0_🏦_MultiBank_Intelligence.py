@@ -50,7 +50,7 @@ st.markdown(
 )
 wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
-    "Fragmented subsidiary ESG data across CRDB Tanzania, Burundi, and DRC.",
+    "CRDB Group operates three banking subsidiaries — CRDB Bank Plc (Tanzania), CRDB Bank Burundi S.A., and CRDB Bank DR Congo S.A. (incorporated 2023, 55% ownership). Subsidiary metrics are reported in narrative form, not standardised KPIs. Citation: Sustainability Report 2024, pp. 6, 117–128.",
 )
 wd.render_gap_demonstration(
     "CRDB's 2024 Sustainability Report consolidates Group sustainability metrics but does not disclose subsidiary-level breakdowns. Climate risk, green portfolio share, and financed emissions intensity are reported only at consolidated Group level, hiding where the gap sits geographically across CRDB Tanzania, CRDB Bank Burundi, and CRDB Bank DRC.",
@@ -632,7 +632,7 @@ with tab_africa:
             f'<li>FIRST commercial bank in E&C Africa with GCF direct access</li>'
             f'<li>Kijani Bond 429% oversubscribed — highest demand of any EA green bond</li>'
             f'<li>MUFG Japan USD 225M — largest bilateral green facility in Tanzania</li>'
-            f'<li>BoT 2025 compliant — ahead of regulatory peers</li>'
+            f'<li>Bank of Tanzania Climate Risk Guideline aligned — ahead of regulatory peers</li>'
             f'</ul>'
             f'</div>',
             unsafe_allow_html=True,
@@ -655,7 +655,7 @@ with tab_africa:
             f'<div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:12px;border-radius:0 6px 6px 0;">'
             f'<b>🎯 2025–2027 Targets to Move Up</b><br>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>Reach #5 Africa by growing green ratio to 8% (2027)</li>'
+            f'<li>Reach #5 Africa by growing green ratio beyond the 7% 2024 baseline toward 15% by 2030</li>'
             f'<li>Reduce portfolio ITR to 2.3°C via sector rebalancing</li>'
             f'<li>PCAF full adoption → Score 2 data quality</li>'
             f'<li>TNFD pilot report 2025 → full disclosure 2026</li>'

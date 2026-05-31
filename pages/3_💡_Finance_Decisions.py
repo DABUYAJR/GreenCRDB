@@ -33,7 +33,7 @@ st.markdown(
 )
 wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
-    "Green asset ratio below internal target; Kijani Bond proceeds largely undeployed.",
+    "The Kijani Bond raised TZS 171.8bn — the first tranche of a USD 300M five-year Medium-Term Note Programme. By end-2024, TZS 75.4bn (44%) had been disbursed. The Samia Infrastructure Bond (TZS 150bn) is the second tranche. Project-level allocations are not disclosed publicly. Citation: Sustainability Report 2024, pp. 16–17, 54, 106.",
 )
 wd.render_gap_demonstration(
     "CRDB's 2024 Sustainability Report references the Kijani Bond and green lending ambitions but does not break out how proceeds are allocated by sector or borrower type, and does not show the trajectory of the green asset ratio against an internal target. There is no auditable trail from borrower assessment to lending decision.",
@@ -102,7 +102,7 @@ with tab_dash:
         f'<div style="background:linear-gradient(90deg,{wd.CRDB_GREEN}18,{wd.CRDB_GREEN}08);'
         f'border:1px solid {wd.CRDB_GREEN}44;border-radius:10px;padding:12px 18px;margin:8px 0;">'
         f'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">'
-        f'<b style="font-size:13px;">🌿 Green Asset Ratio Journey (2024 → 2030 → 2050)</b>'
+        f'<b style="font-size:13px;">🌿 Green Asset Ratio Journey: 7% in 2024 → 15% by 2030 → 30% by 2050</b>'
         f'<span style="font-size:11px;color:#555;">Source: CRDB 2024 Integrated Annual Report</span>'
         f'</div>'
         f'<div style="display:flex;align-items:center;gap:12px;">'
@@ -119,7 +119,7 @@ with tab_dash:
         f'<div style="display:flex;justify-content:space-between;font-size:11px;color:#555;margin-top:4px;">'
         f'<span></span>'
         f'<span style="color:#D97706;">🎯 15% by 2030</span>'
-        f'<span>30% by 2050</span>'
+        f'<span>30% by 2050 · sustainable portfolio target: 20% by 2027</span>'
         f'</div>'
         f'</div>',
         unsafe_allow_html=True,

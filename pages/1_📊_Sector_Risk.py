@@ -33,7 +33,7 @@ st.markdown(
 )
 wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
-    "Physical climate risk not quantified at sector level.",
+    "CRDB maps climate risks to credit, market, operational and liquidity risk in its 2024 disclosure, but assessment stops at sector level. Client-level (L2) and site-level (L3) physical risk views are not yet operational. Citation: Sustainability Report 2024, pp. 68–69; TCFD 2024, p.14.",
 )
 wd.render_gap_demonstration(
     "CRDB's 2024 Sustainability Report acknowledges climate exposure across its lending sectors but does not quantify physical climate risk at sector level. Risk is described narratively rather than scored, leaving credit officers without a tool to apply sector-level adjustments when underwriting.",
@@ -318,12 +318,12 @@ wd.render_data_methodology(
     [
         "TCFD Final Recommendations (2017) Strategy and Risk Management pillars for the risk taxonomy",
         "IFC Performance Standard 1 (Assessment and Management of Environmental and Social Risks) for sector classification",
-        "Bank of Tanzania Climate-Related Financial Risk Guidelines 2025 — Section on physical and transition risk assessment",
+        "Bank of Tanzania Climate Risk Guideline — section on physical and transition risk assessment",
     ],
     [
         "Composite weights (drought 0.25, flood 0.20, temperature 0.20, transition 0.20, water stress 0.15) reflect Tanzania's economic exposure profile: agriculture is the largest GDP contributor and drought is the dominant historical hazard (FAO Tanzania country profile, 2023), hence the highest weight.",
         "Transition risk weighted equal to flood because Tanzania is a fossil-fuel-importing economy with limited stranded asset exposure but rising carbon-price pass-through risk.",
-        "Tiers (Low <4.5, Medium 4.5–6.0, High 6.0–7.5, Critical >7.5) follow the four-band structure used in TCFD scenario analysis examples and BoT 2025 supervisory expectations.",
+        "Tiers (Low <4.5, Medium 4.5–6.0, High 6.0–7.5, Critical >7.5) follow the four-band structure used in TCFD scenario analysis examples and Bank of Tanzania Climate Risk Guideline supervisory expectations.",
     ],
     [
         "Sector-level scores are demonstrator outputs derived from the weighting above applied to publicly available country-level indicators. CRDB's actual sectoral exposures are not used.",
