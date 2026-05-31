@@ -81,6 +81,35 @@ def render_gap_demonstration(gap: str, solution: list[str], enables: list[str]) 
         unsafe_allow_html=True,
     )
 
+
+def render_data_methodology(
+    sources: list[str],
+    methodology: list[str],
+    weighting: list[str],
+    disclosure: list[str],
+) -> None:
+    """Render a module-level data sources and methodology expander."""
+
+    def _bullet_list(items: list[str]) -> str:
+        return "".join(f"<li>{escape(item)}</li>" for item in items)
+
+    sections = [
+        ("Data sources used in this module", sources),
+        ("Methodology and frameworks applied", methodology),
+        ("Weighting and threshold rationale", weighting),
+        ("Honest disclosure on what is simulated", disclosure),
+    ]
+
+    with st.expander("📚 Data sources, methodology, and assumptions", expanded=False):
+        for heading, items in sections:
+            st.markdown(
+                f'<p style="font-weight:700;color:{CRDB_GREEN};margin:10px 0 4px 0;">'
+                f'{escape(heading)}</p>'
+                f'<ul style="font-size:13px;line-height:1.5;margin:0 0 12px 0;padding-left:20px;">'
+                f'{_bullet_list(items)}</ul>',
+                unsafe_allow_html=True,
+            )
+
 RISK_COLOURS = {
     "Critical": "#7b241c",
     "High": "#e74c3c",

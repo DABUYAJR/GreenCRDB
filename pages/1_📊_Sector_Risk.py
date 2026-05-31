@@ -306,3 +306,27 @@ if tab_enter is not None:
                 file_name="entered_sector_risk.csv",
                 mime="text/csv",
             )
+
+wd.render_data_methodology(
+    [
+        "ND-GAIN Country Index 2024 (Notre Dame Global Adaptation Initiative) for Tanzania country-level physical risk baseline",
+        "IPCC AR6 Working Group II Africa chapter (2022) for regional hazard projections",
+        "World Resources Institute Aqueduct 4.0 (2023) for water stress by region",
+        "FAO AQUASTAT Tanzania for sectoral water dependence",
+        "Tanzania National Climate Change Response Strategy 2021–2026 for sector-specific transition risk inputs",
+    ],
+    [
+        "TCFD Final Recommendations (2017) Strategy and Risk Management pillars for the risk taxonomy",
+        "IFC Performance Standard 1 (Assessment and Management of Environmental and Social Risks) for sector classification",
+        "Bank of Tanzania Climate-Related Financial Risk Guidelines 2025 — Section on physical and transition risk assessment",
+    ],
+    [
+        "Composite weights (drought 0.25, flood 0.20, temperature 0.20, transition 0.20, water stress 0.15) reflect Tanzania's economic exposure profile: agriculture is the largest GDP contributor and drought is the dominant historical hazard (FAO Tanzania country profile, 2023), hence the highest weight.",
+        "Transition risk weighted equal to flood because Tanzania is a fossil-fuel-importing economy with limited stranded asset exposure but rising carbon-price pass-through risk.",
+        "Tiers (Low <4.5, Medium 4.5–6.0, High 6.0–7.5, Critical >7.5) follow the four-band structure used in TCFD scenario analysis examples and BoT 2025 supervisory expectations.",
+    ],
+    [
+        "Sector-level scores are demonstrator outputs derived from the weighting above applied to publicly available country-level indicators. CRDB's actual sectoral exposures are not used.",
+        "Production deployment would require CRDB's internal sector exposure data feeding into the composite.",
+    ],
+)

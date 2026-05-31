@@ -351,3 +351,26 @@ if tab_enter is not None:
                 file_name="entered_borrower_esg.csv",
                 mime="text/csv",
             )
+
+wd.render_data_methodology(
+    [
+        "Simulated borrower portfolio (50 SME and corporate borrowers) generated from plausible Tanzanian sectoral distributions",
+        "IFC ESG performance indicators for emerging market banks (2023) for pillar definitions",
+        "PCAF Global GHG Accounting and Reporting Standard for Financial Industry (Part A, 2022) Chapter 5.10 (business loans and unlisted equity) for Scope 3 Category 15 attribution",
+        "Tanzania Bureau of Statistics sector GHG intensity factors (latest available)",
+    ],
+    [
+        "SASB FN-CB Commercial Banks Sustainability Accounting Standard (2023) for material ESG topics",
+        "IFC Performance Standards 1–8 for environmental and social pillar inputs",
+        "PCAF Data Quality Score 4 (estimated emissions using sector-average factors) applied — see honest disclosure below",
+        "GRI 305-3 Other Indirect (Scope 3) GHG Emissions structure",
+    ],
+    [
+        "Environmental 40%, Social 30%, Governance 30% — weighted toward Environmental because the platform's primary purpose is climate-finance decision support. The 40/30/30 split aligns with the median weighting used by emerging market bank ESG frameworks reviewed by IFC (2023).",
+        "Tier thresholds (Green Eligible ≥7.5, Standard 5.5–7.4, Watch List 4.0–5.4, High Risk <4.0) chosen so roughly the top quintile of a normally distributed portfolio qualifies as Green Eligible, consistent with EU Taxonomy alignment ratios observed at European banks (EBA Pilot Exercise 2021).",
+    ],
+    [
+        "All 50 borrower profiles are synthetic. Sectors, sizes, and ESG inputs are illustrative.",
+        "PCAF Data Quality Score 4 is used because borrower-reported emissions are not available in this demonstrator. Production deployment would target DQS 2–3 by collecting borrower-level emissions data.",
+    ],
+)

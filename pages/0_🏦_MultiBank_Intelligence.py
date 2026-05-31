@@ -1218,3 +1218,25 @@ st.caption(
     "Africa and East Africa rankings are composite scores based on published sustainability reports, PRB database, GCF registry, and public disclosures. "
     "Rankings are for illustrative/benchmarking purposes only."
 )
+
+wd.render_data_methodology(
+    [
+        "CRDB Group 2024 Integrated Annual Report (aggregate Group figures for green portfolio share and DFI facility commitments)",
+        "GCF accredited entity list and project portfolio data (Green Climate Fund public registry, 2024)",
+        "Public annual reports of peer banks: Access Bank Nigeria 2023, Equity Bank Kenya 2023, KCB Group 2023, Bank Windhoek 2023, Ecobank Transnational 2023",
+        "DFI public disclosures: AFD, IFC, KfW, EIB, World Bank IDA",
+    ],
+    [
+        "GCF Performance Measurement Framework (PMF) indicators for peer comparison",
+        "PCAF Global GHG Accounting and Reporting Standard for Financial Industry (Part A, 2022) for financed emissions metric definitions",
+        "GRI 305 Emissions disclosure structure for emissions intensity",
+    ],
+    [
+        "Peer ranking is unweighted; banks are compared on absolute green asset ratio percentages.",
+        "Subsidiary view treats each entity as a separate reporting unit consistent with IFRS 8 segment reporting principles.",
+    ],
+    [
+        "Subsidiary-level breakdowns for CRDB Tanzania, Burundi, and DRC are illustrative — CRDB does not publish this split.",
+        "Peer bank metrics are placeholders calibrated to plausible 2023 ranges; production use would require pulling from each bank's audited disclosure.",
+    ],
+)

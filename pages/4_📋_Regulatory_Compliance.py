@@ -686,3 +686,31 @@ with tab_tnfd:
             unsafe_allow_html=True,
         )
     st.caption("TNFD v1.0 (September 2023) · LEAP = Locate, Evaluate, Assess, Prepare. Source: CRDB 2024 TCFD Report + TNFD framework.")
+
+wd.render_data_methodology(
+    [
+        "Bank of Tanzania Climate-Related Financial Risk Guidelines 2025 (13 supervisory expectations)",
+        "GRI Sustainability Reporting Standards (GRI 1, GRI 2, GRI 3, GRI 305) — 2021 update",
+        "IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information (2023)",
+        "IFRS S2 Climate-related Disclosures (2023)",
+        "TCFD Final Recommendations (2017) and Implementation Annex (2021)",
+        "GCF Performance Measurement Framework and Project Performance Monitoring System (PPMS)",
+        "PCAF Global GHG Accounting and Reporting Standard (2022)",
+        "SASB FN-CB Commercial Banks Standard (2023)",
+        "UNEP FI Principles for Responsible Banking — six principles and self-assessment template (2021)",
+        "TNFD Recommendations v1.0 (September 2023) and LEAP approach",
+        "UN Sustainable Development Goals indicator framework",
+    ],
+    [
+        "Collect-once-report-many crosswalk inspired by the IFRS S1/S2 interoperability guidance with GRI (May 2024)",
+        "Data point inventory aligned with EFRAG ESRS-IFRS S2 interoperability table where applicable for global consistency",
+    ],
+    [
+        "BoT 2025 compliance tracker is binary per item (Compliant / Non-Compliant / In Progress) — no weighting applied.",
+        "Framework readiness scores use a 0–100 completeness scale based on the proportion of required data points populated for that framework.",
+    ],
+    [
+        "Compliance status per BoT 2025 item is illustrative for the demonstrator (e.g. 12/13 compliant). Real status would be determined by CRDB internal audit against the actual guidelines.",
+        "Framework readiness percentages reflect what the demonstrator can produce, not what CRDB's live reporting system currently produces.",
+    ],
+)

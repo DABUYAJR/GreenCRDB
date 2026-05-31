@@ -384,3 +384,26 @@ if tab_enter is not None:
                 file_name="entered_lending_decisions.csv",
                 mime="text/csv",
             )
+
+wd.render_data_methodology(
+    [
+        "Outputs of Module 1 (sector climate risk scores) and Module 2 (borrower ESG scores) as inputs",
+        "CRDB Kijani Bond prospectus and 2024 Integrated Annual Report references to Kijani Bond proceeds",
+        "ICMA Green Bond Principles (June 2022) for proceeds allocation categorisation",
+        "IFC Performance Standards 1–8 for E&S due diligence checklist",
+    ],
+    [
+        "TCFD Final Recommendations (2017) — all four pillars for the decision audit trail",
+        "ICMA Green Bond Principles for Kijani Bond proceeds tracking",
+        "Climate Bonds Initiative Taxonomy for eligible green project categories",
+        "IFC Performance Standards for the E&S risk gate",
+    ],
+    [
+        "Decision score weights (ESG 55%, sector readiness 45%) tilt toward borrower-specific factors because borrower behaviour is more actionable than sector exposure in short-term lending decisions. The 55/45 split is illustrative and would be calibrated against CRDB's historical default data in production.",
+        "Decision tiers (Approve ≥65, Conditional ≥52, Review ≥40, Decline <40) chosen to produce a realistic approval-rate distribution (~50% Approve / ~25% Conditional / ~15% Review / ~10% Decline) on the simulated portfolio.",
+    ],
+    [
+        "Kijani Bond deployment percentages and green asset ratio trajectory values are illustrative. CRDB has not publicly disclosed line-item bond proceeds allocation.",
+        "Decision engine weights would require backtesting against CRDB's loan book historicals before any production use.",
+    ],
+)
