@@ -14,7 +14,7 @@ import web_data as wd
 from auth import require_login, sidebar_user_card, can_access_module, can_enter_data, get_user, require_module_access, access_level_banner, can_export, user_sectors, user_regions, filter_by_user, mask_sensitive_data
 from data_store import append_borrower, get_entered_borrowers, merge_with_processed
 
-st.set_page_config(page_title="Borrower ESG | GreenCRDB", page_icon="🌱", layout="wide")
+st.set_page_config(page_title="Borrower ESG → Credit Risk Engine | GreenCRDB", page_icon="🌱", layout="wide")
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 user = require_login()
@@ -24,15 +24,39 @@ access_level_banner("borrower_esg")
 
 st.markdown(
     '<div style="background:#1D9E75;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">🌱 Module 2 — Borrower ESG Scoring Engine</h2>'
-    '<p style="color:#d4ede7;margin:2px 0 0 0;font-size:13px;">'
-    "E · S · G pillar scoring blended with sector climate risk · 60 simulated borrowers · 12 sectors · 10 Tanzania regions"
+    '<h2 style="color:white;margin:0;font-size:22px;">🌱 Borrower ESG → Credit Risk Engine</h2>'
+    '<p style="color:#d4ede7;margin:2px 0 0 0;font-size:13px;font-style:italic;">'
+    "PCAF Scope 3 Category 15 at borrower level. Where climate exposure becomes credit-risk signal."
     "</p></div>",
     unsafe_allow_html=True,
 )
 wd.render_crdb_finding(
     "Addresses CRDB 2024 Sustainability Report finding:",
-    "Unmeasured Scope 3 Category 15 financed emissions at borrower level.",
+    "Of 15 Scope 3 categories, CRDB names 8 as relevant. Only Cat 6 (Business Travel) and Cat 7 (Employee Commuting) are measured. Category 15 financed emissions are named a priority for future reporting. Citation: Sustainability Report 2024, pp. 48–50.",
+)
+
+st.markdown("### From climate exposure to credit risk")
+chain_stages = [
+    ("High Scope 3 exposure", "Cat 15 financed emissions", "#006B3C"),
+    ("Sector climate shocks", "Drought · transition policy", "#3D8B5F"),
+    ("Borrower distress", "Cash flow · collateral hit", "#B45309"),
+    ("Credit risk increases", "Default · NPLs · provisions", "#9F1239"),
+]
+for col, (label, subtext, colour) in zip(st.columns(4), chain_stages):
+    with col:
+        st.markdown(
+            f'<div style="background:{colour};color:white;padding:16px;border-radius:8px;'
+            f'min-height:112px;display:flex;flex-direction:column;justify-content:center;">'
+            f'<div style="font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;">{label}</div>'
+            f'<div style="font-style:italic;font-size:13px;line-height:1.35;opacity:0.95;">{subtext}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+st.markdown(
+    "<p style='font-size:12px;color:#6B7280;font-style:italic;margin:6px 0 16px 0;'>"
+    "CRDB's own 2024 disclosure maps climate risks to credit, market, operational and liquidity risk (SR 2024, pp. 68–69)."
+    "</p>",
+    unsafe_allow_html=True,
 )
 wd.render_gap_demonstration(
     "CRDB's 2024 Sustainability Report discloses Group operational emissions (Scope 1 and 2) but does not measure financed emissions. PCAF Scope 3 Category 15 — the dominant emissions category for any bank — is not implemented at borrower level. Without it, CRDB cannot accurately report its climate footprint or set science-based targets.",
@@ -43,9 +67,9 @@ wd.render_gap_demonstration(
         "Sector-filtered views and exportable borrower profiles.",
     ],
     [
-        "ESG-linked pricing for Green Eligible borrowers becomes operational rather than aspirational.",
+        "ESG-linked pricing + green bond allocation.",
         "Quarterly PCAF Category 15 disclosure ready out of the box.",
-        "Watch List borrowers flagged for active engagement rather than discovered after a default.",
+        "Watch List borrowers flagged for active engagement + transition planning required.",
     ],
 )
 
@@ -85,6 +109,13 @@ if sel_region != "All":
 if sel_class != "All":
     filtered = filtered[filtered["classification"] == sel_class]
 
+CLASSIFICATION_ACTIONS = {
+    "Green Eligible": "ESG-linked pricing + green bond allocation",
+    "Standard": "Routine portfolio, standard credit terms",
+    "Watch List": "Active engagement + transition planning required",
+    "High Risk": "Decline, restructure, or concentration cap applies",
+}
+
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tabs = ["🌱 Dashboard", "✏️ Enter Borrower ESG Data"] if can_enter_data("borrower_esg") else ["🌱 Dashboard"]
 active_tabs = st.tabs(tabs)
@@ -95,9 +126,36 @@ tab_enter = active_tabs[1] if len(active_tabs) > 1 else None
 # DASHBOARD TAB
 # ════════════════════════════════════════════════════════════════════════════
 with tab_dash:
+    high_risk = filtered[filtered["classification"] == "High Risk"]
+    watch_list = filtered[filtered["classification"] == "Watch List"]
+    total_exposure_mn = filtered["loan_size_tzs_mn"].sum() if not filtered.empty else 0
+    high_risk_exposure_mn = high_risk["loan_size_tzs_mn"].sum() if not high_risk.empty else 0
+    watch_high_exposure_mn = high_risk_exposure_mn + (watch_list["loan_size_tzs_mn"].sum() if not watch_list.empty else 0)
+    high_risk_share = (high_risk_exposure_mn / total_exposure_mn * 100) if total_exposure_mn else 0
+    high_risk_count_share = (len(high_risk) / len(filtered) * 100) if len(filtered) else 0
+
+    st.markdown("#### Credit-Risk Exposure Signal")
+    risk_col1, risk_col2, risk_col3 = st.columns(3)
+    risk_col1.metric(
+        "High Risk exposure share",
+        f"{high_risk_share:.0f}%",
+        f"of TZS {total_exposure_mn / 1000:.1f}B total",
+    )
+    risk_col2.metric(
+        "High Risk borrower count",
+        len(high_risk),
+        f"of {len(filtered)} total borrowers ({high_risk_count_share:.0f}%)",
+    )
+    risk_col3.metric(
+        "Watch List + High Risk",
+        f"TZS {watch_high_exposure_mn / 1000:.1f}B",
+        f"TZS {watch_high_exposure_mn:,.0f}Mn requires action",
+    )
+
+    st.markdown("---")
+
     c1, c2, c3, c4, c5 = st.columns(5)
     green_elig = filtered[filtered["classification"] == "Green Eligible"]
-    high_risk = filtered[filtered["classification"] == "High Risk"]
     c1.metric("Borrowers Shown", len(filtered))
     c2.metric("Green Eligible", len(green_elig), f"TZS {green_elig['loan_size_tzs_mn'].sum():,.0f}Mn")
     c3.metric("Avg ESG Score", f"{filtered['esg_composite'].mean():.2f} / 10" if not filtered.empty else "—")
@@ -131,7 +189,8 @@ with tab_dash:
                     f'<span style="background:{colour};color:white;padding:3px 10px;'
                     f'border-radius:4px;font-size:12px;margin:2px;">'
                     f'{row["classification"]}: {int(row["borrowers"])} borrowers · '
-                    f'TZS {row["total_exposure_tzs_mn"]:,.0f}Mn</span>',
+                    f'TZS {row["total_exposure_tzs_mn"]:,.0f}Mn · '
+                    f'{CLASSIFICATION_ACTIONS.get(row["classification"], "")}</span>',
                     unsafe_allow_html=True,
                 )
 
@@ -360,10 +419,7 @@ wd.render_data_methodology(
         "Tanzania Bureau of Statistics sector GHG intensity factors (latest available)",
     ],
     [
-        "SASB FN-CB Commercial Banks Sustainability Accounting Standard (2023) for material ESG topics",
-        "IFC Performance Standards 1–8 for environmental and social pillar inputs",
-        "PCAF Data Quality Score 4 (estimated emissions using sector-average factors) applied — see honest disclosure below",
-        "GRI 305-3 Other Indirect (Scope 3) GHG Emissions structure",
+        "PCAF Global Standard, Category 15 (data quality score 4 baseline, with roadmap to score 2-3) · SASB FN-CB · IFC Performance Standards 1-8 · GRI 305-3",
     ],
     [
         "Environmental 40%, Social 30%, Governance 30% — weighted toward Environmental because the platform's primary purpose is climate-finance decision support. The 40/30/30 split aligns with the median weighting used by emerging market bank ESG frameworks reviewed by IFC (2023).",
