@@ -427,6 +427,6 @@ wd.render_data_methodology(
     ],
     [
         "All 50 borrower profiles are synthetic. Sectors, sizes, and ESG inputs are illustrative.",
-        "PCAF Data Quality Score 4 is used because borrower-reported emissions are not available in this demonstrator. Production deployment would target DQS 2–3 by collecting borrower-level emissions data.",
+        "PCAF data quality score 4 (highest uncertainty) is used because borrower-reported emissions are not available in this demonstrator. Production deployment would target scores 2–3 by collecting borrower-level emissions data.",
     ],
 )

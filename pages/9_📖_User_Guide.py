@@ -63,7 +63,7 @@ with tab_start:
     st.markdown(
         "GreenCRDB is CRDB Bank's **Tanzania Climate-Finance Risk Intelligence Platform**. "
         "It helps the Sustainable Finance Unit integrate climate risk into lending decisions, "
-        "track green finance targets, and generate regulatory reports for Bank of Tanzania 2025 compliance."
+        "track green finance targets, and generate regulatory reports for Bank of Tanzania Climate Risk Guideline compliance."
     )
 
     gs_col1, gs_col2 = st.columns([1.2, 1])
@@ -158,7 +158,7 @@ with tab_nav:
         ("📊", "1 · Sector Climate Risk Engine", "All roles", "12-sector climate risk scoring on 5 hazard dimensions. Risk tiers, financial impact scores, regional exposure, heatmaps. Climate Risk Managers can enter/update sector data.", wd.CRDB_GREEN),
         ("🌱", "2 · Borrower ESG Scoring Engine", "All (ESG Officer = assigned sectors)", "60+ borrower ESG scores across E, S, G pillars. Classification (Green/Standard/Watch/High Risk). Sector comparisons. ESG Officers enter assessments for assigned sectors.", "#1D9E75"),
         ("💡", "3 · Climate Finance Decision Engine", "All (GFO full, others read)", "Composite decision scores, lending decision distribution, green finance pipeline, IFC PS alignment, TCFD metrics, climate scenario credit loss. Green Finance Officers record decisions.", "#2563EB"),
-        ("📋", "4 · Regulatory Compliance & PCAF", "All (Data Analyst: no access)", "BoT 2025 compliance (13 items) · PCAF financed emissions · SASB FN-CB · PRB radar · SDG alignment · Double materiality matrix · iMBEJU social impact · TNFD readiness tracker.", "#D97706"),
+        ("📋", "4 · Regulatory Compliance & PCAF", "All (Data Analyst: no access)", "Bank of Tanzania Climate Risk Guideline compliance (13 items) · PCAF financed emissions · SASB FN-CB · PRB radar · SDG alignment · Double materiality matrix · iMBEJU social impact · TNFD readiness tracker.", "#D97706"),
         ("🤖", "5 · AI Sustainability Copilot", "CSO, Climate RM, GFO, Compliance", "Ask questions about the portfolio in plain English. Generate 4 formal reports: TCFD Climate Report, ESG Summary, Green Finance Report, Board Brief. Requires Gemini API key.", "#7C3AED"),
         ("📂", "6 · Data Upload Studio", "CSO, Climate RM, ESG Officer, Compliance", "Upload borrower CSV files, sector data, and portfolio snapshots. Template provided. Validates columns before saving.", "#059669"),
         ("👥", "7 · User Management", "CSO only", "View all platform users, roles, sectors, and regions. Add or modify users (in production build).", "#D85A30"),
@@ -292,7 +292,7 @@ with tab_m0:
     st.markdown("#### Key Metrics Explained")
     explain_items = [
         ("Group ITR (°C)", "Implied Temperature Rise — weighted average across all entities by portfolio size. CRDB Group: 2.73°C vs Paris 1.5°C target. Lower is better."),
-        ("Green Asset Ratio (%)", "Proportion of total loan book classified as green finance (GCF-eligible, Kijani Bond projects, renewable energy, climate-smart agriculture). CRDB 2024 actual: 7%. Target: 15% by 2030."),
+        ("Green Asset Ratio (%)", "Proportion of total loan book classified as green finance (GCF-eligible, Kijani Bond projects, renewable energy, climate-smart agriculture). CRDB 2024 actual: 7%. Targets: 15% by 2030 and 30% by 2050."),
         ("Group Financed Emissions", "PCAF Scope 3 Category 15 — emissions from the bank's lending activities. 1,247 ktCO₂e (simulated proxy). Dominated by Agriculture and Mining sectors."),
         ("Africa Rank #8", "Composite sustainability score based on 6 dimensions. CRDB ranks #8 of Top 20 African banks and #3 in East Africa. CRDB leads in GCF access and DFI partnerships; trails on absolute green ratio."),
     ]
@@ -587,13 +587,13 @@ with tab_m4:
     st.markdown("### Module 4 — Regulatory Compliance & PCAF Analytics")
     st.markdown(
         "Module 4 is the **compliance and reporting hub**. It brings together all regulatory frameworks "
-        "that CRDB Bank must meet — from the mandatory Bank of Tanzania 2025 Guidelines to voluntary "
+        "that CRDB Bank must meet — from the mandatory Bank of Tanzania Climate Risk Guideline to voluntary "
         "frameworks like PRB, SASB, and TNFD — plus social impact and nature-related disclosure readiness."
     )
 
     m4_tabs_guide = [
-        ("🏛️ BoT 2025 Compliance", "13-item compliance checklist across 4 pillars: Governance (3), Risk Management (4), Disclosure (4), Strategy (2). Shows status (Compliant / In Progress) with evidence for each item. 12/13 fully compliant; 1 in progress (financed emissions — PCAF adoption target Score 2 by 2026)."),
-        ("🌡️ PCAF Emissions", "Simulated Scope 3 Category 15 financed emissions by sector using IPCC AR6 Africa emission intensity proxies. PCAF Data Quality Score 4 (economic-activity proxy — standard for emerging markets). Includes ITR gauge showing portfolio at 2.73°C vs Paris 1.5°C target. Sector ITR contribution breakdown."),
+        ("🏛️ Bank of Tanzania Climate Risk Guideline Compliance", "13-item compliance checklist across 4 pillars: Governance (3), Risk Management (4), Disclosure (4), Strategy (2). Shows status (Compliant / In Progress) with evidence for each item. 12/13 fully compliant; 1 in progress (financed emissions — PCAF adoption target Score 2 by 2026)."),
+        ("🌡️ PCAF Emissions", "Simulated Scope 3 Category 15 financed emissions by sector using IPCC AR6 Africa emission intensity proxies. PCAF data quality score 4 (highest uncertainty; economic-activity proxy baseline). Includes ITR gauge showing portfolio at 2.73°C vs Paris 1.5°C target. Sector ITR contribution breakdown."),
         ("📊 SASB FN-CB", "Five SASB FN-CB Commercial Banks disclosure topics scored 0–5: Data Security (3.8), Financial Inclusion (4.2), ESG in Credit Analysis (3.5), Business Ethics (4.6), Systematic Risk Management (3.9). Overall average 4.0/5.0."),
         ("🤝 PRB Principles", "Six PRB pillars scored 0–5 with radar chart and bar chart. CRDB above 3.0/5.0 threshold across all pillars. Recommended next step: formal PRB signatory application (already a signatory)."),
         ("🌐 UN SDGs", "Portfolio alignment to 9 SDGs most relevant to a Tanzanian commercial bank. SDG 17 (Partnerships) and SDG 1 (No Poverty) are CRDB's strongest. SDG 15 (Life on Land) is weakest — TNFD gap."),
@@ -619,8 +619,8 @@ with tab_m4:
         "|-----|-------|---------------|\n"
         "| Portfolio ITR | 2.73°C | +1.23°C above Paris 1.5°C — action required |\n"
         "| Financed Emissions | ~1,247 ktCO₂e | PCAF Scope 3 proxy — agriculture dominates |\n"
-        "| Green Asset Ratio | 7% | 2024 actual — 8% points gap to 15% by 2030 |\n"
-        "| BoT 2025 | 12/13 items | 92% compliance — 1 in progress |\n"
+        "| Green Asset Ratio | 7% | 2024 actual — 8 percentage-point gap to 15% by 2030; 30% by 2050 |\n"
+        "| Bank of Tanzania Guideline | 12/13 items | 92% compliance — 1 in progress |\n"
         "| Moody's Rating | B1 | First Tanzanian bank — Stable outlook |"
     )
 
@@ -658,9 +658,9 @@ with tab_ai:
             "Generate a 300-word summary of our TCFD compliance status",
             "Which borrowers should we prioritise for green finance restructuring?",
             "What is our portfolio ITR and how does it compare to the Paris target?",
-            "Explain the Kijani Bond and how it helps us reach our 15% green ratio target",
+            "Explain the Kijani Bond and how it helps us move from the 7% 2024 green asset ratio toward 15% by 2030 and 30% by 2050",
             "What are the three biggest gaps in our IFC Performance Standards alignment?",
-            "Summarise our BoT 2025 compliance position for the Board",
+            "Summarise our Bank of Tanzania Climate Risk Guideline compliance position for the Board",
             "What climate scenario poses the highest credit loss risk to CRDB?",
         ]
         for q in questions:
@@ -867,8 +867,8 @@ with tab_faq:
             "cat": "Module 3",
         },
         {
-            "q": "What is PCAF Data Quality Score 4 — and should I be worried?",
-            "a": "PCAF Data Quality ranges from Score 1 (best — verified GHG data from borrower) to Score 5 (worst — regional average). Score 4 (economic-activity proxy) is the standard for emerging market banks and what CRDB uses. CRDB acknowledged this in its 2024 TCFD Report. The GreenCRDB platform provides a pathway to improve to Score 2–3 over time as more borrower data is collected.",
+            "q": "What is PCAF data quality score 4 (highest uncertainty) — and should I be worried?",
+            "a": "PCAF Data Quality ranges from Score 1 (best — verified GHG data from borrower) to Score 5 (worst — regional average). Data quality score 4 (highest uncertainty; economic-activity proxy) is the baseline used in this demonstrator. CRDB's Sustainability Report 2024 names financed emissions as a future reporting priority, with TCFD 2024 as supporting reference. The GreenCRDB platform provides a pathway to improve to Score 2–3 over time as more borrower data is collected.",
             "cat": "Regulatory",
         },
         {

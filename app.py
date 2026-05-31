@@ -115,7 +115,7 @@ st.markdown(
             </div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;">
                 <span style="background:{wd.CRDB_GOLD};color:#1a1a1a;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
-                    BoT 2025 Compliant
+                    Bank of Tanzania Climate Risk Guideline
                 </span>
                 <span style="background:#1D9E75;color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
                     GCF Accredited
@@ -202,7 +202,7 @@ c6.metric("Financed Emissions", f"{total_fe:,.0f} ktCO₂e", "PCAF Scope 3 Cat.1
 
 # ── Green Asset Ratio progress bar ───────────────────────────────────────────
 st.markdown("---")
-st.markdown("### 🌱 Green Asset Ratio — Progress to 2030 Target")
+st.markdown("### 🌱 Green Asset Ratio — 7% in 2024 → 15% by 2030 → 30% by 2050")
 col_left, col_right = st.columns([2, 1])
 with col_left:
     progress_pct = min(gar_current / gar_target, 1.0)
@@ -304,7 +304,7 @@ with right:
         f'</div>',
         unsafe_allow_html=True,
     )
-    st.caption("Simulated · NGFS pathways · PACTA methodology · PCAF data quality Score 4")
+    st.caption("Simulated · NGFS pathways · PACTA methodology · PCAF data quality score 4 (highest uncertainty)")
 
 st.markdown("---")
 
@@ -380,7 +380,7 @@ milestones = [
     ("🌍", "GCF Accreditation", "First commercial bank\nin East & Central Africa\nUSD 200M TACATDP"),
     ("🏦", "MUFG Facility", "USD 225M secured\nfrom MUFG Japan\nfor green lending"),
     ("🤝", "Proparco Facility", "USD 125M\nclimate + gender\nlending programme"),
-    ("📋", "BoT 2025", "First TCFD Report\npublished 2024\nCompliant"),
+    ("📋", "BoT Guideline", "First TCFD Report\npublished 2024\nCompliant"),
 ]
 for col, (icon, title, detail) in zip([m1, m2, m3, m4, m5], milestones):
     with col:
@@ -558,7 +558,9 @@ st.markdown(
     "<em>Demonstrator only. Not for handling real borrower data.</em><br>"
     "All portfolio values and climate risk scores are simulated / illustrative. "
     "Built by Dishon Abuya · Independent Developer. "
-    "Framework references: TCFD · ISSB S1/S2 · PRB · SASB FN-CB · PCAF · IFC PS · Bank of Tanzania 2025 Guidelines"
+    "Researching the intersection of climate finance and credit risk in East African banking.<br>"
+    "Document references: Sustainability Report 2024 · TCFD Report 2024 · Integrated Annual Report 2024. "
+    "Framework references: TCFD · ISSB S1/S2 · PRB · SASB FN-CB · PCAF · IFC PS · Bank of Tanzania Climate Risk Guideline"
     "</p>",
     unsafe_allow_html=True,
 )

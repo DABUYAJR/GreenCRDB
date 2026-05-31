@@ -203,7 +203,7 @@ SASB_METRICS: dict[str, dict] = {
     "Systematic Risk Management": {
         "score": 3.9,
         "status": "Adequate",
-        "note": "Climate stress testing commenced; BoT Guidelines 2025 compliance in progress",
+        "note": "Climate stress testing commenced; Bank of Tanzania Climate Risk Guideline compliance in progress",
         "colour": "#378ADD",
     },
 }
@@ -236,7 +236,7 @@ SDG_ALIGNMENT: dict[str, dict] = {
     },
     "SDG 13 · Climate Action": {
         "score": 3.6,
-        "activity": "TCFD 2024; BoT 2025 compliance; Kijani Bond; GCF direct access",
+        "activity": "Sustainability Report 2024, with TCFD 2024 supporting reference; Bank of Tanzania Climate Risk Guideline compliance; Kijani Bond; GCF direct access",
     },
     "SDG 15 · Life on Land": {
         "score": 2.8,
@@ -248,7 +248,7 @@ SDG_ALIGNMENT: dict[str, dict] = {
     },
 }
 
-# ── BoT 2025 Compliance Tracker ───────────────────────────────────────────────
+# ── Bank of Tanzania Climate Risk Guideline Compliance Tracker ────────────────
 BOT_COMPLIANCE: list[dict] = [
     {"Pillar": "Governance", "Requirement": "Board-level climate risk oversight", "Status": "Compliant", "Evidence": "Risk & Sustainability Committee active at board level"},
     {"Pillar": "Governance", "Requirement": "Dedicated climate risk management function", "Status": "Compliant", "Evidence": "Sustainable Finance Unit (SFU) operational"},
@@ -260,7 +260,7 @@ BOT_COMPLIANCE: list[dict] = [
     {"Pillar": "Disclosure", "Requirement": "Annual TCFD-aligned climate disclosure", "Status": "Compliant", "Evidence": "First standalone TCFD Report published 2024"},
     {"Pillar": "Disclosure", "Requirement": "Annual Sustainability Report", "Status": "Compliant", "Evidence": "Sustainability Report 2024 published — Connect. Empower. Sustain."},
     {"Pillar": "Disclosure", "Requirement": "Climate metrics and targets disclosed", "Status": "Compliant", "Evidence": "Green asset ratio target 15% by 2030; green loan TZS 86.9Bn (2024)"},
-    {"Pillar": "Disclosure", "Requirement": "Financed emissions disclosure (Scope 3 Cat.15)", "Status": "In Progress", "Evidence": "PCAF methodology adoption in progress; GreenCRDB provides Score 4 proxy — target Score 2 by 2026"},
+    {"Pillar": "Disclosure", "Requirement": "Financed emissions disclosure (Scope 3 Cat.15)", "Status": "In Progress", "Evidence": "PCAF methodology adoption in progress; GreenCRDB provides data quality score 4 (highest uncertainty) proxy — target Score 2 by 2026"},
     {"Pillar": "Strategy", "Requirement": "Climate risk integrated into credit policy", "Status": "Compliant", "Evidence": "GreenCRDB climate risk scores integrated into loan origination workflow"},
     {"Pillar": "Strategy", "Requirement": "Green finance product offering", "Status": "Compliant", "Evidence": "Green Project Loans, SLLs, Kijani Bond; GCF concessional finance window"},
 ]
@@ -628,7 +628,7 @@ GROUP_ENTITIES: list[dict] = [
         "high_risk_pct": 33,
         "colour": CRDB_GREEN,
         "regulator": "Bank of Tanzania (BoT)",
-        "climate_framework": "BoT Climate Risk Guidelines 2025 · First TCFD Report in Tanzania (2024) · ISSB S2",
+        "climate_framework": "Bank of Tanzania Climate Risk Guideline · First TCFD Report in Tanzania (2024) · ISSB S2",
         "key_risk": "Drought (Agriculture 28% of book) · Flood (coastal) · Transition risk (Mining/Energy)",
         "green_milestone": "Kijani Bond USD 65.7M (429% oversubscribed, Luxembourg-listed) · GCF USD 200M · MUFG USD 225M",
         "platform_status": "LIVE — Full GreenCRDB Platform",
@@ -838,7 +838,7 @@ def build_portfolio_context() -> str:
         "- Net-zero target: 2029 | EDGE Advance target: 2026",
         "- Group: 4,251 employees | 259 branches | 684 ATMs | 36,566 Wakala agents",
         "- Group entities: CRDB Bank TZ (flagship) + CRDB Burundi (PAT TZS 40.3Bn) + CRDB DR Congo (frontier-market subsidiary, 55% ownership) + CRDB Insurance (break-even 2024)",
-        "- Bank of Tanzania 2025 Guidelines: climate risk reporting mandatory — CRDB compliant",
+        "- Bank of Tanzania Climate Risk Guideline: climate risk reporting mandatory — CRDB compliant",
         "",
         "=== SECTOR CLIMATE RISK (Module 1 — GreenCRDB) ===",
     ]
@@ -874,7 +874,7 @@ def build_portfolio_context() -> str:
 
     if not gp.empty:
         lines.append(f"Green Finance Pipeline: {len(gp)} borrowers, TZS {gp['loan_size_tzs_mn'].sum():,.1f}Mn")
-        lines.append(f"Current Green Asset Ratio: {gar:.1f}% (target: 15.0% by 2030)")
+        lines.append(f"Current Green Asset Ratio: {gar:.1f}% (2024 baseline 7.0%; targets 15.0% by 2030 and 30.0% by 2050)")
 
     lines.append("")
     lines.append("=== TCFD METRICS ===")
@@ -899,7 +899,7 @@ def build_portfolio_context() -> str:
 
     lines.append("")
     lines.append("=== SIMULATED PCAF FINANCED EMISSIONS (Scope 3 Category 15) ===")
-    lines.append("Methodology: IPCC AR6 Africa sector emission intensity proxies; PCAF data quality Score 4")
+    lines.append("Methodology: IPCC AR6 Africa sector emission intensity proxies; PCAF data quality score 4 (highest uncertainty)")
     if not fe.empty:
         total_emissions = fe["financed_emissions_ktco2e"].sum()
         lines.append(f"Total Portfolio Financed Emissions: {total_emissions:,.0f} ktCO2e")
@@ -909,7 +909,7 @@ def build_portfolio_context() -> str:
     lines.append("")
     lines.append(f"=== PORTFOLIO IMPLIED TEMPERATURE RISE (ITR) ===")
     lines.append(f"Portfolio ITR: {itr:.2f}°C (vs. Paris Agreement 1.5°C target)")
-    lines.append("Methodology: NGFS 2023 sector decarbonisation pathways; PACTA proxy; Data Quality Score 4")
+    lines.append("Methodology: NGFS 2023 sector decarbonisation pathways; PACTA proxy; data quality score 4 (highest uncertainty)")
     lines.append("Implication: Portfolio is currently aligned to a ~2.6°C warming pathway — action required to reach 1.5°C")
 
     lines.append("")

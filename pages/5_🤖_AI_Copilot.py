@@ -31,7 +31,7 @@ st.markdown(
     '<h2 style="color:white;margin:0;font-size:22px;">🤖 AI Copilot — Sustainability Intelligence Assistant</h2>'
     '<p style="color:#e9d5ff;margin:2px 0 0 0;font-size:13px;">'
     "Ask questions about your portfolio · Generate TCFD · PRB · SASB · SDG reports · "
-    "Analyse climate scenarios · IFC PS guidance · BoT 2025 compliance"
+    "Analyse climate scenarios · IFC PS guidance · Bank of Tanzania Climate Risk Guideline compliance"
     "</p></div>",
     unsafe_allow_html=True,
 )
@@ -155,13 +155,13 @@ SYSTEM_CONTEXT_EXTRA = """
 IMPORTANT CRDB BANK REAL FACTS TO REFERENCE IN REPORTS:
 - GreenCRDB is the platform name; TZ-CRIP is the internal code name
 - CRDB Bank is Tanzania's largest commercial bank, listed on the Dar es Salaam Stock Exchange
-- Kijani Bond: USD 68.3M raised in October 2023 (429% oversubscribed); listed on Luxembourg Stock Exchange (LuxSE)
+- Kijani Bond: USD 65.7M raised in October 2023 (429% oversubscribed); listed on Luxembourg Stock Exchange (LuxSE)
 - GCF Accreditation: CRDB is the FIRST commercial bank in East and Central Africa with GCF direct access; up to USD 100M concessional finance
 - MUFG (Mitsubishi UFJ Financial Group, Japan): USD 225M green lending facility secured
 - Proparco (French DFI): USD 50M + USD 75M co-finance for climate and gender lending
 - Green loans disbursed 2024: TZS 86.9 billion
-- Green asset ratio target: 15% of portfolio by 2030; 30% by 2050 (currently ~2.1%)
-- Bank of Tanzania 2025 Guidelines: climate risk reporting is NOW MANDATORY for all licensed banks in Tanzania
+- Green asset ratio: 7% in 2024; target 15% by 2030 and 30% by 2050
+- Bank of Tanzania Climate Risk Guideline: climate risk reporting is mandatory for licensed banks in Tanzania
 - CRDB published its FIRST standalone TCFD Report in 2024
 - CRDB's Sustainability Report 2024 theme: "Connect. Empower. Sustain."
 - Governance: Risk and Sustainability Committee at board level; Sustainable Finance Unit (SFU) operational
@@ -311,7 +311,7 @@ Reference the 2024 Third Biennial Progress Report structure (UNEP FI).
 ## CRDB Bank Tanzania | Reporting Period: 2024–2025
 
 ## OVERVIEW OF CRDB BANK
-(Brief description including Kijani Bond, GCF accreditation, BoT 2025 compliance)
+(Brief description including Kijani Bond, GCF accreditation, Bank of Tanzania Climate Risk Guideline compliance)
 
 ## PRINCIPLE 1: ALIGNMENT
 - How CRDB's strategy aligns with the Paris Agreement (1.5°C)
@@ -337,7 +337,7 @@ Reference the 2024 Third Biennial Progress Report structure (UNEP FI).
 - Staff training programme
 
 ## PRINCIPLE 6: TRANSPARENCY & ACCOUNTABILITY
-- Reporting: TCFD 2024, Sustainability Report 2024, GreenCRDB platform
+- Reporting: Sustainability Report 2024, TCFD 2024 supporting reference, GreenCRDB platform
 - Assurance status and next steps
 
 Write in formal UNEP FI signatory language. Include specific scores from the PRB assessment data.
@@ -374,7 +374,7 @@ for CRDB Bank, following the IFRS Foundation SASB standard format.
 - Whistleblower policy
 
 ## DISCLOSURE TOPIC 5: SYSTEMATIC RISK MANAGEMENT
-- Climate stress testing programme (BoT 2025 compliance)
+- Climate stress testing programme (Bank of Tanzania Climate Risk Guideline compliance)
 - Three-scenario credit loss analysis results
 - Capital adequacy implications of climate risk
 - Portfolio climate concentration index (use TCFD data)
@@ -419,21 +419,21 @@ Include: SDG 1, SDG 2, SDG 5, SDG 7, SDG 8, SDG 10, SDG 13, SDG 15, SDG 17
 
 Write in formal DFI reporting language. Suitable for submission to GCF, AfDB, and Proparco.
 """,
-    "BoT 2025 Compliance Report": """
+    "Bank of Tanzania Climate Risk Guideline Compliance Report": """
 Generate a formal Bank of Tanzania Climate-Related Financial Risks Compliance Report.
 
 # CLIMATE-RELATED FINANCIAL RISKS — COMPLIANCE REPORT
 ## CRDB Bank Tanzania
-## Bank of Tanzania Guidelines 2025
+## Bank of Tanzania Climate Risk Guideline
 
 ## 1. EXECUTIVE STATEMENT OF COMPLIANCE
-(Senior management statement confirming compliance with BoT 2025 Guidelines)
+(Senior management statement confirming compliance with the Bank of Tanzania Climate Risk Guideline)
 
-## 2. GOVERNANCE PILLAR (BoT Requirement)
+## 2. GOVERNANCE PILLAR (Bank of Tanzania Requirement)
 - Board-level climate oversight: Risk & Sustainability Committee
 - Management-level function: Sustainable Finance Unit (SFU)
 - Staff training and capacity building (36 senior managers trained 2024)
-- Compliance status: [use BoT compliance tracker data]
+- Compliance status: [use Bank of Tanzania compliance tracker data]
 
 ## 3. RISK MANAGEMENT PILLAR
 - Physical climate risk process: [reference Module 1 — 5 hazard dimensions, 12 sectors]
@@ -441,7 +441,7 @@ Generate a formal Bank of Tanzania Climate-Related Financial Risks Compliance Re
 - ESMS for financial intermediary activities: [IFC PS1–PS7 alignment]
 - Compliance status: [use compliance tracker data]
 
-## 4. SCENARIO ANALYSIS (BoT Minimum: 2 scenarios)
+## 4. SCENARIO ANALYSIS (Bank of Tanzania minimum: 2 scenarios)
 - Scenario 1: Base Case (2.5°C by 2100, current NDC trajectory)
 - Scenario 2: Accelerated Transition (1.5°C pathway, carbon pricing)
 - Scenario 3: Severe Physical Shock (1-in-20-year event)
@@ -449,12 +449,12 @@ Generate a formal Bank of Tanzania Climate-Related Financial Risks Compliance Re
 - Capital adequacy implications
 
 ## 5. DISCLOSURES PILLAR
-- TCFD Report 2024: published [reference key metrics]
+- Sustainability Report 2024: published [primary reference key metrics]; TCFD Report 2024 supports climate-risk detail
 - Sustainability Report 2024: published
-- Financed emissions: data quality Score 4 proxy; PCAF full adoption roadmap
+- Financed emissions: data quality score 4 (highest uncertainty) proxy; PCAF full adoption roadmap
 
 ## 6. STRATEGY PILLAR
-- Green lending target: 15% green asset ratio by 2030
+- Green asset ratio trajectory: 7% in 2024, 15% by 2030, 30% by 2050
 - GreenCRDB platform: climate risk integration in credit process
 - Kijani Bond: green capital markets positioning
 
@@ -557,7 +557,7 @@ Include:
 
 1. ABOUT THIS REPORT
 - Reporting period: Financial Year 2024–2025
-- Reporting frameworks: TCFD/ISSB S2, GRI Standards, PRB, SASB FN-CB, IFC Performance Standards, BoT 2025 Guidelines
+- Reporting frameworks: TCFD/ISSB S2, GRI Standards, PRB, SASB FN-CB, IFC Performance Standards, Bank of Tanzania Climate Risk Guideline
 - Reporting boundary: CRDB Bank consolidated (Tanzania operations)
 - Assurance: Management-reviewed; external assurance planned for 2025
 - Note: GreenCRDB platform data (this report) uses simulated/illustrative portfolio data for prototype demonstration
@@ -572,7 +572,7 @@ Include:
 - Strategic vision for green finance
 - GreenCRDB platform as the bank's climate intelligence backbone
 - Key 2024 achievements (Kijani Bond, GCF, MUFG, Proparco)
-- 2030 green asset ratio target and pathway
+- Green asset ratio pathway from 7% in 2024 to 15% by 2030 and 30% by 2050
 - Call to action for CRDB clients and partners
 
 Write in formal, professional banking language. Use real CRDB facts from the context provided.""",
@@ -588,7 +588,7 @@ Write in formal, professional banking language. Use real CRDB facts from the con
 - Management-level: Sustainable Finance Unit (SFU) — structure, reporting lines, mandate
 - ESG integration across all business units
 
-## 1.2 Climate Risk Governance (BoT 2025 Compliance)
+## 1.2 Climate Risk Governance (Bank of Tanzania Climate Risk Guideline Compliance)
 - How the bank identifies, assesses, and manages climate-related risks
 - Physical risk vs. transition risk governance process
 - Integration with existing Enterprise Risk Management (ERM) framework
@@ -622,7 +622,7 @@ Use real CRDB governance facts from context. Write in formal annual report langu
 - Portfolio climate concentration index
 
 ## 2.2 Financed Emissions (PCAF Scope 3 Category 15)
-- Methodology: IPCC AR6 Africa sector emission intensity proxies; PCAF data quality Score 4
+- Methodology: IPCC AR6 Africa sector emission intensity proxies; PCAF data quality score 4 (highest uncertainty)
 - Total portfolio financed emissions: [use the 12,889 ktCO2e figure]
 - Top 3 emitting sectors with specific numbers
 - Roadmap to PCAF Score 1 data quality
@@ -630,11 +630,11 @@ Use real CRDB governance facts from context. Write in formal annual report langu
 
 ## 2.3 Green Finance Portfolio
 - Green loan disbursements 2024: TZS 86.9 billion
-- Kijani Bond: USD 68.3M (detailed use of proceeds)
+- Kijani Bond: USD 65.7M (detailed use of proceeds)
 - GCF accreditation: first in East & Central Africa; USD 100M window
 - MUFG green facility: USD 225M
 - Green Finance Pipeline: [use Module 3 pipeline data — borrower count and exposure]
-- Green Asset Ratio: current vs. 15% target by 2030
+- Green Asset Ratio: 7% in 2024 vs. 15% by 2030 and 30% by 2050
 
 ## 2.4 Climate Scenario Analysis
 - Three pathways: Base Case, Accelerated Transition, Severe Physical Shock
@@ -779,7 +779,7 @@ Keep this under 600 words. Executive-level language. The MD should be able to re
 |---|---|---|
 | 0 | Executive Summary | Headline achievements, commitments table, strategic priorities |
 | 1 | Leadership Messages | Chairperson + MD/CEO statements |
-| 2 | Governance | Board structure, BoT 2025 compliance, TCFD Governance pillar |
+| 2 | Governance | Board structure, Bank of Tanzania Climate Risk Guideline compliance, TCFD Governance pillar |
 | 3 | Environmental | Climate risk scores, financed emissions, green finance, scenarios |
 | 4 | Social | Financial inclusion, ESG social pillar, IFC PS, community |
 | 5 | Frameworks & Appendix | IFC PS, PRB, SASB, GRI Content Index, KPI data table |
@@ -827,7 +827,7 @@ Keep this under 600 words. Executive-level language. The MD should be able to re
                     "=" * 70,
                     "CRDB BANK TANZANIA — SUSTAINABILITY REPORT 2024–2025",
                     "GreenCRDB Platform | Climate-Finance Risk Intelligence",
-                    "Frameworks: TCFD · ISSB S1/S2 · PRB · SASB FN-CB · IFC PS · BoT 2025",
+                    "Frameworks: TCFD · ISSB S1/S2 · PRB · SASB FN-CB · IFC PS · Bank of Tanzania Climate Risk Guideline",
                     "=" * 70,
                     "",
                     "IMPORTANT: This report is generated by the GreenCRDB prototype platform.",

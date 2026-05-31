@@ -61,7 +61,7 @@ c1, c2, c3, c4, c5 = st.columns(5)
 total_fe = fe["financed_emissions_ktco2e"].sum() if not fe.empty else 0
 c1.metric("Portfolio ITR", f"{itr:.2f} °C", f"{itr - 1.5:.2f}°C above 1.5°C target", delta_color="inverse")
 c2.metric("Financed Emissions", f"{total_fe:,.0f} ktCO₂e", "PCAF Scope 3 Category 15")
-c3.metric("Green Asset Ratio", f"{gar_current:.0f}%", f"Target: {wd.CRDB_TARGETS['green_asset_ratio_2030']:.0f}% by 2030 · 2024 Actual")
+c3.metric("Green Asset Ratio", f"{gar_current:.0f}%", f"2024 actual · 15% by 2030 · 30% by 2050")
 c4.metric("Bank of Tanzania Climate Risk Guideline Compliance", "12 / 13 items", "1 in progress", delta_color="off")
 c5.metric("Moody's Rating", fr["moodys_rating"], f"Stable · prev {fr['moodys_prev_rating']} · first TZ bank B1")
 
@@ -201,7 +201,7 @@ with tab_pcaf:
             ("Score 1", "Verified GHG data from borrower", "Best"),
             ("Score 2", "Reported but unverified data", "Good"),
             ("Score 3", "Physical activity-based estimates", "Moderate"),
-            ("Score 4", "Economic proxy — **current level**", "Acceptable"),
+            ("Score 4", "Economic proxy — **current level; highest uncertainty baseline used in this demonstrator**", "Acceptable"),
             ("Score 5", "Regional/national average factors", "Minimal"),
         ]
         for score, desc, level in quality_items:

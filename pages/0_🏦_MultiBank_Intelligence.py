@@ -71,7 +71,7 @@ wd.render_gap_demonstration(
 c1, c2, c3, c4, c5, c6 = st.columns(6)
 c1.metric("Group Total Assets", f"TZS {gc['total_assets_tzs_bn']:,.0f} Bn", "+25.3% YoY · 2024 Actual")
 c2.metric("Group ITR", f"{gc['group_itr']:.2f}°C", "vs 1.5°C target", delta_color="inverse")
-c3.metric("Green Asset Ratio", f"{gc['group_green_ratio']:.0f}%", f"Target 15% by 2030 · Actual 2024")
+c3.metric("Green Asset Ratio", f"{gc['group_green_ratio']:.0f}%", "2024 actual · 15% by 2030 · 30% by 2050")
 c4.metric("Moody's Rating", gc.get("moody_rating","B1"), "First TZ bank B1 · Stable")
 c5.metric("Group Emissions", f"{gc['group_emissions_ktco2e']:,} ktCO₂e", "PCAF Scope 3")
 c6.metric("Africa ESG Rank", "#8 / 20", "East Africa: #3")
@@ -204,7 +204,7 @@ with tab_group:
         st.plotly_chart(fig2, use_container_width=True)
 
     # Group Green Ratio progress bars
-    st.markdown("#### Green Asset Ratio Progress — All Entities vs 2030 Group Target (15%)")
+    st.markdown("#### Green Asset Ratio Progress — All Entities vs 2030 Group Target (15%) and 2050 Target (30%)")
     for e in entities:
         pct = min(e["green_ratio_pct"] / gc["group_target_green_2030"], 1.0) * 100
         gap = gc["group_target_green_2030"] - e["green_ratio_pct"]
@@ -644,7 +644,7 @@ with tab_africa:
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
             f'<li>Green ratio 7% — Nedbank at 28%, KCB at 12% (gap remains significant)</li>'
             f'<li>Portfolio ITR 2.73°C — industry leaders below 2.2°C</li>'
-            f'<li>Financed emissions disclosure (data quality Score 4 → target Score 2)</li>'
+            f'<li>Financed emissions disclosure (data quality score 4, highest uncertainty → target Score 2)</li>'
             f'<li>TNFD readiness still in scoping phase; PCAF full adoption pending</li>'
             f'</ul>'
             f'</div>',
@@ -655,7 +655,7 @@ with tab_africa:
             f'<div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:12px;border-radius:0 6px 6px 0;">'
             f'<b>🎯 2025–2027 Targets to Move Up</b><br>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>Reach #5 Africa by growing green ratio beyond the 7% 2024 baseline toward 15% by 2030</li>'
+            f'<li>Reach #5 Africa by growing green ratio beyond the 7% 2024 baseline toward 15% by 2030 and 30% by 2050</li>'
             f'<li>Reduce portfolio ITR to 2.3°C via sector rebalancing</li>'
             f'<li>PCAF full adoption → Score 2 data quality</li>'
             f'<li>TNFD pilot report 2025 → full disclosure 2026</li>'
@@ -736,7 +736,7 @@ with tab_ea:
         st.markdown("#### CRDB vs Peer Radar — 6 Dimensions")
         # Radar: CRDB vs KCB (top East Africa)
         dims = ["ESG Score", "Climate Disclosure", "DFI Access", "Green Ratio", "ESMS Quality", "Sector Risk Mgmt"]
-        crdb_vals = [6.5, 4.8, 5.0, 2.1/3, 4.3, 4.2]  # normalised to 0-7
+        crdb_vals = [6.5, 4.8, 5.0, 7.0/15.0*5.0, 4.3, 4.2]  # green ratio normalised against 15% 2030 target
         kcb_vals  = [7.2, 4.5, 4.8, 4.0,   4.2, 4.5]
         equity_vals=[7.0, 4.3, 4.5, 3.3,   4.0, 4.3]
 
@@ -865,7 +865,7 @@ with tab_global:
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
             f'<li>Green ratio 7% vs peer leader XacBank at 22% — closing but gap remains</li>'
             f'<li>ITR 2.73°C vs leader XacBank at 2.20°C</li>'
-            f'<li>PCAF adoption still proxy-based (Score 4)</li>'
+            f'<li>PCAF adoption still proxy-based (data quality score 4, highest uncertainty)</li>'
             f'</ul>'
             f'</div>',
             unsafe_allow_html=True,
