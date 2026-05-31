@@ -25,34 +25,50 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown("## Who built this")
+st.header("Who built this")
 st.markdown(
-    "I am **Dishon Abuya**, an MSc Finance and Investment student with a Financial Machine Learning specialisation at the University of Dundee, graduating with Distinction. "
-    "I am from Tanzania and currently work at Branston Ltd in Scotland in a sustainability and data analytics capacity."
+    "I am **Dishon Abuya**, an MSc Finance and Investment student with a Financial Machine Learning specialisation at the University of Dundee. "
+    "I built GreenCRDB independently, without instruction from CRDB Bank, after reading CRDB's 2024 Sustainability Report and TCFD Report end to end. "
+    "Researching the intersection of climate finance and credit risk in East African banking."
 )
 
 st.markdown("---")
-st.markdown("## Why CRDB specifically")
+st.header("The thesis")
 st.markdown(
-    "I read CRDB's 2024 Sustainability Report end to end because CRDB is one of Tanzania's most important financial institutions and already has serious climate-finance commitments. "
-    "While reading it, I identified six concrete disclosure and operational gaps around financed emissions, climate risk, green asset deployment, framework reporting, borrower-level ESG data, and group-level sustainability visibility. "
-    "I built GreenCRDB to show one possible path to closing those gaps using a working Streamlit demonstrator rather than a static write-up."
+    "The biggest gap in CRDB's 2024 disclosure — Scope 3 Category 15 financed emissions — is also the biggest unmeasured credit-risk exposure on the loan book. "
+    "High-emission borrowers face the steepest climate shocks. Those shocks become loan distress. Loan distress becomes credit risk. "
+    "This is not a sustainability problem with credit-risk implications. It is a credit-risk problem with sustainability data. "
+    "GreenCRDB demonstrates what closing that gap looks like operationally today."
 )
 
 st.markdown("---")
-st.markdown("## What this demonstrates")
+st.header("Why CRDB")
+st.markdown(
+    "CRDB is a useful case because the 2024 Sustainability Report gives enough concrete detail to build a serious demonstrator. "
+    "The Group operates three banking subsidiaries: **CRDB Bank Plc in Tanzania**, **CRDB Bank Burundi S.A.**, and **CRDB Bank DR Congo S.A.** "
+    "It has a **USD 300M five-year Medium-Term Note Programme**, with the **Kijani Bond** as the first tranche and the **Samia Infrastructure Bond** as the second."
+)
+st.markdown(
+    "The same report says CRDB considers **8 of 15 Scope 3 categories** relevant, but only **Category 6 Business Travel** and **Category 7 Employee Commuting** are currently measured. "
+    "Category 15 financed emissions are named as a future reporting priority. That is the disclosure gap GreenCRDB turns into an operational credit-risk workflow."
+)
 for item in [
-    "PCAF Scope 3 Category 15 financed emissions estimation for a lending portfolio.",
-    "A multi-framework reporting crosswalk across GRI, IFRS S1/S2, GCF PPMS, IFC, and Bank of Tanzania 2025 requirements.",
-    "Pan-African GCF peer benchmarking against other accredited African banks.",
-    "Sector-level physical climate risk scoring for Tanzanian lending exposure.",
-    "Borrower ESG scoring and a climate-finance decision engine for simulated loan applications.",
+    "**TACATDP:** USD 200M, split between USD 100M GCF funding and USD 100M co-financing.",
+    "**Project GAIA:** USD 1.5B blended finance structure with MUFG Bank.",
+    "**Financing partners:** 10 partners with TZS 1.47 trillion outstanding.",
+    "**Green Asset Ratio:** 7% in 2024, targeting 15% by 2030 and 30% by 2050.",
 ]:
     st.markdown(f"- {item}")
 
 st.markdown("---")
-st.markdown("## What I'm looking for")
+st.header("What I'm looking for")
 st.markdown(
-    "I am looking for a 30-minute conversation with CRDB's sustainability or risk team to walk through the demo, test whether the gaps I identified are useful in practice, and hear what would need to change for this kind of tool to support real internal work. "
-    "You can reach me at **dishonabuyajr@gmail.com**."
+    "A 30-minute conversation with someone in the Sustainable Finance Unit or the Risk function. "
+    "I share the screen and walk through the live demo. You tell me what works, what doesn't, and what would make this useful in real internal work. "
+    "After the meeting, I send a one-page summary tailored to the priorities you raise."
+)
+st.markdown(
+    "- **Email:** dishonabuyajr@gmail.com\n"
+    "- **LinkedIn:** linkedin.com/in/dishon-abuya\n"
+    "- **App:** greencrdb.streamlit.app"
 )
