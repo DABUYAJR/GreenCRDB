@@ -15,6 +15,14 @@ import streamlit as st
 import web_data as wd
 from auth import require_login, sidebar_user_card, can_upload_files, require_module_access
 
+
+def _safe_secret(key: str, default: str = "") -> str:
+    try:
+        return st.secrets.get(key, default)
+    except Exception:
+        return default
+
+
 st.set_page_config(page_title="Data Upload | GreenCRDB", page_icon="📂", layout="wide")
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
@@ -608,7 +616,7 @@ with tab_ai:
     st.markdown("#### AI-Powered Data Review")
 
     with st.sidebar:
-        _secret_key = st.secrets.get("GEMINI_API_KEY", "") if hasattr(st, "secrets") else ""
+        _secret_key = _safe_secret("GEMINI_API_KEY", "")
         ai_api_key = st.text_input("Gemini API Key (for AI review)", value=_secret_key,
                                     type="password", key="upload_gemini_key", placeholder="AIza...")
         ai_claude_key = st.text_input("Claude API Key (optional)", type="password",

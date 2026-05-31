@@ -11,6 +11,14 @@ import streamlit as st
 import web_data as wd
 from auth import require_login, sidebar_user_card, require_module_access, can_access_module
 
+
+def _safe_secret(key: str, default: str = "") -> str:
+    try:
+        return st.secrets.get(key, default)
+    except Exception:
+        return default
+
+
 st.set_page_config(page_title="AI Copilot | GreenCRDB", page_icon="🤖", layout="wide")
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
@@ -39,7 +47,7 @@ with st.sidebar:
         "4. Paste it below\n\n"
         "Free tier: 1,000,000 tokens/day — more than enough.",
     )
-    _secret_key = st.secrets.get("GEMINI_API_KEY", "") if hasattr(st, "secrets") else ""
+    _secret_key = _safe_secret("GEMINI_API_KEY", "")
     api_key = st.text_input("Gemini API Key", value=_secret_key, type="password", placeholder="AIza...")
     model_choice = st.selectbox(
         "Model",
@@ -64,9 +72,8 @@ if use_claude:
 elif use_gemini:
     st.info(f"Using Google Gemini ({model_name}). Free tier active.")
 else:
-    st.warning(
-        "No API key entered. Enter your free Gemini API key in the sidebar to activate the AI Copilot. "
-        "Get one free at aistudio.google.com/apikey — takes 2 minutes."
+    st.info(
+        "AI Copilot requires a Google Gemini API key. Configure it in Streamlit Cloud Secrets to enable Q&A and report generation."
     )
 
 

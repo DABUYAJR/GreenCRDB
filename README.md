@@ -30,7 +30,7 @@ Demo access available on request — contact Dishon Abuya (dishonabuyajr@gmail.c
 | 🤖 AI Copilot | Gemini-powered Q&A and formal sustainability report generation |
 | 📂 Data Upload Studio | CSV/Excel/PDF ingestion with validation and AI-powered review |
 | 👥 User Management | Role and permission matrix (CSO view) |
-| ℹ️ About | Platform overview, frameworks, tech stack, roadmap |
+| ℹ️ Why This Exists | Author, motivation, the six CRDB report gaps, and the ask |
 | 📖 User Guide | Full scoring logic, role workflows, FAQ |
 
 ---

@@ -39,6 +39,12 @@ outputs/tables/
 # Entered/uploaded data from users (runtime state)
 data/entered/
 
+# Local agent notes and generated working files
+AGENTS.md
+data/interim/
+notebooks/
+reports/
+
 # IDE
 .vscode/
 .idea/
