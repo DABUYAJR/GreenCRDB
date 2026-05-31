@@ -1,151 +1,59 @@
-# GreenCRDB — Tanzania Climate-Finance Risk Intelligence Platform
+# GreenCRDB
 
-## About this project
+A demonstrator showing how climate disclosure becomes credit-risk management at an East African bank.
 
-GreenCRDB was built independently by **Dishon Abuya**, an MSc Finance and Investment student at the University of Dundee, as a learning exercise and conversation starter with CRDB Bank on climate-finance disclosure and implementation gaps identified from its 2024 Sustainability Report.
+## The thesis
 
-The application combines sector climate risk scoring, borrower ESG assessment, lending decisions, and regulatory compliance reporting in a Streamlit demonstrator.
+The biggest gap in CRDB Bank's 2024 Sustainability Report — Scope 3 Category 15 financed emissions — is also the biggest unmeasured credit-risk exposure on the loan book.
 
-All portfolio values and borrower data are **simulated and illustrative**. CRDB Group aggregate figures are sourced from the **2024 Integrated Annual Report**.
+Of 15 Scope 3 categories, CRDB names 8 as relevant but measures only Business Travel and Employee Commuting. The other six — including financed emissions — are CRDB's most credit-risk-relevant exposure. GreenCRDB demonstrates what closing that gap looks like operationally.
 
----
+## Six gaps, six modules
 
-## Live App
+| 2024 Sustainability Report gap | GreenCRDB module |
+| --- | --- |
+| Subsidiary sustainability metrics are reported narratively across Tanzania, Burundi and DR Congo, not as standardised KPIs. | MultiBank Intelligence |
+| Climate risks are mapped to credit, market, operational and liquidity risk, but client-level and site-level physical-risk views are not operational. | Sector Climate Risk |
+| Scope 3 Category 15 financed emissions are identified as a future priority but not measured at borrower level. | Borrower ESG -> Credit Risk Engine |
+| Kijani Bond and Samia Infrastructure Bond proceeds sit inside a wider USD 300M Medium-Term Note Programme, but project-level allocation and credit decision traceability are not public. | Finance Decisions |
+| IFRS S1, IFRS S2, TCFD, Bank of Tanzania Climate Risk Guideline, DSE ESG Guidelines and GRI reporting run in parallel without a collect-once-report-many data flow. | Regulatory Compliance |
+| CRDB's position against other GCF-accredited African banks is not visible in the public reporting package. | Pan-African GCF Peer Benchmarking |
 
-**[greencrdb.streamlit.app](https://greencrdb.streamlit.app)**
+## Live app
 
-Demo access available on request — contact Dishon Abuya (dishonabuyajr@gmail.com).
+Live demo: [greencrdb.streamlit.app](https://greencrdb.streamlit.app)
 
----
+Demo login:
 
-## Platform Modules
-
-| Module | Description |
-|--------|-------------|
-| 🏦 MultiBank Intelligence | Group entity benchmarking, Africa league table, DFI facility tracker |
-| 📊 Module 1 — Sector Climate Risk | 5-hazard composite scoring across 12 Tanzania sectors (0–10 scale) |
-| 🌱 Module 2 — Borrower ESG | E/S/G pillar scoring, 4-tier classification, sector-filtered views |
-| 💡 Module 3 — Finance Decisions | Decision engine, TCFD metrics, IFC PS alignment, scenario analysis |
-| 📋 Module 4 — Regulatory Compliance | BoT 2025, PCAF Scope 3, PRB, SASB FN-CB, TNFD readiness |
-| 🤖 AI Copilot | Gemini-powered Q&A and formal sustainability report generation |
-| 📂 Data Upload Studio | CSV/Excel/PDF ingestion with validation and AI-powered review |
-| 👥 User Management | Role and permission matrix (CSO view) |
-| ℹ️ Why This Exists | Author, motivation, the six CRDB report gaps, and the ask |
-| 📖 User Guide | Full scoring logic, role workflows, FAQ |
-
----
-
-## Scoring Logic
-
-**Module 1 — Composite Climate Risk (0–10)**
-```
-composite = drought×0.25 + flood×0.20 + temperature×0.20 + transition×0.20 + water_stress×0.15
-```
-Tiers: Low <4.5 · Medium 4.5–6.0 · High 6.0–7.5 · Critical >7.5
-
-**Module 2 — ESG Score (0–10)**
-```
-ESG = Environmental×0.40 + Social×0.30 + Governance×0.30
-```
-Tiers: Green Eligible ≥7.5 · Standard 5.5–7.4 · Watch List 4.0–5.4 · High Risk <4.0
-
-**Module 3 — Decision Score (0–100)**
-```
-sector_readiness = (10 − composite_climate_risk) × 10   # invert: high risk → low readiness
-decision_score   = ESG×10×0.55 + sector_readiness×0.45
-```
-Thresholds: Approve ≥65 · Conditional ≥52 · Review ≥40 · Decline <40
-
----
-
-## Role-Based Access
-
-| Role | Access |
-|------|--------|
-| Chief Sustainability Officer | Full — all modules, user management |
-| Climate Risk Manager | Module 1 + Regulatory full; others read |
-| ESG Assessment Officer | Module 2 full; sector/region restricted |
-| Green Finance Officer | Module 3 full; others read |
-| Compliance & Reporting Officer | All read + report generation |
-| Data Analyst | Modules 1–3 read only |
-
-Demo usernames are not published. Contact Dishon Abuya (dishonabuyajr@gmail.com) for access.
-
----
-
-## Running Locally
-
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Launch web app
-streamlit run app.py
-
-# Or run the data pipeline scripts in order
-python3 scripts/01_TZCRIP_Module1_Sector_Climate_Risk.py
-python3 scripts/02_TZCRIP_Module2_Borrower_ESG_Scoring_Engine.py
-python3 scripts/03_TZCRIP_Module3_Climate_Finance_Decision_Engine.py
+```text
+Username: DemoCRDB
+Password: GreenCRDB@2025
 ```
 
----
+This is a demonstrator account for review access. It is not a production authentication model.
 
-## AI Copilot Setup
+## Source attribution
 
-The AI Copilot requires a free Google Gemini API key:
+Primary source: CRDB Bank 2024 Sustainability Report.
 
-1. Go to [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
-2. Create an API key (free tier — 1M tokens/day)
-3. On Streamlit Cloud: app settings → Secrets → add `GEMINI_API_KEY = "your-key"`
-4. Locally: create `.streamlit/secrets.toml` with the same line
+Supporting sources: CRDB Bank 2024 TCFD Report and CRDB Bank 2024 Integrated Annual Report.
 
----
+All page references in the app point to specific pages of these documents. The app uses the Sustainability Report as the primary citation source, with the TCFD Report and Integrated Annual Report used where they provide supporting detail.
 
-## Frameworks & Standards
+## About
 
-| Framework | Coverage |
-|-----------|----------|
-| TCFD | Four-pillar disclosure (Governance, Strategy, Risk Mgmt, Metrics) |
-| Bank of Tanzania 2025 | 13-item compliance tracker — 12/13 compliant |
-| PCAF | Scope 3 Category 15 financed emissions, Data Quality Score 4 |
-| IFC Performance Standards | PS1–PS8 alignment per borrower |
-| PRB (UNEP FI) | Six principles self-assessment |
-| SASB FN-CB | Commercial banking sector standard |
-| TNFD v1.0 | LEAP approach readiness tracker |
-| UN SDGs | Portfolio SDG contribution mapping |
+Built solo by Dishon Abuya, MSc Finance and Investment, University of Dundee.
 
----
+GreenCRDB is independent of CRDB Bank. It was built as a learning project and conversation starter after reading CRDB's 2024 Sustainability Report, TCFD Report and Integrated Annual Report.
 
-## Project Structure
+Researching the intersection of climate finance and credit risk in East African banking.
 
-```
-GreenCRDB/
-├── app.py                          # Home dashboard
-├── auth.py                         # RBAC — users, roles, permissions
-├── web_data.py                     # All platform data constants & loaders
-├── data_store.py                   # Session + CSV persistence for entered data
-├── pages/
-│   ├── 0_🏦_MultiBank_Intelligence.py
-│   ├── 1_📊_Sector_Risk.py
-│   ├── 2_🌱_Borrower_ESG.py
-│   ├── 3_💡_Finance_Decisions.py
-│   ├── 4_📋_Regulatory_Compliance.py
-│   ├── 5_🤖_AI_Copilot.py
-│   ├── 6_📂_Data_Upload.py
-│   ├── 7_👥_User_Management.py
-│   ├── 8_ℹ️_Why_This_Exists.py      # Why this project exists
-│   └── 9_📖_User_Guide.py
-├── scripts/                        # Offline data pipeline (Module 1–3)
-├── config/                         # risk_thresholds.yaml, scoring_weights.yaml
-├── data/processed/                 # Pipeline outputs consumed by the web app
-├── .streamlit/config.toml          # Theme — CRDB green (#006B3C)
-└── requirements.txt
-```
+## Contact
 
----
+dishonabuyajr@gmail.com
 
-## Deployment
+## Honest disclosure
 
-Hosted on **Streamlit Community Cloud** — auto-deploys on every push to `main`.
+Every module includes a "Data Sources, Methodology and Honest Disclosure" panel stating what is sourced, what is simulated, and what would change in production.
 
-`data/raw/` and `outputs/` are excluded from the repo (see `.gitignore`). The web app reads from `data/processed/` which is committed.
+Portfolio data is simulated. Borrower profiles, subsidiary KPIs where not publicly disclosed, peer-bank metrics and decision outputs are illustrative. CRDB Group aggregate figures are sourced from public reports.
