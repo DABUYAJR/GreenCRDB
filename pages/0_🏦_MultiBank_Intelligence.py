@@ -24,7 +24,7 @@ st.set_page_config(page_title="MultiBank Intelligence | GreenCRDB", page_icon="�
 user = require_login()
 sidebar_user_card()
 
-entities = wd.GROUP_ENTITIES
+entities = [e for e in wd.GROUP_ENTITIES if e.get("entity_type") == "banking"]
 gc = wd.GROUP_CONSOLIDATED
 
 # ── Header ────────────────────────────────────────────────────────────────────
@@ -41,7 +41,7 @@ st.markdown(
     f'<div style="display:flex;gap:8px;flex-wrap:wrap;">'
     f'<span style="background:rgba(255,255,255,0.2);color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">🇹🇿 Tanzania</span>'
     f'<span style="background:rgba(255,255,255,0.15);color:#FCD34D;padding:4px 12px;border-radius:20px;font-size:11px;">🇧🇮 Burundi</span>'
-    f'<span style="background:rgba(255,255,255,0.1);color:#D1D5DB;padding:4px 12px;border-radius:20px;font-size:11px;">🇨🇩 DRC</span>'
+    f'<span style="background:rgba(255,255,255,0.1);color:#D1D5DB;padding:4px 12px;border-radius:20px;font-size:11px;">🇨🇩 DR Congo</span>'
     f'<span style="background:rgba(255,255,255,0.15);color:#a7f3d0;padding:4px 12px;border-radius:20px;font-size:11px;">🛡️ Insurance</span>'
     f'</div>'
     f'</div>'
@@ -53,7 +53,7 @@ wd.render_crdb_finding(
     "CRDB Group operates three banking subsidiaries — CRDB Bank Plc (Tanzania), CRDB Bank Burundi S.A., and CRDB Bank DR Congo S.A. (incorporated 2023, 55% ownership). Subsidiary metrics are reported in narrative form, not standardised KPIs. Citation: Sustainability Report 2024, pp. 6, 117–128.",
 )
 wd.render_gap_demonstration(
-    "CRDB's 2024 Sustainability Report consolidates Group sustainability metrics but does not disclose subsidiary-level breakdowns. Climate risk, green portfolio share, and financed emissions intensity are reported only at consolidated Group level, hiding where the gap sits geographically across CRDB Tanzania, CRDB Bank Burundi, and CRDB Bank DRC.",
+    "CRDB's 2024 Sustainability Report consolidates Group sustainability metrics but does not disclose subsidiary-level breakdowns. Climate risk, green portfolio share, and financed emissions intensity are reported only at consolidated Group level, hiding where the gap sits geographically across CRDB Tanzania, CRDB Bank Burundi, and CRDB Bank DR Congo.",
     [
         "Side-by-side subsidiary view: green portfolio share, climate risk exposure, and financed emissions intensity per entity.",
         "Pan-African league table benchmarking CRDB against five other GCF-accredited African banks on the same metrics.",
@@ -93,18 +93,17 @@ tab_group, tab_dfi, tab_africa, tab_ea, tab_global, tab_onboard = st.tabs([
 # TAB 1 — CRDB GROUP ENTITIES
 # ════════════════════════════════════════════════════════════════════════════
 with tab_group:
-    st.markdown("### CRDB Group — All Entities Deep Dive")
+    st.markdown("### CRDB Group — Banking Subsidiary Deep Dive")
     st.markdown(
-        "CRDB Bank Group comprises **5 entities** across 3 countries in Sub-Saharan Africa. "
+        "CRDB Bank Group operates **three banking subsidiaries** across 3 countries in Sub-Saharan Africa. "
         "Tanzania is the flagship entity (TZS 16,699 Bn total assets, 27% market share). "
-        "Burundi is the most profitable subsidiary (ROE 31.1%). Congo is in its 2nd year of operations. "
-        "CRDB Insurance achieved break-even in 2024 and is scaling climate-linked products."
+        "Burundi is the most profitable subsidiary (ROE 31.1%). DR Congo is a frontier-market subsidiary incorporated in 2023, with 55% CRDB ownership and ESMS deployment in early stages."
     )
 
     # Entity selector
-    entity_names = [f'{e["flag"]} {e["country"]}' for e in entities]
+    entity_names = [f'{e["flag"]} {e.get("selector_label", e["country"])}' for e in entities]
     sel = st.radio("Select entity for detail view:", entity_names, horizontal=True, index=0)
-    sel_entity = next(e for e in entities if f'{e["flag"]} {e["country"]}' == sel)
+    sel_entity = next(e for e in entities if f'{e["flag"]} {e.get("selector_label", e["country"])}' == sel)
 
     # Entity detail card
     col_card, col_metrics = st.columns([1, 2])
@@ -120,6 +119,7 @@ with tab_group:
             f'<tr><td>Est.</td><td style="text-align:right;font-weight:bold;">{sel_entity["established"]}</td></tr>'
             f'<tr><td>Regulator</td><td style="text-align:right;font-weight:bold;font-size:10px;">{sel_entity["regulator"].split("(")[0]}</td></tr>'
             f'<tr><td>Currency</td><td style="text-align:right;font-weight:bold;">{sel_entity["currency"]}</td></tr>'
+            f'<tr><td>Ownership</td><td style="text-align:right;font-weight:bold;">{sel_entity.get("ownership_pct", "—")}%</td></tr>'
             f'<tr><td>Branches</td><td style="text-align:right;font-weight:bold;">{sel_entity["branches"]}</td></tr>'
             f'<tr><td>Est. Clients</td><td style="text-align:right;font-weight:bold;">{sel_entity["borrowers_est"]:,}</td></tr>'
             f'</table>'
@@ -226,13 +226,13 @@ with tab_group:
         f'border-radius:0 6px 6px 0;font-size:12px;margin-top:10px;">'
         f'<b>Group Green Asset Ratio: {gc["group_green_ratio"]:.0f}% (2024 Actual)</b> — '
         f'{gc["group_target_green_2030"] - gc["group_green_ratio"]:.0f}% points to close by 2030. '
-        f'Tanzania flagship (7%) drives the ratio. Insurance entity leads proportionally with climate-linked Kijani Bima products. '
+        f'Tanzania flagship (7%) drives the ratio. DR Congo remains early-stage and frontier-market, with simulated green KPI estimates pending public subsidiary disclosure. '
         f'GCF USD 200M + Kijani Bond USD 65.7M are primary vehicles to reach 15% target.'
         f'</div>',
         unsafe_allow_html=True,
     )
 
-    st.caption("Tanzania figures from 2024 Integrated Annual Report (actual). Burundi/Congo/Insurance figures from 2024 Annual Report. Subsidiary sustainability estimates illustrative.")
+    st.caption("Tanzania figures from 2024 Integrated Annual Report (actual). Burundi and DR Congo figures are subsidiary estimates calibrated to public 2024 disclosures; DR Congo sustainability KPIs are simulated.")
 
     # ── Milestone badges ──────────────────────────────────────────────────────
     st.markdown("---")
@@ -941,7 +941,7 @@ with tab_onboard:
         with st.form("onboard_step1"):
             c1, c2 = st.columns(2)
             with c1:
-                entity_name = st.text_input("Legal Entity Name *", placeholder="e.g. CRDB Bank DRC SARL")
+                entity_name = st.text_input("Legal Entity Name *", placeholder="e.g. CRDB Bank DR Congo S.A.")
                 country = st.selectbox("Country *", ["Tanzania", "Burundi", "DR Congo", "Kenya", "Uganda",
                                                       "Rwanda", "Dubai (UAE)", "South Africa", "Nigeria", "Other"])
                 currency = st.selectbox("Reporting Currency", ["TZS", "BIF", "CDF", "KES", "UGX", "RWF", "USD", "Other"])
@@ -1236,7 +1236,8 @@ wd.render_data_methodology(
         "Subsidiary view treats each entity as a separate reporting unit consistent with IFRS 8 segment reporting principles.",
     ],
     [
-        "Subsidiary-level breakdowns for CRDB Tanzania, Burundi, and DRC are illustrative — CRDB does not publish this split.",
+        "Subsidiary-level breakdowns for CRDB Tanzania, Burundi, and DR Congo are illustrative — CRDB does not publish this split.",
+        "CRDB DR Congo figures are simulated based on the incorporation date (2023) and ownership structure (55%) disclosed in the 2024 Sustainability Report, p. 9. Real subsidiary KPIs are not publicly disclosed at the level of granularity shown here.",
         "Peer bank metrics are placeholders calibrated to plausible 2023 ranges; production use would require pulling from each bank's audited disclosure.",
     ],
 )
