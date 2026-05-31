@@ -35,10 +35,10 @@ st.markdown(
 st.markdown("---")
 st.header("The thesis")
 st.markdown(
-    "The biggest gap in CRDB's 2024 disclosure — Scope 3 Category 15 financed emissions — is also the biggest unmeasured credit-risk exposure on the loan book. "
+    "The primary analytical opportunity in CRDB's 2024 disclosure — Scope 3 Category 15 financed emissions — is also a major unmeasured credit-risk signal for loan-book analysis. "
     "High-emission borrowers face the steepest climate shocks. Those shocks become loan distress. Loan distress becomes credit risk. "
     "This is not a sustainability problem with credit-risk implications. It is a credit-risk problem with sustainability data. "
-    "GreenCRDB demonstrates what closing that gap looks like operationally today."
+    "GreenCRDB demonstrates what exploring that next layer of analysis could look like in a career portfolio demo."
 )
 
 st.markdown("---")
@@ -50,7 +50,7 @@ st.markdown(
 )
 st.markdown(
     "The same report says CRDB considers **8 of 15 Scope 3 categories** relevant, but only **Category 6 Business Travel** and **Category 7 Employee Commuting** are currently measured. "
-    "Category 15 financed emissions are named as a future reporting priority. That is the disclosure gap GreenCRDB turns into an operational credit-risk workflow."
+    "Category 15 financed emissions are named as a future reporting priority. GreenCRDB turns that potential reporting enhancement into an illustrative credit-risk analytics workflow."
 )
 for item in [
     "**TACATDP:** USD 200M, split between USD 100M GCF funding and USD 100M co-financing.",
@@ -63,8 +63,8 @@ for item in [
 st.markdown("---")
 st.header("What I'm looking for")
 st.markdown(
-    "A 30-minute conversation with someone in the Sustainable Finance Unit or the Risk function. "
-    "I share the screen and walk through the live demo. You tell me what works, what doesn't, and what would make this useful in real internal work. "
+    "A 30-minute conversation with someone working in sustainability, ESG analytics, climate finance, or risk. "
+    "I share the screen and walk through the live demo. You tell me what works, what does not, and what would make the analytical framing more useful in practice. "
     "After the meeting, I send a one-page summary tailored to the priorities you raise."
 )
 st.markdown(

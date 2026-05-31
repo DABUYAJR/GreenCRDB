@@ -1,4 +1,4 @@
-"""Module 3 — Climate Finance Decision Engine"""
+"""Module 3 — Climate Finance Decision Analytics"""
 from __future__ import annotations
 
 import sys
@@ -25,7 +25,7 @@ access_level_banner("finance_decisions")
 
 st.markdown(
     '<div style="background:#2563EB;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">💡 Module 3 — Climate Finance Decision Engine</h2>'
+    '<h2 style="color:white;margin:0;font-size:22px;">💡 Module 3 — Climate Finance Decision Analytics</h2>'
     '<p style="color:#bfdbfe;margin:2px 0 0 0;font-size:13px;">'
     "TCFD framework · IFC Performance Standards · Green Finance Pipeline · Climate Scenario Analysis"
     "</p></div>",
@@ -40,14 +40,14 @@ wd.render_gap_demonstration(
     [
         "Decision score (0–100) combining ESG (55% weight) and sector climate readiness (45% weight).",
         "Four-tier outcome: Approve (≥65), Conditional (≥52), Review (≥40), Decline (<40).",
-        "Kijani Bond proceeds allocation tracker showing deployed vs undeployed.",
+        "Kijani Bond proceeds allocation tracker showing allocated vs not-yet-allocated illustrative amounts.",
         "Green asset ratio trajectory chart with internal target line.",
         "TCFD-aligned metrics, IFC PS alignment, and stressed scenario analysis per application.",
     ],
     [
         "Faster, defensible decisions on green loan applications.",
         "Auditable trail from borrower ESG score, sector context, and final decision for every approval.",
-        "Board-level visibility on Kijani Bond deployment progress.",
+        "Board-level style visibility on Kijani Bond allocation progress.",
     ],
 )
 
@@ -403,7 +403,7 @@ wd.render_data_methodology(
         "Decision tiers (Approve ≥65, Conditional ≥52, Review ≥40, Decline <40) chosen to produce a realistic approval-rate distribution (~50% Approve / ~25% Conditional / ~15% Review / ~10% Decline) on the simulated portfolio.",
     ],
     [
-        "Kijani Bond deployment percentages and green asset ratio trajectory values are illustrative. CRDB has not publicly disclosed line-item bond proceeds allocation.",
+        "Kijani Bond concept use percentages and green asset ratio trajectory values are illustrative. CRDB has not publicly disclosed line-item bond proceeds allocation.",
         "Decision engine weights would require backtesting against CRDB's loan book historicals before any production use.",
     ],
 )

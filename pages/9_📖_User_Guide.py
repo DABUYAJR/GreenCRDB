@@ -22,7 +22,7 @@ st.markdown(
     f'padding:28px 36px;border-radius:12px;margin-bottom:20px;">'
     f'<h1 style="color:white;margin:0;font-size:28px;">📖 GreenCRDB User Guide</h1>'
     f'<p style="color:#bfdbfe;margin:6px 0 0 0;font-size:14px;">'
-    f'Complete guide to every module, feature, workflow, and scoring logic in the platform'
+    f'Complete guide to every module, feature, workflow, and scoring logic in the demo'
     f'</p>'
     f'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">'
     f'<span style="background:rgba(255,255,255,0.2);color:white;padding:3px 10px;border-radius:12px;font-size:11px;">Getting Started</span>'
@@ -49,7 +49,7 @@ st.markdown(
     "🌱 Module 2 · Borrower ESG",
     "💡 Module 3 · Decisions",
     "📋 Module 4 · Regulatory",
-    "🤖 AI Copilot",
+    "🤖 Sustainability Report Drafting Assistant",
     "📝 Data Entry Workflows",
     "❓ FAQ",
 ])
@@ -61,8 +61,8 @@ st.markdown(
 with tab_start:
     st.markdown("### Welcome to GreenCRDB")
     st.markdown(
-        "GreenCRDB is CRDB Bank's **Tanzania Climate-Finance Risk Intelligence Platform**. "
-        "It helps the Sustainable Finance Unit integrate climate risk into lending decisions, "
+        "GreenCRDB is an independent **Tanzania Climate-Finance Analytics Demonstrator**. "
+        "It shows how sustainability analytics could help teams explore climate risk into lending decisions, "
         "track green finance targets, and generate regulatory reports for Bank of Tanzania Climate Risk Guideline compliance."
     )
 
@@ -77,7 +77,7 @@ with tab_start:
             f'<li>Go to <b>app.py</b> home page (or follow the link your administrator provided)</li>'
             f'<li>Enter your <b>username</b> and <b>password</b> in the login form</li>'
             f'<li>Your role determines which modules you can access and what actions you can take</li>'
-            f'<li>If you forget your password, contact the <b>Chief Sustainability Officer</b></li>'
+            f'<li>If you forget your password, contact the <b>Sustainability Analytics Reviewer</b></li>'
             f'</ol>'
             f'<hr style="margin:10px 0;border-color:{wd.CRDB_GREEN}33;">'
             f'<b style="font-size:13px;">For demo / presentation:</b> Use the credentials in the expandable section on the login page'
@@ -85,11 +85,11 @@ with tab_start:
             unsafe_allow_html=True,
         )
 
-        st.markdown("#### Step 2 — Navigate the Platform")
+        st.markdown("#### Step 2 — Navigate the Demo")
         st.markdown(
             f'<div style="background:#f9fafb;border-left:4px solid #2563EB;'
             f'padding:14px;border-radius:0 8px 8px 0;">'
-            f'<p style="font-size:13px;margin:0;">Use the <b>sidebar on the left</b> to navigate between modules. '
+            f'<p style="font-size:13px;margin:0;">Use the <b>sidebar on the left</b> to navigate between demo pages. '
             f'Pages you cannot access will show a 🔒 <b>Access Restricted</b> screen. '
             f'Your user card at the top of the sidebar shows your name, role, and access level.</p>'
             f'</div>',
@@ -101,7 +101,7 @@ with tab_start:
             f'<div style="background:#fef3c7;border-left:4px solid #D97706;'
             f'padding:14px;border-radius:0 8px 8px 0;">'
             f'<p style="font-size:13px;margin:0;">Before using modules 1–4, ensure the data pipeline has been run. '
-            f'If you see "data not found" errors, a <b>Climate Risk Manager or CSO</b> needs to run the scripts '
+            f'If you see "data not found" errors, a <b>Climate Risk Manager or Demo Reviewer</b> needs to run the scripts '
             f'or upload CSV files via the <b>Data Upload Studio (Module 6)</b>.</p>'
             f'<p style="font-size:12px;color:#92400e;margin:6px 0 0 0;">Scripts: python3 scripts/01... → 02... → 03...</p>'
             f'</div>',
@@ -127,11 +127,11 @@ with tab_start:
         st.markdown("---")
         st.markdown("#### What Each Role Can Do")
         role_summary = {
-            "Chief Sustainability Officer (CSO)": ("Full access — all modules, data entry, reports, user management", "#7C3AED"),
-            "Climate Risk Manager": ("Full Module 1 & Regulatory. Read-only 2 & 3. Can upload data.", "#D97706"),
-            "ESG Assessment Officer": ("Full Module 2 (assigned sectors). Read-only 1, 3, 4.", "#1D9E75"),
-            "Green Finance Officer": ("Full Module 3. Read-only 1 & 2.", "#2563EB"),
-            "Compliance Officer": ("Full read all modules. Full Regulatory. Can generate reports.", "#0F766E"),
+            "Sustainability Analytics Reviewer": ("Illustrative access — all modules, data entry, reports, user management", "#7C3AED"),
+            "Climate Risk Manager": ("Full demo Module 1 & Regulatory. Read-only 2 & 3. Can upload data.", "#D97706"),
+            "ESG Assessment Officer": ("Full demo Module 2 (assigned sectors). Read-only 1, 3, 4.", "#1D9E75"),
+            "Green Finance Officer": ("Full demo Module 3. Read-only 1 & 2.", "#2563EB"),
+            "Compliance Officer": ("Full demo read all modules. Full Regulatory. Can generate reports.", "#0F766E"),
             "Data Analyst": ("Read-only Modules 1–3 only. No data entry, no AI, no export.", "#6B7280"),
         }
         for role, (desc, colour) in role_summary.items():
@@ -149,19 +149,19 @@ with tab_start:
 # TAB 2 — NAVIGATION GUIDE
 # ════════════════════════════════════════════════════════════════════════════
 with tab_nav:
-    st.markdown("### Platform Navigation Map")
+    st.markdown("### Demo Navigation Map")
     st.markdown("Every page in GreenCRDB is accessible from the **left sidebar**. Here's what each page does:")
 
     pages = [
         ("🏠", "Home (app.py)", "—", "Portfolio KPIs, green ratio tracker, climate scenario chart, PRB radar, CRDB milestones, social impact, group intelligence. Best starting point for any user.", wd.CRDB_GREEN),
         ("🏦", "0 · MultiBank Intelligence", "All roles", "CRDB Group entities (TZ, BI, CD, Insurance) · DFI facilities + regulatory ratios · GCF TACATDP pipeline · Africa league table · East Africa benchmark · Global peers · Onboard new entity.", "#7C3AED"),
-        ("📊", "1 · Sector Climate Risk Engine", "All roles", "12-sector climate risk scoring on 5 hazard dimensions. Risk tiers, financial impact scores, regional exposure, heatmaps. Climate Risk Managers can enter/update sector data.", wd.CRDB_GREEN),
-        ("🌱", "2 · Borrower ESG Scoring Engine", "All (ESG Officer = assigned sectors)", "60+ borrower ESG scores across E, S, G pillars. Classification (Green/Standard/Watch/High Risk). Sector comparisons. ESG Officers enter assessments for assigned sectors.", "#1D9E75"),
-        ("💡", "3 · Climate Finance Decision Engine", "All (GFO full, others read)", "Composite decision scores, lending decision distribution, green finance pipeline, IFC PS alignment, TCFD metrics, climate scenario credit loss. Green Finance Officers record decisions.", "#2563EB"),
-        ("📋", "4 · Regulatory Compliance & PCAF", "All (Data Analyst: no access)", "Bank of Tanzania Climate Risk Guideline compliance (13 items) · PCAF financed emissions · SASB FN-CB · PRB radar · SDG alignment · Double materiality matrix · iMBEJU social impact · TNFD readiness tracker.", "#D97706"),
-        ("🤖", "5 · AI Sustainability Copilot", "CSO, Climate RM, GFO, Compliance", "Ask questions about the portfolio in plain English. Generate 4 formal reports: TCFD Climate Report, ESG Summary, Green Finance Report, Board Brief. Requires Gemini API key.", "#7C3AED"),
-        ("📂", "6 · Data Upload Studio", "CSO, Climate RM, ESG Officer, Compliance", "Upload borrower CSV files, sector data, and portfolio snapshots. Template provided. Validates columns before saving.", "#059669"),
-        ("👥", "7 · User Management", "CSO only", "View all platform users, roles, sectors, and regions. Add or modify users (in production build).", "#D85A30"),
+        ("📊", "1 · Sector Climate Risk Analytics", "All roles", "12-sector climate risk scoring on 5 hazard dimensions. Risk tiers, financial impact scores, regional exposure, heatmaps. Climate Risk Managers can enter/update sector data.", wd.CRDB_GREEN),
+        ("🌱", "2 · Borrower ESG Scoring Demo", "All (ESG Officer = assigned sectors)", "60+ borrower ESG scores across E, S, G pillars. Classification (Green/Standard/Watch/High Risk). Sector comparisons. ESG Officers enter assessments for assigned sectors.", "#1D9E75"),
+        ("💡", "3 · Climate Finance Decision Analytics", "All (GFO full, others read)", "Composite decision scores, lending decision distribution, green finance pipeline, IFC PS alignment, TCFD metrics, climate scenario credit loss. Green Finance Officers record decisions.", "#2563EB"),
+        ("📋", "4 · Regulatory & PCAF Reporting Logic", "All (Data Analyst: no access)", "Bank of Tanzania Climate Risk Guideline compliance (13 items) · PCAF financed emissions · SASB FN-CB · PRB radar · SDG alignment · Double materiality matrix · iMBEJU social impact · TNFD readiness tracker.", "#D97706"),
+        ("🤖", "5 · Sustainability Report Drafting Assistant", "Demo Reviewer, Climate RM, GFO, Compliance", "Ask questions about the portfolio in plain English. Generate 4 formal reports: TCFD Climate Report, ESG Summary, Green Finance Report, Board Brief. Requires Gemini API key.", "#7C3AED"),
+        ("📂", "6 · Data Upload Studio", "Demo Reviewer, Climate RM, ESG Officer, Compliance", "Upload borrower CSV files, sector data, and portfolio snapshots. Template provided. Validates columns before saving.", "#059669"),
+        ("👥", "7 · User Management", "Demo Reviewer only", "View all demo users, roles, sectors, and regions. Add or modify users (in production build).", "#D85A30"),
         ("ℹ️", "8 · Why This Exists", "All roles", "Who built GreenCRDB, why CRDB was chosen, what the demonstrator shows, and what kind of conversation the author is seeking.", "#555"),
         ("📖", "9 · User Guide (this page)", "All roles", "Complete user manual. Getting started, module walkthroughs, scoring formulas, role permissions, data entry workflows, FAQ.", "#2563EB"),
     ]
@@ -197,7 +197,7 @@ with tab_roles:
     # Permission matrix
     st.markdown("#### Full Permission Matrix")
     modules = ["sector_risk", "borrower_esg", "finance_decisions", "regulatory", "ai_copilot", "data_upload"]
-    module_labels = ["Module 1\nSector Risk", "Module 2\nBorrower ESG", "Module 3\nDecisions", "Module 4\nRegulatory", "AI Copilot", "Data Upload"]
+    module_labels = ["Module 1\nSector Risk", "Module 2\nBorrower ESG", "Module 3\nDecisions", "Module 4\nRegulatory", "Sustainability Report Drafting Assistant", "Data Upload"]
 
     matrix_rows = []
     for role_key, role_cfg in ROLES.items():
@@ -253,7 +253,7 @@ with tab_roles:
         f'<li>All tables and forms in Modules 2 & 3 automatically filter to their scope</li>'
         f'<li>Example: an ESG officer role can be restricted to Agriculture/Energy/Manufacturing/Mining in Dar/Arusha/Mwanza</li>'
         f'</ul>'
-        f'The CSO can assign sectors and regions per user in the User Management page.'
+        f'The Demo Reviewer can assign sectors and regions per user in the User Management page.'
         f'</div>',
         unsafe_allow_html=True,
     )
@@ -273,10 +273,10 @@ with tab_m0:
     m0_tabs = [
         ("🏦 CRDB Group Entities", "View each entity (TZ, Burundi, Congo, Insurance) individually. Click the radio buttons to switch entities. See portfolio size, ITR, green ratio, PAT, climate framework, key risks, and green milestones. Compare all entities on portfolio size and ITR bubble chart."),
         ("💰 DFI Facilities & Ratios", "Track all USD 600M+ DFI facilities (MUFG, GCF, FMO, Proparco, GCPF, IFC). View BoT regulatory compliance margins (how far above/below minimum ratios). See the GCF TACATDP USD 200M project pipeline with 6 components. Environmental operations (EDGE, recycling, green projects)."),
-        ("🌍 Africa Sustainability Ranking", "CRDB Bank's position in the Africa Top 20 banks league table. Composite score based on TCFD (20%), PRB (15%), green ratio (25%), ITR (20%), DFI partnerships (10%), reporting quality (10%). See unique competitive advantages vs. areas to improve."),
+        ("🌍 Illustrative African Sustainable-Finance Benchmark", "Simulated/proxy peer benchmark view for discussion only. Composite score based on TCFD (20%), PRB (15%), green ratio (25%), ITR (20%), DFI partnerships (10%), reporting quality (10%). See possible strengths and areas for deeper analysis."),
         ("📊 East Africa Benchmark", "Detailed 10-bank East Africa peer comparison across ESG score, climate disclosure quality, DFI access score, green ratio, ESMS quality, BoT compliance equivalence. Includes radar chart comparing CRDB vs KCB vs Equity Bank on 6 dimensions."),
-        ("🏆 Global Peer Comparison", "Benchmarks CRDB against IFC portfolio banks and GCF-accredited institutions in emerging markets globally (Bangladesh, Ecuador, Mongolia, Georgia, Sri Lanka, etc.). Shows where CRDB leads (DFI network, Kijani Bond) and gaps (green ratio, ITR)."),
-        ("➕ Onboard New Entity", "6-step wizard to register a new bank entity (e.g. future CRDB partnerships). Collects entity info, portfolio data, climate profile, regulatory framework, users, and launches the entity on the platform."),
+        ("🏆 Global Peer Comparison", "Benchmarks CRDB against IFC portfolio banks and GCF-accredited institutions in emerging markets globally (Bangladesh, Ecuador, Mongolia, Georgia, Sri Lanka, etc.). Shows where CRDB leads (DFI network, Kijani Bond) and areas for deeper analysis (green ratio, ITR)."),
+        ("➕ Onboard New Entity", "6-step wizard to register a new bank entity (e.g. future CRDB partnerships). Collects entity info, portfolio data, climate profile, regulatory framework, users, and launches the entity on the demo."),
     ]
     for tab_name, desc in m0_tabs:
         st.markdown(
@@ -294,7 +294,7 @@ with tab_m0:
         ("Group ITR (°C)", "Implied Temperature Rise — weighted average across all entities by portfolio size. CRDB Group: 2.73°C vs Paris 1.5°C target. Lower is better."),
         ("Green Asset Ratio (%)", "Proportion of total loan book classified as green finance (GCF-eligible, Kijani Bond projects, renewable energy, climate-smart agriculture). CRDB 2024 actual: 7%. Targets: 15% by 2030 and 30% by 2050."),
         ("Group Financed Emissions", "PCAF Scope 3 Category 15 — emissions from the bank's lending activities. 1,247 ktCO₂e (simulated proxy). Dominated by Agriculture and Mining sectors."),
-        ("Africa Rank #8", "Composite sustainability score based on 6 dimensions. CRDB ranks #8 of Top 20 African banks and #3 in East Africa. CRDB leads in GCF access and DFI partnerships; trails on absolute green ratio."),
+        ("Africa Rank #8", "Composite sustainability score based on 6 dimensions. This illustrative view places CRDB #8 of Top 20 African banks and #3 in East Africa. CRDB leads in GCF access and DFI partnerships; trails on absolute green ratio."),
     ]
     for metric, explanation in explain_items:
         st.markdown(
@@ -310,7 +310,7 @@ with tab_m0:
 # TAB 5 — MODULE 1: SECTOR CLIMATE RISK ENGINE
 # ════════════════════════════════════════════════════════════════════════════
 with tab_m1:
-    st.markdown("### Module 1 — Sector Climate Risk Engine")
+    st.markdown("### Module 1 — Sector Climate Risk Analytics")
     st.markdown(
         "Module 1 is the **foundation of the entire pipeline**. It scores all 12 sectors of CRDB's portfolio "
         "on physical and transition climate risk, producing a composite risk score that feeds into Modules 2 and 3."
@@ -396,7 +396,7 @@ with tab_m1:
 # TAB 6 — MODULE 2: BORROWER ESG SCORING ENGINE
 # ════════════════════════════════════════════════════════════════════════════
 with tab_m2:
-    st.markdown("### Module 2 — Borrower ESG Scoring Engine")
+    st.markdown("### Module 2 — Borrower ESG Scoring Demo")
     st.markdown(
         "Module 2 takes each of CRDB's ~6.4M borrowers (simulated as ~60 per sector) and assigns "
         "an **E/S/G score** that is then blended with the sector climate risk score from Module 1 "
@@ -490,7 +490,7 @@ with tab_m2:
 # TAB 7 — MODULE 3: FINANCE DECISION ENGINE
 # ════════════════════════════════════════════════════════════════════════════
 with tab_m3:
-    st.markdown("### Module 3 — Climate Finance Decision Engine")
+    st.markdown("### Module 3 — Climate Finance Decision Analytics")
     st.markdown(
         "Module 3 is the **core decision-making engine**. It blends borrower ESG scores with sector climate risk "
         "to generate composite financing decisions, and tracks the green finance pipeline, TCFD metrics, "
@@ -559,7 +559,7 @@ with tab_m3:
             "<li><b>PS8</b> — Cultural Heritage</li>"
             "</ul>"
             "<p style='font-size:12px;color:#555;'>Each PS is scored 0–10. The bar chart shows alignment tier "
-            "(Full / Adequate / Partial / Insufficient) and key gaps to address.</p>",
+            "(Full / Adequate / Partial / Insufficient) and key analytical opportunities to address.</p>",
             unsafe_allow_html=True,
         )
 
@@ -584,7 +584,7 @@ with tab_m3:
 # TAB 8 — MODULE 4: REGULATORY COMPLIANCE
 # ════════════════════════════════════════════════════════════════════════════
 with tab_m4:
-    st.markdown("### Module 4 — Regulatory Compliance & PCAF Analytics")
+    st.markdown("### Module 4 — Regulatory & PCAF Reporting Logic Analytics")
     st.markdown(
         "Module 4 is the **compliance and reporting hub**. It brings together all regulatory frameworks "
         "that CRDB Bank must meet — from the mandatory Bank of Tanzania Climate Risk Guideline to voluntary "
@@ -596,10 +596,10 @@ with tab_m4:
         ("🌡️ PCAF Emissions", "Simulated Scope 3 Category 15 financed emissions by sector using IPCC AR6 Africa emission intensity proxies. PCAF data quality score 4 (highest uncertainty; economic-activity proxy baseline). Includes ITR gauge showing portfolio at 2.73°C vs Paris 1.5°C target. Sector ITR contribution breakdown."),
         ("📊 SASB FN-CB", "Five SASB FN-CB Commercial Banks disclosure topics scored 0–5: Data Security (3.8), Financial Inclusion (4.2), ESG in Credit Analysis (3.5), Business Ethics (4.6), Systematic Risk Management (3.9). Overall average 4.0/5.0."),
         ("🤝 PRB Principles", "Six PRB pillars scored 0–5 with radar chart and bar chart. CRDB above 3.0/5.0 threshold across all pillars. Recommended next step: formal PRB signatory application (already a signatory)."),
-        ("🌐 UN SDGs", "Portfolio alignment to 9 SDGs most relevant to a Tanzanian commercial bank. SDG 17 (Partnerships) and SDG 1 (No Poverty) are CRDB's strongest. SDG 15 (Life on Land) is weakest — TNFD gap."),
+        ("🌐 UN SDGs", "Portfolio alignment to 9 SDGs most relevant to a Tanzanian commercial bank. SDG 17 (Partnerships) and SDG 1 (No Poverty) are CRDB's strongest. SDG 15 (Life on Land) is weakest — TNFD next layer of analysis."),
         ("⬡ Materiality Matrix", "Double materiality scatter plot: x-axis = financial materiality (how ESG issues affect CRDB), y-axis = impact materiality (CRDB's impact on society/environment). Priority Action Zone = top-right quadrant. Agricultural Climate Risk and Physical Climate Risk are top priorities."),
         ("🤝 Social Impact & iMBEJU", "iMBEJU Community Investment Programme: TZS 7.76 Bn across 153 projects, 218,471 beneficiaries. Investment by pillar (Education, Healthcare, Livelihoods, Environment). Human capital metrics: 41% female workforce, 36% female board, 47 PWDs employed. Financial inclusion KPIs."),
-        ("🌿 TNFD Readiness", "8-requirement TNFD readiness tracker across 4 pillars (Governance, Strategy, Risk Management, Metrics & Targets). Status: 2 Compliant, 3 In Progress/Partial, 3 Planned. Gap analysis: what TCFD work transfers to TNFD vs. what is TNFD-specific. Roadmap: pilot 2025, full report 2026."),
+        ("🌿 TNFD Readiness", "8-requirement TNFD readiness tracker across 4 pillars (Governance, Strategy, Risk Management, Metrics & Targets). Status: 2 Compliant, 3 In Progress/Partial, 3 Planned. Gap analysis: what TCFD work transfers to TNFD vs. what is TNFD-specific. Roadmap: concept demonstration 2025, full report 2026."),
     ]
     for tab_name, desc in m4_tabs_guide:
         st.markdown(
@@ -619,7 +619,7 @@ with tab_m4:
         "|-----|-------|---------------|\n"
         "| Portfolio ITR | 2.73°C | +1.23°C above Paris 1.5°C — action required |\n"
         "| Financed Emissions | ~1,247 ktCO₂e | PCAF Scope 3 proxy — agriculture dominates |\n"
-        "| Green Asset Ratio | 7% | 2024 actual — 8 percentage-point gap to 15% by 2030; 30% by 2050 |\n"
+        "| Green Asset Ratio | 7% | 2024 actual — 8 percentage-point distance to 15% by 2030; 30% by 2050 |\n"
         "| Bank of Tanzania Guideline | 12/13 items | 92% compliance — 1 in progress |\n"
         "| Moody's Rating | B1 | First Tanzanian bank — Stable outlook |"
     )
@@ -629,9 +629,9 @@ with tab_m4:
 # TAB 9 — AI COPILOT
 # ════════════════════════════════════════════════════════════════════════════
 with tab_ai:
-    st.markdown("### Module 5 — AI Sustainability Copilot")
+    st.markdown("### Module 5 — Sustainability Report Drafting Assistant")
     st.markdown(
-        "The AI Copilot uses **Google Gemini** (free tier available) to answer questions about CRDB's "
+        "The Sustainability Report Drafting Assistant uses **Google Gemini** (free tier available) to answer questions about CRDB's "
         "sustainability portfolio and generate four types of formal sustainability reports."
     )
 
@@ -643,23 +643,23 @@ with tab_ai:
             f'<ol style="font-size:13px;margin:0;padding-left:18px;line-height:2.2;">'
             f'<li>Go to <b>aistudio.google.com/apikey</b> and create a free Google account</li>'
             f'<li>Click <b>"Create API Key"</b> — copy the key (starts with "AIza...")</li>'
-            f'<li>In GreenCRDB, open <b>Module 5 — AI Copilot</b></li>'
+            f'<li>In GreenCRDB, open <b>Module 5 — Sustainability Report Drafting Assistant</b></li>'
             f'<li>Paste your API key in the sidebar field labelled "Google Gemini API Key"</li>'
-            f'<li>Click "Confirm Key" — the copilot is now active</li>'
+            f'<li>Click "Confirm Key" — the drafting assistant is now active</li>'
             f'</ol>'
             f'<p style="font-size:11px;color:#065f46;margin:6px 0 0 0;">Free tier: 15 requests/minute, 1M tokens/day — more than enough for demo and regular use.</p>'
             f'</div>',
             unsafe_allow_html=True,
         )
 
-        st.markdown("#### What to Ask the Copilot")
+        st.markdown("#### What to Ask the Drafting Assistant")
         questions = [
             "What is CRDB's most climate-exposed sector and what should we do about it?",
             "Generate a 300-word summary of our TCFD compliance status",
             "Which borrowers should we prioritise for green finance restructuring?",
             "What is our portfolio ITR and how does it compare to the Paris target?",
             "Explain the Kijani Bond and how it helps us move from the 7% 2024 green asset ratio toward 15% by 2030 and 30% by 2050",
-            "What are the three biggest gaps in our IFC Performance Standards alignment?",
+            "What are the three primary analytical opportunitys in our IFC Performance Standards alignment?",
             "Summarise our Bank of Tanzania Climate Risk Guideline compliance position for the Board",
             "What climate scenario poses the highest credit loss risk to CRDB?",
         ]
@@ -677,7 +677,7 @@ with tab_ai:
         reports = [
             ("📄", "TCFD Climate Risk Report", "Structured TCFD four-pillar report (Governance, Strategy, Risk Management, Metrics & Targets). ~800 words. Cites actual CRDB portfolio data.", wd.CRDB_GREEN),
             ("🌱", "ESG Portfolio Summary", "Sector-by-sector ESG assessment narrative. Highlights top green eligible borrowers. Recommends priority sectors for ESG improvement.", "#1D9E75"),
-            ("💰", "Green Finance Opportunity Report", "Green finance pipeline analysis. Kijani Bond progress. GCF TACATDP deployment. Recommended green products per sector.", "#2563EB"),
+            ("💰", "Green Finance Opportunity Report", "Green finance pipeline analysis. Kijani Bond progress. GCF TACATDP concept use. Recommended green products per sector.", "#2563EB"),
             ("📊", "Board Climate Risk Brief", "Executive-level 1-page brief for CRDB Board. Key risks, green ratio progress, regulatory compliance status, recommended Board actions.", "#D97706"),
         ]
         for icon, name, desc, colour in reports:
@@ -716,11 +716,11 @@ with tab_workflow:
     workflows = [
         {
             "title": "🌱 Record a New Lending Decision",
-            "who": "Green Finance Officer · CSO",
+            "who": "Green Finance Officer · Demo Reviewer",
             "module": "Module 3 → ✏️ Record Lending Decision tab",
             "steps": [
-                "Navigate to Module 3 — Climate Finance Decision Engine",
-                "Click the '✏️ Record Lending Decision' tab (only visible to Green Finance Officers and CSOs)",
+                "Navigate to Module 3 — Climate Finance Decision Analytics",
+                "Click the '✏️ Record Lending Decision' tab (only visible to Green Finance Officers and Demo Reviewers)",
                 "Enter Borrower ID (e.g. BW-042) and Borrower Name",
                 "Select Sector, Region, and Loan Amount (TZS Mn)",
                 "Set the ESG Score (0–100) — use Module 2 output as reference",
@@ -734,11 +734,11 @@ with tab_workflow:
         },
         {
             "title": "📊 Update Sector Climate Risk Scores",
-            "who": "Climate Risk Manager · CSO",
+            "who": "Climate Risk Manager · Demo Reviewer",
             "module": "Module 1 → Data Entry tab",
             "steps": [
-                "Navigate to Module 1 — Sector Climate Risk Engine",
-                "Click the data entry tab (visible to Climate Risk Managers and CSOs)",
+                "Navigate to Module 1 — Sector Climate Risk Analytics",
+                "Click the data entry tab (visible to Climate Risk Managers and Demo Reviewers)",
                 "Select the sector you want to update",
                 "Adjust the 5 hazard sliders (Drought, Flood, Temperature, Transition, Water Stress)",
                 "The composite score auto-calculates in real-time",
@@ -748,7 +748,7 @@ with tab_workflow:
         },
         {
             "title": "📂 Upload Portfolio Data (CSV)",
-            "who": "Climate Risk Manager · ESG Officer · CSO · Compliance Officer",
+            "who": "Climate Risk Manager · ESG Officer · Demo Reviewer · Compliance Officer",
             "module": "Module 6 — Data Upload Studio",
             "steps": [
                 "Navigate to Module 6 — Data Upload Studio",
@@ -763,11 +763,11 @@ with tab_workflow:
         },
         {
             "title": "🤖 Generate a Sustainability Report",
-            "who": "CSO · Climate Risk Manager · Compliance Officer · Green Finance Officer",
-            "module": "Module 5 — AI Sustainability Copilot",
+            "who": "Demo Reviewer · Climate Risk Manager · Compliance Officer · Green Finance Officer",
+            "module": "Module 5 — Sustainability Report Drafting Assistant",
             "steps": [
-                "Ensure your Gemini API key is entered in the sidebar (see AI Copilot guide above)",
-                "Navigate to Module 5 — AI Sustainability Copilot",
+                "Ensure your Gemini API key is entered in the sidebar (see Sustainability Report Drafting Assistant guide above)",
+                "Navigate to Module 5 — Sustainability Report Drafting Assistant",
                 "Click the report type you want: TCFD Report / ESG Summary / Green Finance / Board Brief",
                 "The AI will use your live portfolio data to generate the report (takes ~10–20 seconds)",
                 "Review the generated report text",
@@ -777,7 +777,7 @@ with tab_workflow:
         },
         {
             "title": "🏦 Onboard a New Bank Entity",
-            "who": "CSO",
+            "who": "Demo Reviewer",
             "module": "Module 0 → ➕ Onboard New Entity tab",
             "steps": [
                 "Navigate to Module 0 — MultiBank Intelligence",
@@ -827,8 +827,8 @@ with tab_faq:
 
     faqs = [
         {
-            "q": "Why does the platform say 'data not found' or show empty dashboards?",
-            "a": "The platform pipeline scripts have not been run yet. Ask your Climate Risk Manager or CSO to run the 3 scripts in order (01 → 02 → 03) from the scripts/ directory, or upload the required CSV files via Module 6 — Data Upload Studio.",
+            "q": "Why does the demo say 'data not found' or show empty dashboards?",
+            "a": "The demo pipeline scripts have not been run yet. Ask your Climate Risk Manager or Demo Reviewer to run the 3 scripts in order (01 → 02 → 03) from the scripts/ directory, or upload the required CSV files via Module 6 — Data Upload Studio.",
             "cat": "Technical",
         },
         {
@@ -843,7 +843,7 @@ with tab_faq:
         },
         {
             "q": "What is the green asset ratio and how is it calculated?",
-            "a": "The green asset ratio = (green-eligible loans / total loan book) × 100. CRDB's 2024 actual ratio is 7% (from the 2024 Integrated Annual Report). In the platform, it is computed from the green finance pipeline output of Module 3 divided by the total sector portfolio. Target: 15% by 2030, 30% by 2050.",
+            "a": "The green asset ratio = (green-eligible loans / total loan book) × 100. CRDB's 2024 actual ratio is 7% (from the 2024 Integrated Annual Report). In the demo, it is computed from the green finance pipeline output of Module 3 divided by the total sector portfolio. Target: 15% by 2030, 30% by 2050.",
             "cat": "Green Finance",
         },
         {
@@ -852,13 +852,13 @@ with tab_faq:
             "cat": "Access Control",
         },
         {
-            "q": "How do I get a Gemini API key for the AI Copilot?",
+            "q": "How do I get a Gemini API key for the Sustainability Report Drafting Assistant?",
             "a": "Go to aistudio.google.com/apikey, sign in with a Google account, and click 'Create API Key'. It's free and gives 15 requests/minute and 1 million tokens/day — more than enough for daily use. Paste the key into the sidebar field in Module 5. The key is stored in your session only (not saved to the server).",
-            "cat": "AI Copilot",
+            "cat": "Sustainability Report Drafting Assistant",
         },
         {
-            "q": "Can I export data from the platform?",
-            "a": "Yes, if your role has export permission (CSO, Climate Risk Manager, ESG Officer, Green Finance Officer, Compliance Officer). Look for the '⬇ Download' buttons at the bottom of tables. Data Analysts cannot export.",
+            "q": "Can I export data from the demo?",
+            "a": "Yes, if your role has export permission (Demo Reviewer, Climate Risk Manager, ESG Officer, Green Finance Officer, Compliance Officer). Look for the '⬇ Download' buttons at the bottom of tables. Data Analysts cannot export.",
             "cat": "Data",
         },
         {
@@ -868,7 +868,7 @@ with tab_faq:
         },
         {
             "q": "What is PCAF data quality score 4 (highest uncertainty) — and should I be worried?",
-            "a": "PCAF Data Quality ranges from Score 1 (best — verified GHG data from borrower) to Score 5 (worst — regional average). Data quality score 4 (highest uncertainty; economic-activity proxy) is the baseline used in this demonstrator. CRDB's Sustainability Report 2024 names financed emissions as a future reporting priority, with TCFD 2024 as supporting reference. The GreenCRDB platform provides a pathway to improve to Score 2–3 over time as more borrower data is collected.",
+            "a": "PCAF Data Quality ranges from Score 1 (best — verified GHG data from borrower) to Score 5 (worst — regional average). Data quality score 4 (highest uncertainty; economic-activity proxy) is the baseline used in this demonstrator. CRDB's Sustainability Report 2024 names financed emissions as a future reporting priority, with TCFD 2024 as supporting reference. The GreenCRDB analytics demo provides a pathway to improve to Score 2–3 over time as more borrower data is collected.",
             "cat": "Regulatory",
         },
         {
@@ -877,13 +877,13 @@ with tab_faq:
             "cat": "Climate",
         },
         {
-            "q": "How does the Africa Sustainability Ranking work?",
-            "a": "It is a composite score based on 6 dimensions: TCFD disclosure (20%), PRB commitment (15%), green finance ratio (25%), ITR alignment (20%), DFI partnerships (10%), reporting quality (10%). CRDB ranks #8 of 20 African banks and #3 in East Africa (after KCB Group and Equity Bank Kenya). The rankings are for illustrative benchmarking — not based on proprietary bank data.",
+            "q": "How does the Illustrative African Sustainable-Finance Benchmark work?",
+            "a": "It is a composite score based on 6 dimensions: TCFD disclosure (20%), PRB commitment (15%), green finance ratio (25%), ITR alignment (20%), DFI partnerships (10%), reporting quality (10%). This illustrative view places CRDB #8 of 20 African banks and #3 in East Africa (after KCB Group and Equity Bank Kenya). The benchmark figures are simulated/proxy values for demonstration only — not based on proprietary bank data.",
             "cat": "Module 0",
         },
         {
             "q": "Is all the portfolio data real?",
-            "a": "No — the portfolio data (borrower names, loan sizes, sector exposures, ESG scores) is simulated and illustrative. The CRDB Bank financial figures (total assets, PAT, ROE, green ratio, Kijani Bond, etc.) ARE real and sourced from the 2024 Integrated Annual Report. Real deployment would require integration with Temenos T24 core banking.",
+            "a": "No — the portfolio data (borrower names, loan sizes, sector exposures, ESG scores) is simulated and illustrative. The CRDB Bank financial figures (total assets, PAT, ROE, green ratio, Kijani Bond, etc.) ARE real and sourced from the 2024 Integrated Annual Report. A real analytical environment would require integration with Temenos T24 core banking.",
             "cat": "Data",
         },
     ]
@@ -894,7 +894,7 @@ with tab_faq:
         "Scoring Logic": "#D97706",
         "Green Finance": "#1D9E75",
         "Access Control": "#7C3AED",
-        "AI Copilot": "#7C3AED",
+        "Sustainability Report Drafting Assistant": "#7C3AED",
         "Data": "#059669",
         "Regulatory": "#D97706",
         "Climate": "#D85A30",
@@ -914,6 +914,6 @@ with tab_faq:
 
 st.markdown("---")
 st.caption(
-    "GreenCRDB User Guide · Platform v1.0 · "
-    "For support: contact the Chief Sustainability Officer or email the Sustainable Finance Unit."
+    "GreenCRDB User Guide · Independent analytics demo · "
+    "For support: contact the Sustainability Analytics Reviewer or email the Dishon Abuya."
 )

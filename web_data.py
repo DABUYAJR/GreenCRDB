@@ -29,7 +29,7 @@ def render_crdb_finding(title: str, body: str) -> None:
 
 
 def render_gap_demonstration(gap: str, solution: list[str], enables: list[str]) -> None:
-    """Render a consistent module-level gap demonstration section."""
+    """Render a consistent module-level analytical opportunity section."""
     panel_style = (
         "background:#F8F9FA;border:1px solid #E5E7EB;"
         "padding:16px;border-radius:8px;min-height:230px;height:100%;"
@@ -37,7 +37,7 @@ def render_gap_demonstration(gap: str, solution: list[str], enables: list[str]) 
 
     st.markdown(
         f'<h3 style="color:{CRDB_GREEN};font-size:18px;margin:4px 0 12px 0;">'
-        f'How this module closes the gap</h3>',
+        f'How this module supports the analysis</h3>',
         unsafe_allow_html=True,
     )
 
@@ -45,7 +45,7 @@ def render_gap_demonstration(gap: str, solution: list[str], enables: list[str]) 
     with col_gap:
         st.markdown(
             f'<div style="{panel_style}">'
-            f'<div style="font-weight:700;color:#111827;margin-bottom:8px;">The gap in CRDB 2024</div>'
+            f'<div style="font-weight:700;color:#111827;margin-bottom:8px;">Public-report theme in CRDB 2024</div>'
             f'<p style="font-size:13px;line-height:1.55;color:#374151;margin:0;">{escape(gap)}</p>'
             f'</div>',
             unsafe_allow_html=True,
@@ -251,7 +251,7 @@ SDG_ALIGNMENT: dict[str, dict] = {
 # ── Bank of Tanzania Climate Risk Guideline Compliance Tracker ────────────────
 BOT_COMPLIANCE: list[dict] = [
     {"Pillar": "Governance", "Requirement": "Board-level climate risk oversight", "Status": "Compliant", "Evidence": "Risk & Sustainability Committee active at board level"},
-    {"Pillar": "Governance", "Requirement": "Dedicated climate risk management function", "Status": "Compliant", "Evidence": "Sustainable Finance Unit (SFU) operational"},
+    {"Pillar": "Governance", "Requirement": "Dedicated climate risk management function", "Status": "Illustrative", "Evidence": "Public-report sustainability governance themes translated into demo logic"},
     {"Pillar": "Governance", "Requirement": "Staff ESG training programme", "Status": "Compliant", "Evidence": "36 senior managers trained in 2024 (TCFD, ESMS, ESRA)"},
     {"Pillar": "Risk Management", "Requirement": "Physical climate risk identification", "Status": "Compliant", "Evidence": "Module 1 sector climate risk scoring; 5 hazard dimensions"},
     {"Pillar": "Risk Management", "Requirement": "Transition risk identification", "Status": "Compliant", "Evidence": "Transition risk scored per sector; portfolio impact modelled"},
@@ -498,13 +498,13 @@ SOCIAL_IMPACT = {
 # ── TNFD Readiness Assessment (from CRDB 2024 Annual Report + TNFD framework) ─
 TNFD_READINESS = [
     {"pillar": "Governance", "requirement": "Board oversight of nature-related risks", "status": "Compliant", "evidence": "Risk & Sustainability Committee oversees nature-linked risks alongside climate"},
-    {"pillar": "Governance", "requirement": "Management role in assessing nature risks", "status": "Compliant", "evidence": "Sustainable Finance Unit (SFU) leads TNFD scoping with ESMS integration"},
-    {"pillar": "Strategy", "requirement": "Identify nature-related dependencies and impacts", "status": "In Progress", "evidence": "Agriculture sector ESMS covers soil/water; full dependency mapping in progress (2025 pilot)"},
+    {"pillar": "Governance", "requirement": "Management role in assessing nature risks", "status": "Compliant", "evidence": "Sustainability analytics team (SFU) leads TNFD scoping with ESMS integration"},
+    {"pillar": "Strategy", "requirement": "Identify nature-related dependencies and impacts", "status": "In Progress", "evidence": "Agriculture sector ESMS covers soil/water; full dependency mapping in progress (2025 concept demonstration)"},
     {"pillar": "Strategy", "requirement": "Nature-related scenario analysis", "status": "Planned", "evidence": "Planned alongside TCFD scenarios; LEAP approach scoping commenced Q1 2025"},
     {"pillar": "Risk Management", "requirement": "Nature-related risk identification process", "status": "In Progress", "evidence": "IFC PS6 biodiversity screening active; ESMS covers water stress and land use"},
     {"pillar": "Risk Management", "requirement": "Integration into overall risk management", "status": "Partial", "evidence": "Physical climate risk includes water stress; biodiversity not yet fully integrated"},
     {"pillar": "Metrics & Targets", "requirement": "Disclose nature-related metrics", "status": "Planned", "evidence": "GRI 304 biodiversity indicators planned for 2025 Sustainability Report"},
-    {"pillar": "Metrics & Targets", "requirement": "Set nature-related targets", "status": "Planned", "evidence": "Deforestation-free agriculture policy under development; TNFD pilot 2025 → full report 2026"},
+    {"pillar": "Metrics & Targets", "requirement": "Set nature-related targets", "status": "Planned", "evidence": "Deforestation-free agriculture policy under development; TNFD concept demonstration 2025 → full report 2026"},
 ]
 
 # ── CRDB Awards & Recognition 2024 (from Annual Report) ─────────────────────
@@ -631,7 +631,7 @@ GROUP_ENTITIES: list[dict] = [
         "climate_framework": "Bank of Tanzania Climate Risk Guideline · First TCFD Report in Tanzania (2024) · ISSB S2",
         "key_risk": "Drought (Agriculture 28% of book) · Flood (coastal) · Transition risk (Mining/Energy)",
         "green_milestone": "Kijani Bond USD 65.7M (429% oversubscribed, Luxembourg-listed) · GCF USD 200M · MUFG USD 225M",
-        "platform_status": "LIVE — Full GreenCRDB Platform",
+        "platform_status": "Demo focus — detailed Tanzania analytics view",
         "platform_colour": "#1D9E75",
         "established": 1996,
     },
@@ -660,8 +660,8 @@ GROUP_ENTITIES: list[dict] = [
         "regulator": "Banque de la République du Burundi (BRB)",
         "climate_framework": "BRB Prudential Norms · CRDB Group ESMS · Temenos T24 upgrade 2025",
         "key_risk": "Flood (Lake Tanganyika basin) · Landslides · Political transition risk · Inflation",
-        "green_milestone": "Group green lending framework rollout 2025 · Mobile banking +48.6% 2024",
-        "platform_status": "Phase 2 — Module Integration Planned Q3 2025",
+        "green_milestone": "Group green lending framework concept · Mobile banking +48.6% 2024",
+        "platform_status": "Concept view — illustrative subsidiary analytics",
         "platform_colour": "#D97706",
         "established": 2012,
     },
@@ -672,7 +672,7 @@ GROUP_ENTITIES: list[dict] = [
         "country": "DR Congo",
         "selector_label": "CRDB Bank DR Congo",
         "entity_type": "banking",
-        "status": "Frontier-market subsidiary · 55% CRDB ownership · ESMS deployment in early stages",
+        "status": "Frontier-market subsidiary · 55% CRDB ownership · ESMS analysis shown as early-stage concept",
         "ownership_pct": 55,
         "currency": "CDF",
         "portfolio_tzs_bn": 185,             # Total Assets — 2024 Annual Report actual (TZS 184.6 Bn)
@@ -688,10 +688,10 @@ GROUP_ENTITIES: list[dict] = [
         "high_risk_pct": 58,
         "colour": "#D85A30",
         "regulator": "Banque Centrale du Congo (BCC)",
-        "climate_framework": "BCC Directive · CRDB Group ESMS deployment in early stages · IFC PS screening planned",
+        "climate_framework": "BCC Directive · CRDB Group ESMS analysis concept · IFC PS screening logic",
         "key_risk": "Mining and deforestation-linked transition risk · political risk · currency depreciation · site-level physical-risk data gap",
-        "green_milestone": "Frontier-market ESMS rollout planned · green portfolio KPIs simulated until public disclosure improves",
-        "platform_status": "Phase 3 — Frontier-Market ESMS Scoping",
+        "green_milestone": "Frontier-market ESMS concept · green portfolio KPIs simulated until public disclosure improves",
+        "platform_status": "Concept view — frontier-market scenario analysis",
         "platform_colour": "#9CA3AF",
         "established": 2023,
     },
@@ -721,7 +721,7 @@ GROUP_ENTITIES: list[dict] = [
         "climate_framework": "TIRA Guidelines · CRDB Group ESG · Kijani Bima Framework",
         "key_risk": "Agricultural climate claims (drought/flood) · Underwriting climate volatility · Market development",
         "green_milestone": "Weather Index Insurance launched · Cattle AI Insurance · Kijani Bima (TIRA approved)",
-        "platform_status": "Phase 2 — Insurance Intelligence Module Planned",
+        "platform_status": "Concept view — insurance analytics illustration",
         "platform_colour": "#059669",
         "established": 2023,
     },
@@ -799,7 +799,7 @@ def green_asset_ratio_current() -> float:
 
 
 def build_portfolio_context() -> str:
-    """Build a rich text summary of all portfolio data for the AI copilot."""
+    """Build a rich text summary of all portfolio data for the AI drafting assistant."""
     sr = sector_risk()
     bw = borrowers()
     cs = class_summary()
@@ -814,7 +814,7 @@ def build_portfolio_context() -> str:
     fr = FINANCIAL_RATIOS
     lines: list[str] = [
         "=== GreenCRDB PORTFOLIO DATA CONTEXT ===",
-        "Platform: GreenCRDB — Tanzania Climate-Finance Risk Intelligence Platform",
+        "Platform: GreenCRDB — Tanzania Climate-Finance Analytics Demonstrator",
         "Client: CRDB Bank Group, Tanzania (DSE listed; largest commercial bank in Tanzania; 27% market share deposits)",
         "",
         "=== CRDB BANK KEY FACTS (2024 Integrated Annual Report — ACTUAL FIGURES) ===",

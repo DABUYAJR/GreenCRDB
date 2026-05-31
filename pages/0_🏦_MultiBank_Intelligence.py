@@ -1,6 +1,6 @@
 """
 GreenCRDB — MultiBank Intelligence Module
-CRDB Group Entities · Africa Sustainability Ranking · East Africa Benchmark · Entity Onboarding
+CRDB Group Entities · Illustrative African Sustainable-Finance Benchmark · East Africa Benchmark · Entity Onboarding
 """
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ st.markdown(
     f'<div>'
     f'<h1 style="color:white;margin:0;font-size:24px;">🏦 MultiBank Intelligence</h1>'
     f'<p style="color:#a5d6a7;margin:4px 0 0 0;font-size:13px;">'
-    f'CRDB Group · DFI Facilities · Africa Sustainability Ranking · East Africa Benchmark · Entity Onboarding'
+    f'CRDB Group · DFI Facilities · Illustrative African Sustainable-Finance Benchmark · East Africa Benchmark · Entity Onboarding'
     f'</p>'
     f'</div>'
     f'<div style="display:flex;gap:8px;flex-wrap:wrap;">'
@@ -53,15 +53,15 @@ wd.render_crdb_finding(
     "CRDB Group operates three banking subsidiaries — CRDB Bank Plc (Tanzania), CRDB Bank Burundi S.A., and CRDB Bank DR Congo S.A. (incorporated 2023, 55% ownership). Subsidiary metrics are reported in narrative form, not standardised KPIs. Citation: Sustainability Report 2024, pp. 6, 117–128.",
 )
 wd.render_gap_demonstration(
-    "CRDB's 2024 Sustainability Report consolidates Group sustainability metrics but does not disclose subsidiary-level breakdowns. Climate risk, green portfolio share, and financed emissions intensity are reported only at consolidated Group level, hiding where the gap sits geographically across CRDB Tanzania, CRDB Bank Burundi, and CRDB Bank DR Congo.",
+    "CRDB's 2024 Sustainability Report consolidates Group sustainability metrics at Group level. A possible next layer of analysis is to show climate risk, green portfolio share, and financed-emissions intensity consistently across CRDB Tanzania, CRDB Bank Burundi, and CRDB Bank DR Congo.",
     [
         "Side-by-side subsidiary view: green portfolio share, climate risk exposure, and financed emissions intensity per entity.",
-        "Pan-African league table benchmarking CRDB against five other GCF-accredited African banks on the same metrics.",
+        "Illustrative peer-style benchmark comparing CRDB with five other GCF-accredited African banks on the same metrics.",
         "DFI facility tracker showing committed vs drawn amounts across GCF, AFD, IFC, KfW, and other partners.",
-        "Single consolidated view replacing fragmented internal reporting from subsidiary finance teams.",
+        "Single consolidated concept dashboard showing how subsidiary finance and sustainability data could be viewed together.",
     ],
     [
-        "Group sustainability officers can pinpoint which subsidiary drags the Group green ratio.",
+        "Reviewers can see how subsidiary-level assumptions affect the Group green ratio.",
         "DFI relationship managers see facility utilisation in one place when preparing drawdown requests.",
         "External reviewers can verify subsidiary-level disclosures against Group claims.",
     ],
@@ -74,7 +74,7 @@ c2.metric("Group ITR", f"{gc['group_itr']:.2f}°C", "vs 1.5°C target", delta_co
 c3.metric("Green Asset Ratio", f"{gc['group_green_ratio']:.0f}%", "2024 actual · 15% by 2030 · 30% by 2050")
 c4.metric("Moody's Rating", gc.get("moody_rating","B1"), "First TZ bank B1 · Stable")
 c5.metric("Group Emissions", f"{gc['group_emissions_ktco2e']:,} ktCO₂e", "PCAF Scope 3")
-c6.metric("Africa ESG Rank", "#8 / 20", "East Africa: #3")
+c6.metric("Illustrative Peer View", "Simulated", "Discussion only")
 
 st.markdown("---")
 
@@ -82,7 +82,7 @@ st.markdown("---")
 tab_group, tab_dfi, tab_africa, tab_ea, tab_global, tab_onboard = st.tabs([
     "🏦 CRDB Group Entities",
     "💰 DFI Facilities & Ratios",
-    "🌍 Africa Sustainability Ranking",
+    "🌍 Illustrative African Sustainable-Finance Benchmark",
     "📊 East Africa Benchmark",
     "🏆 Global Peer Comparison",
     "➕ Onboard New Entity",
@@ -97,7 +97,7 @@ with tab_group:
     st.markdown(
         "CRDB Bank Group operates **three banking subsidiaries** across 3 countries in Sub-Saharan Africa. "
         "Tanzania is the flagship entity (TZS 16,699 Bn total assets, 27% market share). "
-        "Burundi is the most profitable subsidiary (ROE 31.1%). DR Congo is a frontier-market subsidiary incorporated in 2023, with 55% CRDB ownership and ESMS deployment in early stages."
+        "Burundi is the most profitable subsidiary (ROE 31.1%). DR Congo is a frontier-market subsidiary incorporated in 2023, with 55% CRDB ownership and ESMS concept use in early stages."
     )
 
     # Entity selector
@@ -216,7 +216,7 @@ with tab_group:
             f'display:flex;align-items:center;padding-left:6px;">'
             f'<span style="color:white;font-size:10px;font-weight:bold;">{e["green_ratio_pct"]:.1f}%</span>'
             f'</div></div>'
-            f'<div style="width:130px;font-size:11px;color:#D85A30;">Gap: {gap:.1f}% pts to target</div>'
+            f'<div style="width:130px;font-size:11px;color:#D85A30;">Distance: {gap:.1f}% pts to target</div>'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -243,7 +243,7 @@ with tab_group:
         ("🏦", "FIRST Tanzanian Bank with Moody's B1", "Upgraded 2024 — first local currency B1 rating for any Tanzanian bank; drove USD 567M lender commitments", "#1D9E75"),
         ("🟢", "FIRST East & Central Africa Green Bond", "Kijani Bond USD 65.7M — 429% oversubscribed; 10.25% yield; listed Luxembourg Stock Exchange June 2025", "#D97706"),
         ("🏢", "FIRST EDGE Certified Building in Tanzania", "CRDB HQ — 21% energy saving, 27% water saving, 28% embodied carbon reduction vs baseline", "#2563EB"),
-        ("🤖", "FIRST AI Chatbot in East, Sub-Saharan & West Africa", "Elle Chatbot on website + WhatsApp — deployed 2024 across CRDB Bank platforms", "#7C3AED"),
+        ("🤖", "FIRST AI Chatbot in East, Sub-Saharan & West Africa", "Elle Chatbot on website + WhatsApp — deployed 2024 across CRDB Bank digital channels", "#7C3AED"),
     ]
     for i in range(0, len(milestones), 2):
         cols_m = st.columns(2)
@@ -513,14 +513,16 @@ with tab_dfi:
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# TAB 3 — AFRICA SUSTAINABILITY RANKING
+# TAB 3 — ILLUSTRATIVE AFRICAN BENCHMARK
 # ════════════════════════════════════════════════════════════════════════════
 with tab_africa:
-    st.markdown("### 🌍 Africa Bank Sustainability League Table")
+    st.markdown("### 🌍 Illustrative African Sustainable-Finance Benchmark")
     st.markdown(
-        "How CRDB Bank compares against the **Top 20 African banks** on sustainability, "
-        "green finance, climate disclosure, and ESG integration. "
-        "Rankings are based on published sustainability reports, TCFD disclosures, PRB commitments, and green finance volumes."
+        "Benchmark figures in this section are simulated/proxy values for demonstration only. "
+        "They should not be interpreted as an official ranking of CRDB Bank or its peers."
+    )
+    st.info(
+        "This illustrative view is designed to show how peer-style benchmarking could support sustainability discussion, green asset ratio monitoring, and financed-emissions analysis."
     )
 
     AFRICA_BANKS = [
@@ -554,8 +556,7 @@ with tab_africa:
         f'border:2px solid {wd.CRDB_GREEN};border-radius:10px;padding:14px 20px;margin-bottom:16px;">'
         f'<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">'
         f'<div>'
-        f'<span style="font-size:28px;font-weight:900;color:{wd.CRDB_GREEN};">#8 in Africa</span>'
-        f'<span style="font-size:14px;color:#555;margin-left:10px;">out of 20 ranked banks · Tier 2 Strong</span><br>'
+        f'<span style="font-size:22px;font-weight:900;color:{wd.CRDB_GREEN};">Simulated/proxy peer benchmark for discussion only</span><br>'
         f'<span style="font-size:13px;color:{wd.CRDB_GREEN};">🇹🇿 CRDB Bank Tanzania — Composite Sustainability Score: <b>68/100</b></span>'
         f'</div>'
         f'<div style="display:flex;gap:8px;flex-wrap:wrap;">'
@@ -622,12 +623,12 @@ with tab_africa:
         )
 
     st.markdown("---")
-    st.markdown("#### What Gives CRDB a Competitive Edge vs. Africa Peers")
+    st.markdown("#### What This Illustrative View Shows")
     col_adv1, col_adv2, col_adv3 = st.columns(3)
     with col_adv1:
         st.markdown(
             f'<div style="background:#d1fae5;border-left:4px solid {wd.CRDB_GREEN};padding:12px;border-radius:0 6px 6px 0;">'
-            f'<b>🏆 Unique Advantages</b><br>'
+            f'<b>🏆 Public-report strengths to discuss</b><br>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
             f'<li>FIRST commercial bank in E&C Africa with GCF direct access</li>'
             f'<li>Kijani Bond 429% oversubscribed — highest demand of any EA green bond</li>'
@@ -640,9 +641,9 @@ with tab_africa:
     with col_adv2:
         st.markdown(
             f'<div style="background:#fef3c7;border-left:4px solid #F59E0B;padding:12px;border-radius:0 6px 6px 0;">'
-            f'<b>⚠️ Areas to Improve</b><br>'
+            f'<b>⚠️ Areas for deeper analysis</b><br>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>Green ratio 7% — Nedbank at 28%, KCB at 12% (gap remains significant)</li>'
+            f'<li>Green ratio 7% — peer-style comparison values are simulated/proxy for discussion</li>'
             f'<li>Portfolio ITR 2.73°C — industry leaders below 2.2°C</li>'
             f'<li>Financed emissions disclosure (data quality score 4, highest uncertainty → target Score 2)</li>'
             f'<li>TNFD readiness still in scoping phase; PCAF full adoption pending</li>'
@@ -653,17 +654,17 @@ with tab_africa:
     with col_adv3:
         st.markdown(
             f'<div style="background:#EFF6FF;border-left:4px solid #2563EB;padding:12px;border-radius:0 6px 6px 0;">'
-            f'<b>🎯 2025–2027 Targets to Move Up</b><br>'
+            f'<b>🎯 Scenario-analysis areas</b><br>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>Reach #5 Africa by growing green ratio beyond the 7% 2024 baseline toward 15% by 2030 and 30% by 2050</li>'
+            f'<li>Explore green ratio scenarios from the 7% 2024 baseline toward 15% by 2030 and 30% by 2050</li>'
             f'<li>Reduce portfolio ITR to 2.3°C via sector rebalancing</li>'
             f'<li>PCAF full adoption → Score 2 data quality</li>'
-            f'<li>TNFD pilot report 2025 → full disclosure 2026</li>'
+            f'<li>TNFD concept demonstration report 2025 → full disclosure 2026</li>'
             f'</ul>'
             f'</div>',
             unsafe_allow_html=True,
         )
-    st.caption("Rankings are composite scores based on: TCFD disclosure (20%), PRB commitment (15%), green finance ratio (25%), ITR alignment (20%), DFI partnerships (10%), reporting quality (10%). All simulated/illustrative.")
+    st.caption("Benchmark scores are simulated/proxy values based on: TCFD disclosure (20%), PRB commitment (15%), green finance ratio (25%), ITR alignment (20%), DFI partnerships (10%), reporting quality (10%). Discussion only.")
 
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -694,9 +695,9 @@ with tab_ea:
         st.markdown(
             f'<div style="background:{wd.CRDB_GREEN}18;border:2px solid {wd.CRDB_GREEN};border-radius:8px;'
             f'padding:8px 14px;margin-bottom:8px;font-size:13px;">'
-            f'🇹🇿 <b>CRDB Bank ranks #3 in East Africa</b> — behind only KCB and Equity Bank Group. '
-            f'CRDB leads all East African banks on DFI Access (5.0/5) and Climate Disclosure (4.8/5). '
-            f'2024 green ratio: 7% (actual). Gap to #1: improving to 12% would challenge KCB by 2027.'
+            f'🇹🇿 <b>Simulated/proxy peer benchmark for discussion only.</b> '
+            f'This view illustrates how DFI access, climate disclosure, and green ratio metrics could be compared. '
+            f'2024 green ratio: 7% (actual). Movement toward 12% is shown only as a scenario-analysis area.'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -863,7 +864,7 @@ with tab_global:
             f'</ul>'
             f'<b>Gap to close:</b>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>Green ratio 7% vs peer leader XacBank at 22% — closing but gap remains</li>'
+            f'<li>Green ratio 7% vs simulated/proxy peer leader XacBank at 22% — area for deeper analysis</li>'
             f'<li>ITR 2.73°C vs leader XacBank at 2.20°C</li>'
             f'<li>PCAF adoption still proxy-based (data quality score 4, highest uncertainty)</li>'
             f'</ul>'
@@ -896,7 +897,7 @@ with tab_global:
 with tab_onboard:
     st.markdown("### ➕ Onboard New Bank Entity to GreenCRDB")
     st.markdown(
-        "Use this wizard to register and configure a new CRDB subsidiary or partner bank on the platform. "
+        "Use this wizard to register and configure a new CRDB subsidiary or partner bank on the demo. "
         "Once onboarded, the entity will appear in the Group Intelligence view and its data will flow into "
         "consolidated reporting."
     )
@@ -1022,7 +1023,7 @@ with tab_onboard:
 
             climate_framework = st.selectbox("Central Bank Climate Framework", [
                 "Full TCFD/ISSB S2 adoption",
-                "Central bank climate risk guidelines (pilot)",
+                "Central bank climate risk guidelines (concept demonstration)",
                 "General prudential norms only",
                 "No formal climate framework yet",
             ])
@@ -1186,7 +1187,7 @@ with tab_onboard:
             ("⚙️", "Configure Module 1", "The Climate Risk Manager should enter country-specific sector hazard scores.", "Week 1"),
             ("🌱", "ESG Baseline Assessment", "ESG officers to complete initial borrower ESG assessments for top 20 borrowers.", "Month 1"),
             ("📋", "Regulatory Compliance Scan", "Compliance officer to complete the BoT equivalent checklist for the new jurisdiction.", "Month 1"),
-            ("🤖", "AI Copilot Calibration", "Update the AI system prompt with entity-specific regulatory and market context.", "Month 2"),
+            ("🤖", "Sustainability Report Drafting Assistant Calibration", "Update the AI system prompt with entity-specific regulatory and market context.", "Month 2"),
             ("🌍", "Group Consolidation", "Entity data will auto-consolidate into Group Intelligence dashboard and GreenCRDB reports.", "Ongoing"),
         ]
         for i in range(0, len(steps_next), 2):
@@ -1215,8 +1216,8 @@ with tab_onboard:
 st.markdown("---")
 st.caption(
     "GreenCRDB MultiBank Intelligence · All non-Tanzania entity data is simulated/illustrative. "
-    "Africa and East Africa rankings are composite scores based on published sustainability reports, PRB database, GCF registry, and public disclosures. "
-    "Rankings are for illustrative/benchmarking purposes only."
+    "Africa and East Africa benchmark values are simulated/proxy scores based on public sustainability reports, PRB database, GCF registry, and public disclosures. "
+    "They are for illustrative discussion only and are not official rankings."
 )
 
 wd.render_data_methodology(
@@ -1232,7 +1233,7 @@ wd.render_data_methodology(
         "GRI 305 Emissions disclosure structure for emissions intensity",
     ],
     [
-        "Peer ranking is unweighted; banks are compared on absolute green asset ratio percentages.",
+        "Peer-style benchmark is unweighted; banks are compared on absolute green asset ratio percentages for illustration only.",
         "Subsidiary view treats each entity as a separate reporting unit consistent with IFRS 8 segment reporting principles.",
     ],
     [

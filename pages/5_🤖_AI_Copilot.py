@@ -1,4 +1,4 @@
-"""GreenCRDB AI Copilot — Sustainability Report Generator & Portfolio Q&A"""
+"""GreenCRDB Sustainability Report Drafting Assistant — Sustainability Report Generator & Portfolio Q&A"""
 from __future__ import annotations
 
 import sys
@@ -19,7 +19,7 @@ def _safe_secret(key: str, default: str = "") -> str:
         return default
 
 
-st.set_page_config(page_title="AI Copilot | GreenCRDB", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="Sustainability Report Drafting Assistant | GreenCRDB", page_icon="🤖", layout="wide")
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 require_login()
@@ -28,7 +28,7 @@ require_module_access("ai_copilot")
 
 st.markdown(
     '<div style="background:#7C3AED;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">🤖 AI Copilot — Sustainability Intelligence Assistant</h2>'
+    '<h2 style="color:white;margin:0;font-size:22px;">🤖 Sustainability Report Drafting Assistant — Sustainability Intelligence Assistant</h2>'
     '<p style="color:#e9d5ff;margin:2px 0 0 0;font-size:13px;">'
     "Ask questions about your portfolio · Generate TCFD · PRB · SASB · SDG reports · "
     "Analyse climate scenarios · IFC PS guidance · Bank of Tanzania Climate Risk Guideline compliance"
@@ -73,7 +73,7 @@ elif use_gemini:
     st.info(f"Using Google Gemini ({model_name}). Free tier active.")
 else:
     st.info(
-        "AI Copilot requires a Google Gemini API key. Configure it in Streamlit Cloud Secrets to enable Q&A and report generation."
+        "Sustainability Report Drafting Assistant requires a Google Gemini API key. Configure it in Streamlit Cloud Secrets to enable Q&A and report generation."
     )
 
 
@@ -83,8 +83,7 @@ def get_context() -> str:
     return wd.build_portfolio_context()
 
 
-SYSTEM_PROMPT = """You are TZ-CRIP Copilot, an expert AI assistant for CRDB Bank's Climate Risk and
-Sustainability Unit in Tanzania. You have deep expertise in:
+SYSTEM_PROMPT = """You are TZ-CRIP Copilot, an expert AI assistant for independent sustainability analytics demo in Tanzania. You have deep expertise in:
 - TCFD (Task Force on Climate-related Financial Disclosures) framework
 - IFC Performance Standards (PS1-PS7)
 - GRI Sustainability Reporting Standards
@@ -95,12 +94,12 @@ Sustainability Unit in Tanzania. You have deep expertise in:
 
 You have access to the complete TZ-CRIP portfolio data below. Always use specific numbers from this
 data in your answers. When generating reports, follow the relevant framework structure precisely.
-Write in professional, formal banking language suitable for a bank Managing Director.
+Write in professional, clearly labelled demo language suitable for a sustainability analytics reviewer.
 
 {context}
 
 Important: This is simulated/illustrative prototype data for an MSc Finance & Investment research project.
-Always note this when generating official-style reports.
+Always note this when generating report-style drafts.
 """
 
 
@@ -147,13 +146,13 @@ def ask_ai(prompt: str) -> str:
         return call_claude(prompt, context + "\n" + extra, claude_key)
     elif use_gemini:
         return call_gemini(prompt, context, api_key, model_name, extra)
-    return "Please enter an API key in the sidebar to use the AI Copilot."
+    return "Please enter an API key in the sidebar to use the Sustainability Report Drafting Assistant."
 
 
 # ── Report prompts ────────────────────────────────────────────────────────────
 SYSTEM_CONTEXT_EXTRA = """
 IMPORTANT CRDB BANK REAL FACTS TO REFERENCE IN REPORTS:
-- GreenCRDB is the platform name; TZ-CRIP is the internal code name
+- GreenCRDB is the demo name; TZ-CRIP is the internal code name
 - CRDB Bank is Tanzania's largest commercial bank, listed on the Dar es Salaam Stock Exchange
 - Kijani Bond: USD 65.7M raised in October 2023 (429% oversubscribed); listed on Luxembourg Stock Exchange (LuxSE)
 - GCF Accreditation: CRDB is the FIRST commercial bank in East and Central Africa with GCF direct access; up to USD 100M concessional finance
@@ -164,12 +163,12 @@ IMPORTANT CRDB BANK REAL FACTS TO REFERENCE IN REPORTS:
 - Bank of Tanzania Climate Risk Guideline: climate risk reporting is mandatory for licensed banks in Tanzania
 - CRDB published its FIRST standalone TCFD Report in 2024
 - CRDB's Sustainability Report 2024 theme: "Connect. Empower. Sustain."
-- Governance: Risk and Sustainability Committee at board level; Sustainable Finance Unit (SFU) operational
+- Governance: Risk and Sustainability Committee at board level; Public-report governance themes are reflected in the demo
 - IFC investment: IFC invested in CRDB's Kijani Bond to finance climate-resilient lending
 - Climate Agriculture Programme: USD 100M co-investment; climate-smart agriculture for 2 million Tanzanian farmers
 - Clean energy target: transition 2 million Tanzanians from firewood/charcoal to clean energy
 
-Always reference these real facts when generating reports to demonstrate credibility.
+Use these public-report facts carefully and clearly label simulated portfolio analytics.
 """
 
 REPORT_PROMPTS = {
@@ -333,11 +332,11 @@ Reference the 2024 Third Biennial Progress Report structure (UNEP FI).
 
 ## PRINCIPLE 5: GOVERNANCE & CULTURE
 - Board committee structure (Risk & Sustainability Committee)
-- Sustainable Finance Unit (SFU)
+- Sustainability analytics team (SFU)
 - Staff training programme
 
 ## PRINCIPLE 6: TRANSPARENCY & ACCOUNTABILITY
-- Reporting: Sustainability Report 2024, TCFD 2024 supporting reference, GreenCRDB platform
+- Reporting: Sustainability Report 2024, TCFD 2024 supporting reference, GreenCRDB analytics demo
 - Assurance status and next steps
 
 Write in formal UNEP FI signatory language. Include specific scores from the PRB assessment data.
@@ -431,7 +430,7 @@ Generate a formal Bank of Tanzania Climate-Related Financial Risks Compliance Re
 
 ## 2. GOVERNANCE PILLAR (Bank of Tanzania Requirement)
 - Board-level climate oversight: Risk & Sustainability Committee
-- Management-level function: Sustainable Finance Unit (SFU)
+- Management-level function: Sustainability analytics team (SFU)
 - Staff training and capacity building (36 senior managers trained 2024)
 - Compliance status: [use Bank of Tanzania compliance tracker data]
 
@@ -455,7 +454,7 @@ Generate a formal Bank of Tanzania Climate-Related Financial Risks Compliance Re
 
 ## 6. STRATEGY PILLAR
 - Green asset ratio trajectory: 7% in 2024, 15% by 2030, 30% by 2050
-- GreenCRDB platform: climate risk integration in credit process
+- GreenCRDB analytics demo: climate risk integration in credit process
 - Kijani Bond: green capital markets positioning
 
 ## 7. AREAS FOR IMPROVEMENT AND ROADMAP
@@ -541,11 +540,11 @@ with tab_chat:
 # ── TAB 2: Full Sustainability Report ─────────────────────────────────────────
 if tab_full is not None:
  with tab_full:
-    st.markdown("#### Full Sustainability Report Generator")
+    st.markdown("#### Sustainability Report Drafting Assistant")
     st.markdown(
-        "Generate a **complete professional Sustainability Report** in the style of "
+        "Generate a **structured sustainability report draft** in the style of "
         "CRDB Bank's 2024 'Connect. Empower. Sustain.' report — with all chapters, "
-        "using your actual portfolio data. The AI generates 6 chapters in sequence "
+        "using simulated portfolio data. The AI generates 6 chapters in sequence "
         "and combines them into one downloadable document."
     )
 
@@ -560,7 +559,7 @@ Include:
 - Reporting frameworks: TCFD/ISSB S2, GRI Standards, PRB, SASB FN-CB, IFC Performance Standards, Bank of Tanzania Climate Risk Guideline
 - Reporting boundary: CRDB Bank consolidated (Tanzania operations)
 - Assurance: Management-reviewed; external assurance planned for 2025
-- Note: GreenCRDB platform data (this report) uses simulated/illustrative portfolio data for prototype demonstration
+- Note: GreenCRDB demo data (this report) uses simulated/illustrative portfolio data for prototype demonstration
 
 2. BOARD CHAIRPERSON'S MESSAGE (~250 words)
 - Tanzania's climate challenge and CRDB's leadership role
@@ -570,7 +569,7 @@ Include:
 
 3. MANAGING DIRECTOR & CEO'S MESSAGE (~250 words)
 - Strategic vision for green finance
-- GreenCRDB platform as the bank's climate intelligence backbone
+- GreenCRDB analytics demo as an illustrative climate analytics workspace
 - Key 2024 achievements (Kijani Bond, GCF, MUFG, Proparco)
 - Green asset ratio pathway from 7% in 2024 to 15% by 2030 and 30% by 2050
 - Call to action for CRDB clients and partners
@@ -585,7 +584,7 @@ Write in formal, professional banking language. Use real CRDB facts from the con
 
 ## 1.1 Sustainability Governance Structure
 - Board-level: Risk and Sustainability Committee (composition, mandate, meeting frequency)
-- Management-level: Sustainable Finance Unit (SFU) — structure, reporting lines, mandate
+- Management-level: Sustainability analytics team (SFU) — structure, reporting lines, mandate
 - ESG integration across all business units
 
 ## 1.2 Climate Risk Governance (Bank of Tanzania Climate Risk Guideline Compliance)
@@ -616,8 +615,8 @@ Use real CRDB governance facts from context. Write in formal annual report langu
 # CHAPTER 2: ENVIRONMENTAL PERFORMANCE & CLIMATE ACTION
 
 ## 2.1 Climate Risk Assessment Framework
-- GreenCRDB platform description: 3-module approach
-- Module 1: Sector Climate Risk Engine — 5 hazard dimensions (drought, flood, temperature, transition, water stress)
+- GreenCRDB analytics demo description: 3-module approach
+- Module 1: Sector Climate Risk Analytics — 5 hazard dimensions (drought, flood, temperature, transition, water stress)
 - Risk tier results: which sectors are Critical/High/Medium/Low (use actual data)
 - Portfolio climate concentration index
 
@@ -761,7 +760,7 @@ A table with three columns:
 ## 2025–2027 Strategic Priorities (5 numbered priorities)
 
 ## How to Read This Report
-(Brief guide to the 4 chapters and GreenCRDB platform)
+(Brief guide to the 4 chapters and GreenCRDB analytics demo)
 
 Keep this under 600 words. Executive-level language. The MD should be able to read this in 3 minutes and understand everything.""",
         },
@@ -826,11 +825,11 @@ Keep this under 600 words. Executive-level language. The MD should be able to re
                 full_text_parts = [
                     "=" * 70,
                     "CRDB BANK TANZANIA — SUSTAINABILITY REPORT 2024–2025",
-                    "GreenCRDB Platform | Climate-Finance Risk Intelligence",
+                    "GreenCRDB Independent Analytics Demo | Climate-Finance Analytics Demonstrator",
                     "Frameworks: TCFD · ISSB S1/S2 · PRB · SASB FN-CB · IFC PS · Bank of Tanzania Climate Risk Guideline",
                     "=" * 70,
                     "",
-                    "IMPORTANT: This report is generated by the GreenCRDB prototype platform.",
+                    "IMPORTANT: This report is generated by the GreenCRDB prototype demo.",
                     "Portfolio figures are simulated/illustrative. Real CRDB facts are sourced",
                     "from published 2024 Annual Report and Sustainability Report.",
                     "",
@@ -879,7 +878,7 @@ if tab_reports is not None:
  with tab_reports:
     st.markdown("#### Generate Formal Sustainability Reports")
     st.markdown(
-        "Select a report type below. The AI will use your actual portfolio data to generate "
+        "Select a report type below. The AI will use simulated portfolio data to generate "
         "a structured, framework-aligned report you can download."
     )
 

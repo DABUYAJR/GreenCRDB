@@ -1,4 +1,4 @@
-"""Module 1 — Sector Climate Risk Engine"""
+"""Module 1 — Sector Climate Risk Analytics"""
 from __future__ import annotations
 
 import sys
@@ -25,7 +25,7 @@ access_level_banner("sector_risk")
 
 st.markdown(
     f'<div style="background:{wd.CRDB_GREEN};padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">📊 Module 1 — Sector Climate Risk Engine</h2>'
+    '<h2 style="color:white;margin:0;font-size:22px;">📊 Module 1 — Sector Climate Risk Analytics</h2>'
     '<p style="color:#c8e6c9;margin:2px 0 0 0;font-size:13px;">'
     "Weighted composite scoring across 5 climate hazards · 12 Tanzania sectors · IPCC AR6 / INFORM Risk Index"
     "</p></div>",
@@ -327,6 +327,6 @@ wd.render_data_methodology(
     ],
     [
         "Sector-level scores are demonstrator outputs derived from the weighting above applied to publicly available country-level indicators. CRDB's actual sectoral exposures are not used.",
-        "Production deployment would require CRDB's internal sector exposure data feeding into the composite.",
+        "Production concept use would require CRDB's internal sector exposure data feeding into the composite.",
     ],
 )

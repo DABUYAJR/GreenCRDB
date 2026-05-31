@@ -1,4 +1,4 @@
-"""User Management — CSO only. View team roles, portfolios, and permissions."""
+"""User Management — demo roles, portfolios, and permissions."""
 from __future__ import annotations
 
 import sys
@@ -22,7 +22,7 @@ if not can_manage_users():
         '<div style="text-align:center;padding:60px;background:#fef2f2;border-radius:12px;margin:40px auto;max-width:500px;">'
         '<div style="font-size:48px;">🔒</div>'
         '<h2 style="color:#D85A30;margin:16px 0 8px 0;">Access Restricted</h2>'
-        '<p style="color:#888;font-size:14px;">User Management is only available to the <b>Chief Sustainability Officer</b>.</p>'
+        '<p style="color:#888;font-size:14px;">User Management is only available to the <b>Sustainability Analytics Reviewer</b>.</p>'
         '</div>',
         unsafe_allow_html=True,
     )
@@ -32,12 +32,12 @@ st.markdown(
     '<div style="background:#7C3AED;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
     '<h2 style="color:white;margin:0;font-size:22px;">👥 User Management</h2>'
     '<p style="color:#e9d5ff;margin:2px 0 0 0;font-size:13px;">'
-    "View and manage platform users · Sustainable Finance Unit · GreenCRDB"
+    "View and manage demo users · Sustainability analytics team · GreenCRDB"
     "</p></div>",
     unsafe_allow_html=True,
 )
 
-st.info(f"Logged in as: **{user['name']}** · {user['title']} · Full management access")
+st.info(f"Logged in as: **{user['name']}** · {user['title']} · illustrative management access")
 
 # ── Summary KPIs ───────────────────────────────────────────────────────────────
 total_users = len(USERS)
@@ -51,7 +51,7 @@ c3.metric("Departments", len(set(u["department"] for u in USERS.values())))
 st.markdown("---")
 
 # ── User Cards ─────────────────────────────────────────────────────────────────
-st.markdown("### Platform Users")
+st.markdown("### Demo Users")
 
 for username, udata in USERS.items():
     role_cfg = ROLES.get(udata["role"], {})
@@ -89,7 +89,7 @@ for username, udata in USERS.items():
                 "borrower_esg": "Module 2: Borrower ESG",
                 "finance_decisions": "Module 3: Finance Decisions",
                 "regulatory": "Module 4: Regulatory",
-                "ai_copilot": "AI Copilot",
+                "ai_copilot": "Sustainability Report Drafting Assistant",
                 "data_upload": "Data Upload",
             }
             access_icons = {"full": "🟢", "read": "🔵", "limited": "🟡", "none": "🔴"}
@@ -103,11 +103,11 @@ st.markdown("---")
 # ── Role Permissions Matrix ────────────────────────────────────────────────────
 st.markdown("### Role Permissions Matrix")
 st.markdown(
-    "Six roles are defined in the platform; in this demonstrator a single shared account is used for access."
+    "Six roles are defined in the demo; in this demonstrator a single shared account is used for access."
 )
 
 module_keys = ["sector_risk", "borrower_esg", "finance_decisions", "regulatory", "ai_copilot", "data_upload"]
-module_names = ["Sector Risk", "Borrower ESG", "Finance Decisions", "Regulatory", "AI Copilot", "Data Upload"]
+module_names = ["Sector Risk", "Borrower ESG", "Finance Decisions", "Regulatory", "Sustainability Report Drafting Assistant", "Data Upload"]
 
 rows = []
 for role_key, role_cfg in ROLES.items():
@@ -132,4 +132,4 @@ st.markdown(
     "🟡 **Limited** — restricted feature set &nbsp;|&nbsp; "
     "🔴 **None** — page hidden / access denied"
 )
-st.caption("GreenCRDB v1.0 · User management is view-only in this prototype. Contact IT to add or modify users.")
+st.caption("GreenCRDB · User management is view-only in this analytics demo.")

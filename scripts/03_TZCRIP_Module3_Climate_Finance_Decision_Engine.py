@@ -264,7 +264,7 @@ def create_dashboard(
 
     ax_title = fig.add_axes([0, 0.955, 1, 0.045])
     ax_title.set_facecolor(CRDB_GREEN)
-    ax_title.text(0.5, 0.65, "TZ-CRIP: Tanzania Climate-Finance Risk Intelligence Platform", ha="center", va="center", fontsize=20, fontweight="bold", color="white")
+    ax_title.text(0.5, 0.65, "TZ-CRIP: Tanzania Climate-Finance Analytics Demonstrator", ha="center", va="center", fontsize=20, fontweight="bold", color="white")
     ax_title.text(
         0.5,
         0.18,

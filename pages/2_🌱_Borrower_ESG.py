@@ -1,4 +1,4 @@
-"""Module 2 — Borrower ESG Scoring Engine"""
+"""Module 2 — Borrower ESG Scoring Demo"""
 from __future__ import annotations
 
 import sys
@@ -422,11 +422,11 @@ wd.render_data_methodology(
         "PCAF Global Standard, Category 15 (data quality score 4 baseline, with roadmap to score 2-3) · SASB FN-CB · IFC Performance Standards 1-8 · GRI 305-3",
     ],
     [
-        "Environmental 40%, Social 30%, Governance 30% — weighted toward Environmental because the platform's primary purpose is climate-finance decision support. The 40/30/30 split aligns with the median weighting used by emerging market bank ESG frameworks reviewed by IFC (2023).",
+        "Environmental 40%, Social 30%, Governance 30% — weighted toward Environmental because the demo's primary purpose is climate-finance decision support. The 40/30/30 split aligns with the median weighting used by emerging market bank ESG frameworks reviewed by IFC (2023).",
         "Tier thresholds (Green Eligible ≥7.5, Standard 5.5–7.4, Watch List 4.0–5.4, High Risk <4.0) chosen so roughly the top quintile of a normally distributed portfolio qualifies as Green Eligible, consistent with EU Taxonomy alignment ratios observed at European banks (EBA Pilot Exercise 2021).",
     ],
     [
         "All 50 borrower profiles are synthetic. Sectors, sizes, and ESG inputs are illustrative.",
-        "PCAF data quality score 4 (highest uncertainty) is used because borrower-reported emissions are not available in this demonstrator. Production deployment would target scores 2–3 by collecting borrower-level emissions data.",
+        "PCAF data quality score 4 (highest uncertainty) is used because borrower-reported emissions are not available in this demonstrator. A real analytical environment would target scores 2–3 by collecting borrower-level emissions data.",
     ],
 )

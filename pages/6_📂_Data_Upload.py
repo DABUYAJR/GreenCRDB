@@ -32,7 +32,7 @@ require_module_access("data_upload")
 
 # Block upload for roles without file upload permission
 if not can_upload_files():
-    st.warning("Your role does not have permission to upload files. Contact the Chief Sustainability Officer to request access.")
+    st.warning("Your demo role does not have permission to upload files. Access levels are illustrative for demo purposes only.")
     st.stop()
 
 st.markdown(

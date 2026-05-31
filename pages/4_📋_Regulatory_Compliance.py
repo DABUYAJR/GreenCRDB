@@ -23,7 +23,7 @@ require_module_access("regulatory")
 
 st.markdown(
     '<div style="background:#D97706;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">📋 Module 4 — Regulatory Compliance & PCAF Analytics</h2>'
+    '<h2 style="color:white;margin:0;font-size:22px;">📋 Module 4 — Regulatory & PCAF Reporting Logic</h2>'
     '<p style="color:#fef3c7;margin:2px 0 0 0;font-size:13px;">'
     "Bank of Tanzania Climate Risk Guideline · PCAF Financed Emissions (Scope 3) · "
     "Portfolio Temperature Alignment · SASB FN-CB · PRB · UN SDG Mapping"
@@ -144,7 +144,7 @@ with tab_pcaf:
     st.info(
         "**Methodology:** IPCC AR6 Africa sector emission intensity proxies. "
         "PCAF Data Quality Score: **4** (economic-activity-based estimates — standard for emerging markets). "
-        "This is CRDB's acknowledged gap in the Sustainability Report 2024, with TCFD 2024 as supporting reference; this module provides a pathway to full PCAF compliance."
+        "This is a potential reporting enhancement identified from the Sustainability Report 2024, with TCFD 2024 as supporting reference; this module demonstrates a pathway to fuller PCAF-style analysis."
     )
 
     col_a, col_b = st.columns([1.4, 1])

@@ -86,7 +86,7 @@ def create_dashboard(sector_df: pd.DataFrame, regional_df: pd.DataFrame, thresho
     ax_title.text(
         0.5,
         0.65,
-        "TZ-CRIP: Tanzania Climate-Finance Risk Intelligence Platform",
+        "TZ-CRIP: Tanzania Climate-Finance Analytics Demonstrator",
         ha="center",
         va="center",
         fontsize=20,

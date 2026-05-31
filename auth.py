@@ -16,25 +16,25 @@ def _hash(pw: str) -> str:
 # ── User Database ─────────────────────────────────────────────────────────────
 # Single shared demonstrator account.
 USERS: dict[str, dict[str, Any]] = {
-    "democrdb": {
-        "name": "DemoCRDB",
-        "title": "Chief Sustainability Officer",
-        "department": "Demonstrator",
-        "role": "cso",
+    "demo": {
+        "name": "Demo Reviewer",
+        "title": "Sustainability Analytics Reviewer",
+        "department": "Independent Demonstrator",
+        "role": "demo_reviewer",
         "password_hash": hashlib.sha256(b"GreenCRDB@2025").hexdigest(),
         "sectors": "all",
         "regions": "all",
         "email": "demo@greencrdb.local",
-        "avatar": "DC",
+        "avatar": "DR",
     },
 }
 
 # ── Role Definitions & Permissions ────────────────────────────────────────────
 ROLES: dict[str, dict[str, Any]] = {
-    "cso": {
-        "label": "Chief Sustainability Officer",
+    "demo_reviewer": {
+        "label": "Sustainability Analytics Reviewer",
         "colour": "#7C3AED",
-        "badge_text": "CSO · Full Access",
+        "badge_text": "Demo · Illustrative Access",
         "module_access": {
             "sector_risk": "full",
             "borrower_esg": "full",
@@ -48,7 +48,7 @@ ROLES: dict[str, dict[str, Any]] = {
         "can_upload_files": True,
         "can_manage_users": True,
         "can_export": True,
-        "description": "Full platform access. Can enter and approve data in all modules. User management.",
+        "description": "Illustrative reviewer access for the independent analytics demo.",
     },
     "climate_risk_manager": {
         "label": "Climate Risk Manager",
@@ -149,7 +149,7 @@ ROLES: dict[str, dict[str, Any]] = {
 
 # ── Convenience helpers ────────────────────────────────────────────────────────
 DEMO_CREDENTIALS = [
-    ("DemoCRDB", "GreenCRDB@2025", "Chief Sustainability Officer", "#7C3AED"),
+    ("demo", "GreenCRDB@2025", "Demo Reviewer", "#7C3AED"),
 ]
 
 
@@ -237,7 +237,7 @@ def access_level_banner(module_key: str) -> None:
             f'<div style="background:#EFF6FF;border-left:4px solid #3B82F6;padding:10px 16px;'
             f'border-radius:0 6px 6px 0;margin-bottom:12px;font-size:13px;">'
             f'👁️ <b>Read-only access</b> — Your role (<b>{label}</b>) can view this module but cannot enter or modify data. '
-            f'Contact the Chief Sustainability Officer to request elevated access.'
+            f'Access levels are illustrative for demo purposes only.'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -288,7 +288,7 @@ def require_module_access(module_key: str) -> None:
             f'<div style="font-size:48px;">🔒</div>'
             f'<h2 style="color:#D85A30;margin:16px 0 8px 0;">Access Restricted</h2>'
             f'<p style="color:#888;font-size:14px;">Your role (<b>{role_cfg.get("label", "")}</b>) does not have permission to view this module.</p>'
-            f'<p style="color:#888;font-size:13px;">Contact your Chief Sustainability Officer to request access.</p>'
+            f'<p style="color:#888;font-size:13px;">Access levels are illustrative for demo purposes only.</p>'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -350,13 +350,17 @@ def _show_login_page() -> None:
             <div style="background:{CRDB_GREEN};padding:28px;border-radius:12px 12px 0 0;text-align:center;">
                 <h1 style="color:white;margin:0;font-size:28px;">🌍 GreenCRDB</h1>
                 <p style="color:#c8e6c9;margin:6px 0 0 0;font-size:13px;">
-                    Tanzania Climate-Finance Risk Intelligence Platform
+                    Independent Sustainability Analytics Demo
                 </p>
-                <p style="color:#a5d6a7;margin:4px 0 0 0;font-size:12px;">CRDB Bank — Sustainable Finance Unit</p>
+                <p style="color:#a5d6a7;margin:4px 0 0 0;font-size:12px;">Independent educational and career portfolio demo</p>
             </div>
             <div style="background:#f9fafb;border:1px solid #e5e7eb;border-top:none;
                 padding:28px;border-radius:0 0 12px 12px;">
-                <h3 style="margin:0 0 20px 0;color:#1a1a1a;text-align:center;">Sign In to Your Portal</h3>
+                <h3 style="margin:0 0 10px 0;color:#1a1a1a;text-align:center;">Sign in to GreenCRDB</h3>
+                <p style="color:#555;font-size:13px;line-height:1.5;text-align:center;margin:0 0 18px 0;">
+                    This is an independent educational and career portfolio demo built with simulated data and public sustainability-report insights.
+                    It is not an official CRDB Bank system and does not use confidential bank data.
+                </p>
             </div>
         </div>
         """,
@@ -366,8 +370,8 @@ def _show_login_page() -> None:
     col_l, col_form, col_r = st.columns([1, 2, 1])
     with col_form:
         with st.form("login_form", clear_on_submit=False):
-            username = st.text_input("Username", placeholder="DemoCRDB")
-            password = st.text_input("Password", type="password", placeholder="Your portal password")
+            username = st.text_input("Username", placeholder="demo")
+            password = st.text_input("Password", type="password", placeholder="Demo password")
             submitted = st.form_submit_button("Sign In →", use_container_width=True, type="primary")
 
             if submitted:
@@ -380,7 +384,7 @@ def _show_login_page() -> None:
                     st.error("Invalid username or password. Please try again.")
 
         st.markdown("---")
-        with st.expander("🔑 Demo credentials (for presentation)"):
+        with st.expander("🔑 Demo credentials"):
             for uname, pw, title, colour in DEMO_CREDENTIALS:
                 st.markdown(
                     f'<div style="display:flex;justify-content:space-between;align-items:center;'
@@ -398,7 +402,7 @@ def _show_login_page() -> None:
 
         st.markdown(
             '<p style="text-align:center;color:#aaa;font-size:11px;margin-top:12px;">'
-            'GreenCRDB v1.0 · Prototype · All data is simulated/illustrative'
+            'GreenCRDB · Independent analytics demo · All data is simulated/illustrative'
             '</p>',
             unsafe_allow_html=True,
         )

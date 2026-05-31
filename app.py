@@ -1,4 +1,4 @@
-"""GreenCRDB — Tanzania Climate-Finance Risk Intelligence Platform
+"""GreenCRDB — Tanzania Climate-Finance Analytics Demonstrator
 Independent Streamlit demonstrator using simulated portfolio data.
 """
 from __future__ import annotations
@@ -11,7 +11,7 @@ import web_data as wd
 from auth import require_login, sidebar_user_card
 
 st.set_page_config(
-    page_title="GreenCRDB | CRDB Climate Risk Platform",
+    page_title="GreenCRDB | Independent Sustainability Analytics Demo",
     page_icon="🌍",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -22,11 +22,14 @@ user = require_login()
 sidebar_user_card()
 
 st.info(
-    "Independent MSc learning project and conversation starter; portfolio data is simulated, with CRDB Group aggregate figures sourced from the 2024 Integrated Annual Report."
+    "Independent educational demo. GreenCRDB is not an official CRDB Bank system, not a commercial proposal, and does not use confidential bank data. The dashboard uses simulated portfolio data and public sustainability-report insights to demonstrate how ESG, climate finance, green portfolio tracking, financed-emissions thinking, and decision-support analytics could be structured."
 )
 
 # ── Pan-African GCF peer benchmarking hero ────────────────────────────────────
-st.markdown("### How CRDB compares across Africa")
+st.markdown("### Illustrative African Sustainable-Finance Benchmark")
+st.caption(
+    "Benchmark figures in this section are simulated/proxy values for demonstration only. They should not be interpreted as an official ranking of CRDB Bank or its peers."
+)
 peer_data = sorted(wd.AFRICA_GCF_PEERS, key=lambda row: row["green_asset_ratio_pct"], reverse=True)
 crdb_peer = next(row for row in peer_data if row["bank_name"] == "CRDB Bank")
 peer_count = len(peer_data)
@@ -83,7 +86,7 @@ fig_peers.add_vline(
 st.plotly_chart(fig_peers, use_container_width=True)
 
 k1, k2, k3 = st.columns(3)
-k1.metric("Green Asset Ratio Rank", f"{crdb_rank} of {peer_count}", f"{crdb_peer['green_asset_ratio_pct']:.1f}%")
+k1.metric("Illustrative Green Asset Ratio View", f"{crdb_peer['green_asset_ratio_pct']:.1f}%", f"{peer_count} simulated/proxy peers")
 k2.metric(
     "Financed Emissions Intensity",
     f"{crdb_peer['financed_emissions_intensity']:,.0f} tCO₂e / USDm",
@@ -96,7 +99,7 @@ k3.metric(
     "2024 proxy",
 )
 st.markdown(
-    f"**CRDB ranks {crdb_rank} of {peer_count} on green asset ratio among this illustrative GCF-accredited African peer set, making capital deployment the clearest competitive gap.**"
+    "**This illustrative view is designed to show how peer-style benchmarking could support sustainability discussion, green asset ratio monitoring, and financed-emissions analysis.**"
 )
 st.markdown(f"<p style='font-size:12px;color:#6B7280;'><em>{wd.SIMULATED_PEERS_NOTE}</em></p>", unsafe_allow_html=True)
 
@@ -110,21 +113,12 @@ st.markdown(
                     🌍 GreenCRDB
                 </h1>
                 <p style="color:#c8e6c9;margin:4px 0 0 0;font-size:13px;">
-                    Tanzania Climate-Finance Risk Intelligence Platform &nbsp;·&nbsp; CRDB Bank
+                    Tanzania Climate-Finance Analytics Demonstrator &nbsp;·&nbsp; Independent Sustainability Analytics Demo
                 </p>
             </div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <span style="background:{wd.CRDB_GOLD};color:#1a1a1a;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
-                    Bank of Tanzania Climate Risk Guideline
-                </span>
-                <span style="background:#1D9E75;color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
-                    GCF Accredited
-                </span>
-                <span style="background:#2563EB;color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
-                    Kijani Bond Issuer
-                </span>
-                <span style="background:#7C3AED;color:white;padding:4px 12px;border-radius:20px;font-size:11px;">
-                    Illustrative Prototype
+                <span style="background:#E5E7EB;color:#1f2937;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:bold;">
+                    Inspired by public sustainability reporting themes: climate risk, green finance, ESG data, PCAF-style financed emissions, and decision-support analytics.
                 </span>
             </div>
         </div>
@@ -134,14 +128,14 @@ st.markdown(
 )
 
 st.markdown("---")
-st.markdown("### Explore the platform")
+st.markdown("### Explore the analytics demo")
 n1, n2, n3, n4, n5 = st.columns(5)
 nav_items = [
-    (n1, "📊", "Module 1", "Sector Climate\nRisk Engine", wd.CRDB_GREEN),
-    (n2, "🌱", "Module 2", "Borrower ESG\nScoring Engine", "#1D9E75"),
-    (n3, "💡", "Module 3", "Climate Finance\nDecision Engine", "#2563EB"),
-    (n4, "📋", "Module 4", "Regulatory &\nPCAF Compliance", "#D97706"),
-    (n5, "🤖", "AI Copilot", "Sustainability\nReport Generator", "#7C3AED"),
+    (n1, "📊", "Module 1", "Sector Climate\nRisk Analytics", wd.CRDB_GREEN),
+    (n2, "🌱", "Module 2", "Borrower ESG\nScoring Demo", "#1D9E75"),
+    (n3, "💡", "Module 3", "Climate Finance\nDecision Analytics", "#2563EB"),
+    (n4, "📋", "Module 4", "Regulatory & PCAF\nReporting Logic", "#D97706"),
+    (n5, "🤖", "Module 5", "Sustainability Report\nDrafting Assistant", "#7C3AED"),
 ]
 for col, icon, mod, desc, colour in nav_items:
     with col:
@@ -231,9 +225,9 @@ with col_right:
     st.markdown(
         f"""
         <div style="background:{wd.CRDB_GREEN};color:white;padding:14px;border-radius:8px;text-align:center;">
-            <p style="margin:0;font-size:12px;color:#c8e6c9;">Gap to 2030 Target</p>
+            <p style="margin:0;font-size:12px;color:#c8e6c9;">Distance to Illustrative 2030 Target</p>
             <h2 style="margin:4px 0;font-size:32px;">{gar_target - gar_current:.1f}%</h2>
-            <p style="margin:0;font-size:12px;color:#c8e6c9;">percentage points to close</p>
+            <p style="margin:0;font-size:12px;color:#c8e6c9;">percentage points for scenario analysis</p>
         </div>
         """,
         unsafe_allow_html=True,
@@ -496,9 +490,9 @@ with st.expander("📋 View Group Entity Detail — Climate Risk Profiles & Regu
 st.markdown(
     f'<div style="background:#EFF6FF;border-left:4px solid #3B82F6;padding:10px 16px;'
     f'border-radius:0 6px 6px 0;font-size:12px;margin-top:8px;">'
-    f'🔵 <b>Currently active:</b> GreenCRDB platform covers <b>Tanzania operations in full detail</b>. '
-    f'Burundi integration is in Phase 2 (Q3 2025). DRC module planned Phase 3 (2026). CRDB Insurance dashboard planned Phase 2. '
-    f'Group consolidated sustainability reporting uses Tanzania data as the primary entity.'
+    f'🔵 <b>Demonstration scope:</b> GreenCRDB models Tanzania operations in the most detail using simulated data and public-report context. '
+    f'Burundi, DR Congo, and insurance views are concept-dashboard illustrations for discussion only. '
+    f'The demo does not represent an official CRDB internal system.'
     f'</div>',
     unsafe_allow_html=True,
 )

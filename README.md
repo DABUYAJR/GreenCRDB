@@ -1,59 +1,52 @@
-# GreenCRDB
+# GreenCRDB — Independent Sustainability Analytics Demonstrator
 
-A demonstrator showing how climate disclosure becomes credit-risk management at an East African bank.
+## Purpose
 
-## The thesis
+GreenCRDB is an independent career portfolio project created by Dishon Abuya after reviewing CRDB Bank's public Sustainability Report 2024. It demonstrates how sustainability-report insights can be translated into ESG analytics, climate finance tracking, green portfolio monitoring, financed-emissions thinking, and decision-support dashboards.
 
-The biggest gap in CRDB Bank's 2024 Sustainability Report — Scope 3 Category 15 financed emissions — is also the biggest unmeasured credit-risk exposure on the loan book.
+## What the demo shows
 
-Of 15 Scope 3 categories, CRDB names 8 as relevant but measures only Business Travel and Employee Commuting. The other six — including financed emissions — are CRDB's most credit-risk-relevant exposure. GreenCRDB demonstrates what closing that gap looks like operationally.
+- ESG scoring logic
+- Climate finance analytics
+- Green portfolio tracking
+- PCAF-style financed-emissions concepts
+- Sustainability reporting support
+- Decision-support dashboarding
+- AI/ML and analytics skills relevant to banking sustainability, ESG, credit risk, and climate finance teams
 
-## Six gaps, six modules
+## Important disclaimer
 
-| 2024 Sustainability Report gap | GreenCRDB module |
-| --- | --- |
-| Subsidiary sustainability metrics are reported narratively across Tanzania, Burundi and DR Congo, not as standardised KPIs. | MultiBank Intelligence |
-| Climate risks are mapped to credit, market, operational and liquidity risk, but client-level and site-level physical-risk views are not operational. | Sector Climate Risk |
-| Scope 3 Category 15 financed emissions are identified as a future priority but not measured at borrower level. | Borrower ESG -> Credit Risk Engine |
-| Kijani Bond and Samia Infrastructure Bond proceeds sit inside a wider USD 300M Medium-Term Note Programme, but project-level allocation and credit decision traceability are not public. | Finance Decisions |
-| IFRS S1, IFRS S2, TCFD, Bank of Tanzania Climate Risk Guideline, DSE ESG Guidelines and GRI reporting run in parallel without a collect-once-report-many data flow. | Regulatory Compliance |
-| CRDB's position against other GCF-accredited African banks is not visible in the public reporting package. | Pan-African GCF Peer Benchmarking |
+This project is independent. It is not affiliated with, endorsed by, commissioned by, or operated by CRDB Bank. It uses simulated data and public sustainability-report information only. No confidential bank data is used.
 
-## Live app
+## Professional positioning
 
-Live demo: [greencrdb.streamlit.app](https://greencrdb.streamlit.app)
+This demo was built to support career conversations in sustainability, ESG analytics, climate finance, credit risk, and data analytics.
 
-Demo login:
+## Demo access for reviewers
 
-```text
-Username: DemoCRDB
-Password: GreenCRDB@2025
-```
+Live app:
+https://greencrdb.streamlit.app/MultiBank_Intelligence
 
-This is a demonstrator account for review access. It is not a production authentication model.
+Username:
+demo
+
+Password:
+GreenCRDB@2025
+
+Credentials are for demonstration only and provide access only to simulated data.
 
 ## Source attribution
 
-Primary source: CRDB Bank 2024 Sustainability Report.
+Primary public source: CRDB Bank Sustainability Report 2024.
 
-Supporting sources: CRDB Bank 2024 TCFD Report and CRDB Bank 2024 Integrated Annual Report.
+Supporting public sources: CRDB Bank TCFD Report 2024 and Integrated Annual Report 2024.
 
-All page references in the app point to specific pages of these documents. The app uses the Sustainability Report as the primary citation source, with the TCFD Report and Integrated Annual Report used where they provide supporting detail.
+## Honest disclosure
 
-## About
+Every module includes a data sources, methodology, and honest disclosure panel stating what is sourced, what is simulated, and what would change in a real analytical environment.
 
-Built solo by Dishon Abuya, MSc Finance and Investment, University of Dundee.
-
-GreenCRDB is independent of CRDB Bank. It was built as a learning project and conversation starter after reading CRDB's 2024 Sustainability Report, TCFD Report and Integrated Annual Report.
-
-Researching the intersection of climate finance and credit risk in East African banking.
+Portfolio data is simulated. Borrower profiles, subsidiary KPIs where not publicly disclosed, peer-bank metrics, and decision outputs are illustrative. Public CRDB Group aggregate figures are sourced from published reports.
 
 ## Contact
 
 dishonabuyajr@gmail.com
-
-## Honest disclosure
-
-Every module includes a "Data Sources, Methodology and Honest Disclosure" panel stating what is sourced, what is simulated, and what would change in production.
-
-Portfolio data is simulated. Borrower profiles, subsidiary KPIs where not publicly disclosed, peer-bank metrics and decision outputs are illustrative. CRDB Group aggregate figures are sourced from public reports.
