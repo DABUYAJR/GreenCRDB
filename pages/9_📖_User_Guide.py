@@ -294,7 +294,7 @@ with tab_m0:
         ("Group ITR (°C)", "Implied Temperature Rise — weighted average across all entities by portfolio size. CRDB Group: 2.73°C vs Paris 1.5°C target. Lower is better."),
         ("Green Asset Ratio (%)", "Proportion of total loan book classified as green finance (GCF-eligible, Kijani Bond projects, renewable energy, climate-smart agriculture). CRDB 2024 actual: 7%. Targets: 15% by 2030 and 30% by 2050."),
         ("Group Financed Emissions", "PCAF Scope 3 Category 15 — emissions from the bank's lending activities. 1,247 ktCO₂e (simulated proxy). Dominated by Agriculture and Mining sectors."),
-        ("Africa Rank #8", "Composite sustainability score based on 6 dimensions. This illustrative view places CRDB #8 of Top 20 African banks and #3 in East Africa. CRDB leads in GCF access and DFI partnerships; trails on absolute green ratio."),
+        ("Illustrative Peer View", "Composite sustainability score based on 6 dimensions. In the simulated/proxy benchmark, Equity Bank is first and CRDB is second with a 15.2% green asset ratio proxy. Values are for demonstration only."),
     ]
     for metric, explanation in explain_items:
         st.markdown(
@@ -878,7 +878,7 @@ with tab_faq:
         },
         {
             "q": "How does the Illustrative African Sustainable-Finance Benchmark work?",
-            "a": "It is a composite score based on 6 dimensions: TCFD disclosure (20%), PRB commitment (15%), green finance ratio (25%), ITR alignment (20%), DFI partnerships (10%), reporting quality (10%). This illustrative view places CRDB #8 of 20 African banks and #3 in East Africa (after KCB Group and Equity Bank Kenya). The benchmark figures are simulated/proxy values for demonstration only — not based on proprietary bank data.",
+            "a": "It is a simulated/proxy peer view based on 6 dimensions: TCFD disclosure (20%), PRB commitment (15%), green finance ratio (25%), ITR alignment (20%), DFI partnerships (10%), reporting quality (10%). In the demonstration view, Equity Bank is first and CRDB is second with a 15.2% green asset ratio proxy. The benchmark figures are simulated/proxy values for demonstration only — not based on proprietary bank data.",
             "cat": "Module 0",
         },
         {

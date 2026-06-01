@@ -522,30 +522,16 @@ with tab_africa:
         "They should not be interpreted as an official ranking of CRDB Bank or its peers."
     )
     st.info(
-        "This illustrative view is designed to show how peer-style benchmarking could support sustainability discussion, green asset ratio monitoring, and financed-emissions analysis."
+        "This illustrative view is designed to show how peer-style benchmarking could support sustainability discussion, green asset ratio monitoring, and financed-emissions analysis. Figures are simulated/proxy values for demonstration only and should not be interpreted as official rankings or verified bank data."
     )
 
     AFRICA_BANKS = [
-        {"rank": 1,  "bank": "Nedbank",                "country": "South Africa", "flag": "🇿🇦", "esg": 87, "green_ratio": 28.0, "itr": 2.10, "tcfd": True,  "prb": True,  "gcf": False, "bond": True,  "score": 91, "highlight": False, "tier": "Tier 1 Leader"},
-        {"rank": 2,  "bank": "Standard Bank Group",    "country": "South Africa", "flag": "🇿🇦", "esg": 84, "green_ratio": 22.0, "itr": 2.20, "tcfd": True,  "prb": True,  "gcf": False, "bond": True,  "score": 87, "highlight": False, "tier": "Tier 1 Leader"},
-        {"rank": 3,  "bank": "Absa Group",             "country": "South Africa", "flag": "🇿🇦", "esg": 79, "green_ratio": 19.0, "itr": 2.30, "tcfd": True,  "prb": True,  "gcf": False, "bond": True,  "score": 82, "highlight": False, "tier": "Tier 1 Leader"},
-        {"rank": 4,  "bank": "Access Bank",            "country": "Nigeria",      "flag": "🇳🇬", "esg": 74, "green_ratio": 15.0, "itr": 2.50, "tcfd": True,  "prb": True,  "gcf": False, "bond": True,  "score": 76, "highlight": False, "tier": "Tier 1 Leader"},
-        {"rank": 5,  "bank": "KCB Group",              "country": "Kenya",        "flag": "🇰🇪", "esg": 72, "green_ratio": 12.0, "itr": 2.60, "tcfd": True,  "prb": True,  "gcf": False, "bond": True,  "score": 74, "highlight": False, "tier": "Tier 2 Strong"},
-        {"rank": 6,  "bank": "Equity Bank Group",      "country": "Kenya",        "flag": "🇰🇪", "esg": 70, "green_ratio": 10.0, "itr": 2.65, "tcfd": True,  "prb": True,  "gcf": False, "bond": False, "score": 71, "highlight": False, "tier": "Tier 2 Strong"},
-        {"rank": 7,  "bank": "FirstRand",              "country": "South Africa", "flag": "🇿🇦", "esg": 68, "green_ratio": 18.0, "itr": 2.40, "tcfd": True,  "prb": False, "gcf": False, "bond": True,  "score": 69, "highlight": False, "tier": "Tier 2 Strong"},
-        {"rank": 8,  "bank": "CRDB Bank",              "country": "Tanzania",     "flag": "🇹🇿", "esg": 65, "green_ratio":  7.0, "itr": 2.73, "tcfd": True,  "prb": True,  "gcf": True,  "bond": True,  "score": 68, "highlight": True,  "tier": "Tier 2 Strong"},
-        {"rank": 9,  "bank": "Ecobank Transnational",  "country": "Pan-Africa",   "flag": "🌍", "esg": 62, "green_ratio":  8.0, "itr": 2.80, "tcfd": True,  "prb": True,  "gcf": False, "bond": False, "score": 64, "highlight": False, "tier": "Tier 2 Strong"},
-        {"rank": 10, "bank": "Co-operative Bank",      "country": "Kenya",        "flag": "🇰🇪", "esg": 60, "green_ratio":  9.0, "itr": 2.80, "tcfd": True,  "prb": False, "gcf": False, "bond": False, "score": 61, "highlight": False, "tier": "Tier 3 Developing"},
-        {"rank": 11, "bank": "Zenith Bank",            "country": "Nigeria",      "flag": "🇳🇬", "esg": 55, "green_ratio":  5.0, "itr": 3.00, "tcfd": False, "prb": False, "gcf": False, "bond": False, "score": 55, "highlight": False, "tier": "Tier 3 Developing"},
-        {"rank": 12, "bank": "NMB Bank",               "country": "Tanzania",     "flag": "🇹🇿", "esg": 52, "green_ratio":  3.0, "itr": 2.90, "tcfd": True,  "prb": False, "gcf": False, "bond": False, "score": 52, "highlight": False, "tier": "Tier 3 Developing"},
-        {"rank": 13, "bank": "Diamond Trust Bank",     "country": "Kenya/EA",     "flag": "🇰🇪", "esg": 51, "green_ratio":  4.0, "itr": 3.10, "tcfd": False, "prb": False, "gcf": False, "bond": False, "score": 50, "highlight": False, "tier": "Tier 3 Developing"},
-        {"rank": 14, "bank": "Bank of Kigali",         "country": "Rwanda",       "flag": "🇷🇼", "esg": 49, "green_ratio":  6.0, "itr": 2.90, "tcfd": False, "prb": True,  "gcf": False, "bond": False, "score": 49, "highlight": False, "tier": "Tier 3 Developing"},
-        {"rank": 15, "bank": "Stanbic Uganda",         "country": "Uganda",       "flag": "🇺🇬", "esg": 48, "green_ratio":  5.0, "itr": 3.10, "tcfd": True,  "prb": False, "gcf": False, "bond": False, "score": 48, "highlight": False, "tier": "Tier 3 Developing"},
-        {"rank": 16, "bank": "Absa Kenya",             "country": "Kenya",        "flag": "🇰🇪", "esg": 46, "green_ratio":  7.0, "itr": 2.95, "tcfd": True,  "prb": False, "gcf": False, "bond": False, "score": 46, "highlight": False, "tier": "Tier 3 Developing"},
-        {"rank": 17, "bank": "Centenary Bank",         "country": "Uganda",       "flag": "🇺🇬", "esg": 43, "green_ratio":  2.5, "itr": 3.20, "tcfd": False, "prb": False, "gcf": False, "bond": False, "score": 43, "highlight": False, "tier": "Tier 4 Emerging"},
-        {"rank": 18, "bank": "BPR Bank Rwanda",        "country": "Rwanda",       "flag": "🇷🇼", "esg": 40, "green_ratio":  3.5, "itr": 3.10, "tcfd": False, "prb": False, "gcf": False, "bond": False, "score": 40, "highlight": False, "tier": "Tier 4 Emerging"},
-        {"rank": 19, "bank": "KSHS Commercial Bank",   "country": "Tanzania",     "flag": "🇹🇿", "esg": 35, "green_ratio":  1.0, "itr": 3.40, "tcfd": False, "prb": False, "gcf": False, "bond": False, "score": 35, "highlight": False, "tier": "Tier 4 Emerging"},
-        {"rank": 20, "bank": "First Allied Savings",   "country": "Ghana",        "flag": "🇬🇭", "esg": 30, "green_ratio":  0.8, "itr": 3.50, "tcfd": False, "prb": False, "gcf": False, "bond": False, "score": 30, "highlight": False, "tier": "Tier 4 Emerging"},
+        {"rank": 1, "bank": "Equity Bank",   "country": "Kenya",    "flag": "🇰🇪", "esg": 78, "green_ratio": 18.5, "itr": 2.35, "tcfd": True, "prb": True, "gcf": False, "bond": False, "score": 88, "highlight": False, "tier": "Simulated/proxy peer"},
+        {"rank": 2, "bank": "CRDB Bank",     "country": "Tanzania", "flag": "🇹🇿", "esg": 74, "green_ratio": 15.2, "itr": 2.55, "tcfd": True, "prb": True, "gcf": True,  "bond": True,  "score": 82, "highlight": True,  "tier": "Simulated/proxy peer"},
+        {"rank": 3, "bank": "Bank Windhoek", "country": "Namibia",  "flag": "🇳🇦", "esg": 72, "green_ratio": 14.2, "itr": 2.62, "tcfd": True, "prb": False, "gcf": True, "bond": False, "score": 78, "highlight": False, "tier": "Simulated/proxy peer"},
+        {"rank": 4, "bank": "KCB Group",     "country": "Kenya",    "flag": "🇰🇪", "esg": 70, "green_ratio": 12.8, "itr": 2.67, "tcfd": True, "prb": True, "gcf": False, "bond": True,  "score": 74, "highlight": False, "tier": "Simulated/proxy peer"},
+        {"rank": 5, "bank": "Access Bank",   "country": "Nigeria",  "flag": "🇳🇬", "esg": 68, "green_ratio": 11.5, "itr": 2.78, "tcfd": True, "prb": True, "gcf": False, "bond": True,  "score": 71, "highlight": False, "tier": "Simulated/proxy peer"},
+        {"rank": 6, "bank": "Ecobank",       "country": "Togo",     "flag": "🇹🇬", "esg": 64, "green_ratio": 9.6,  "itr": 2.86, "tcfd": True, "prb": True, "gcf": False, "bond": False, "score": 65, "highlight": False, "tier": "Simulated/proxy peer"},
     ]
     df_africa = pd.DataFrame(AFRICA_BANKS)
 
@@ -557,7 +543,7 @@ with tab_africa:
         f'<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">'
         f'<div>'
         f'<span style="font-size:22px;font-weight:900;color:{wd.CRDB_GREEN};">Simulated/proxy peer benchmark for discussion only</span><br>'
-        f'<span style="font-size:13px;color:{wd.CRDB_GREEN};">🇹🇿 CRDB Bank Tanzania — Composite Sustainability Score: <b>68/100</b></span>'
+        f'<span style="font-size:13px;color:{wd.CRDB_GREEN};">🇹🇿 CRDB Bank Tanzania — second in illustrative peer view · green asset ratio proxy: <b>15.2%</b></span>'
         f'</div>'
         f'<div style="display:flex;gap:8px;flex-wrap:wrap;">'
         f'<span style="background:{wd.CRDB_GREEN};color:white;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:bold;">✓ TCFD Published 2024</span>'
@@ -643,7 +629,7 @@ with tab_africa:
             f'<div style="background:#fef3c7;border-left:4px solid #F59E0B;padding:12px;border-radius:0 6px 6px 0;">'
             f'<b>⚠️ Areas for deeper analysis</b><br>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>Green ratio 7% — peer-style comparison values are simulated/proxy for discussion</li>'
+            f'<li>Green ratio proxy: 15.2% in this simulated peer-style view for discussion only</li>'
             f'<li>Portfolio ITR 2.73°C — industry leaders below 2.2°C</li>'
             f'<li>Financed emissions disclosure (data quality score 4, highest uncertainty → target Score 2)</li>'
             f'<li>TNFD readiness still in scoping phase; PCAF full adoption pending</li>'
@@ -677,7 +663,7 @@ with tab_ea:
     EA_BANKS = [
         {"rank": 1, "bank": "KCB Group",             "country": "Kenya",     "flag": "🇰🇪", "esg": 72, "climate_risk": 6.8, "green_ratio": 12.0, "disclosure": 4.5, "esms": 4.2, "dfi_access": 4.8, "bot_equiv": "Compliant",    "prb": True,  "score": 74, "highlight": False},
         {"rank": 2, "bank": "Equity Bank Group",      "country": "Kenya",     "flag": "🇰🇪", "esg": 70, "climate_risk": 6.5, "green_ratio": 10.0, "disclosure": 4.3, "esms": 4.0, "dfi_access": 4.5, "bot_equiv": "Compliant",    "prb": True,  "score": 71, "highlight": False},
-        {"rank": 3, "bank": "CRDB Bank",              "country": "Tanzania",  "flag": "🇹🇿", "esg": 65, "climate_risk": 7.2, "green_ratio":  7.0, "disclosure": 4.8, "esms": 4.3, "dfi_access": 5.0, "bot_equiv": "Compliant",    "prb": True,  "score": 68, "highlight": True},
+        {"rank": 3, "bank": "CRDB Bank",              "country": "Tanzania",  "flag": "🇹🇿", "esg": 65, "climate_risk": 7.2, "green_ratio": 15.2, "disclosure": 4.8, "esms": 4.3, "dfi_access": 5.0, "bot_equiv": "Compliant",    "prb": True,  "score": 68, "highlight": True},
         {"rank": 4, "bank": "Co-operative Bank",      "country": "Kenya",     "flag": "🇰🇪", "esg": 60, "climate_risk": 6.2, "green_ratio":  9.0, "disclosure": 3.8, "esms": 3.5, "dfi_access": 3.2, "bot_equiv": "Partial",      "prb": False, "score": 61, "highlight": False},
         {"rank": 5, "bank": "NMB Bank",               "country": "Tanzania",  "flag": "🇹🇿", "esg": 52, "climate_risk": 6.8, "green_ratio":  3.0, "disclosure": 3.5, "esms": 3.2, "dfi_access": 2.8, "bot_equiv": "Partial",      "prb": False, "score": 52, "highlight": False},
         {"rank": 6, "bank": "Diamond Trust Bank",     "country": "Kenya/EA",  "flag": "🇰🇪", "esg": 51, "climate_risk": 6.1, "green_ratio":  4.0, "disclosure": 3.2, "esms": 3.0, "dfi_access": 2.5, "bot_equiv": "Developing",   "prb": False, "score": 50, "highlight": False},
@@ -697,7 +683,7 @@ with tab_ea:
             f'padding:8px 14px;margin-bottom:8px;font-size:13px;">'
             f'🇹🇿 <b>Simulated/proxy peer benchmark for discussion only.</b> '
             f'This view illustrates how DFI access, climate disclosure, and green ratio metrics could be compared. '
-            f'2024 green ratio: 7% (actual). Movement toward 12% is shown only as a scenario-analysis area.'
+            f'Illustrative CRDB green ratio proxy: 15.2%. Movement between simulated peer values is shown only as a scenario-analysis area.'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -737,7 +723,7 @@ with tab_ea:
         st.markdown("#### CRDB vs Peer Radar — 6 Dimensions")
         # Radar: CRDB vs KCB (top East Africa)
         dims = ["ESG Score", "Climate Disclosure", "DFI Access", "Green Ratio", "ESMS Quality", "Sector Risk Mgmt"]
-        crdb_vals = [6.5, 4.8, 5.0, 7.0/15.0*5.0, 4.3, 4.2]  # green ratio normalised against 15% 2030 target
+        crdb_vals = [6.5, 4.8, 5.0, 15.2/18.5*5.0, 4.3, 4.2]  # green ratio normalised against illustrative peer leader
         kcb_vals  = [7.2, 4.5, 4.8, 4.0,   4.2, 4.5]
         equity_vals=[7.0, 4.3, 4.5, 3.3,   4.0, 4.3]
 
@@ -819,7 +805,7 @@ with tab_global:
         {"bank": "Banco Pichincha", "country": "Ecuador", "flag": "🇪🇨", "esg": 74, "green_ratio": 14.0, "itr": 2.45, "gcf": True,  "score": 74, "category": "DFI Client Leader"},
         {"bank": "Access Bank Nigeria", "country": "Nigeria", "flag": "🇳🇬", "esg": 74, "green_ratio": 15.0, "itr": 2.50, "gcf": False, "score": 76, "category": "DFI Client Leader"},
         {"bank": "XacBank", "country": "Mongolia", "flag": "🇲🇳", "esg": 72, "green_ratio": 22.0, "itr": 2.20, "gcf": True,  "score": 73, "category": "DFI Client Leader"},
-        {"bank": "CRDB Bank", "country": "Tanzania", "flag": "🇹🇿", "esg": 65, "green_ratio":  7.0, "itr": 2.73, "gcf": True,  "score": 68, "category": "DFI Client Strong", "highlight": True},
+        {"bank": "CRDB Bank", "country": "Tanzania", "flag": "🇹🇿", "esg": 65, "green_ratio": 15.2, "itr": 2.73, "gcf": True,  "score": 68, "category": "DFI Client Strong", "highlight": True},
         {"bank": "Bank of Georgia", "country": "Georgia", "flag": "🇬🇪", "esg": 63, "green_ratio": 11.0, "itr": 2.55, "gcf": False, "score": 64, "category": "DFI Client Strong"},
         {"bank": "TBC Bank", "country": "Georgia", "flag": "🇬🇪", "esg": 62, "green_ratio":  9.5, "itr": 2.60, "gcf": False, "score": 62, "category": "DFI Client Strong"},
         {"bank": "Hatton National Bank", "country": "Sri Lanka", "flag": "🇱🇰", "esg": 60, "green_ratio":  8.0, "itr": 2.70, "gcf": True,  "score": 61, "category": "DFI Client Strong"},
@@ -862,9 +848,9 @@ with tab_global:
             f'<li>TCFD published report (2024) — ahead of most Sub-Saharan peers</li>'
             f'<li>IFC, MUFG, Proparco, GCF partnership — strongest DFI network in the peer group</li>'
             f'</ul>'
-            f'<b>Gap to close:</b>'
+            f'<b>Scenario-analysis areas:</b>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>Green ratio 7% vs simulated/proxy peer leader XacBank at 22% — area for deeper analysis</li>'
+            f'<li>Green ratio proxy 15.2% vs simulated/proxy peer leader XacBank at 22% — area for deeper analysis</li>'
             f'<li>ITR 2.73°C vs leader XacBank at 2.20°C</li>'
             f'<li>PCAF adoption still proxy-based (data quality score 4, highest uncertainty)</li>'
             f'</ul>'

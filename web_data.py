@@ -291,7 +291,7 @@ AFRICA_GCF_PEERS: list[dict] = [
     {
         "bank_name": "CRDB Bank",
         "country": "Tanzania",
-        "green_asset_ratio_pct": 7.0,
+        "green_asset_ratio_pct": 15.2,
         "financed_emissions_intensity": 3240,
         "gcf_facility_utilisation_pct": 17.0,
     },
@@ -305,7 +305,7 @@ AFRICA_GCF_PEERS: list[dict] = [
     {
         "bank_name": "Equity Bank",
         "country": "Kenya",
-        "green_asset_ratio_pct": 14.2,
+        "green_asset_ratio_pct": 18.5,
         "financed_emissions_intensity": 2100,
         "gcf_facility_utilisation_pct": 55.0,
     },
@@ -319,7 +319,7 @@ AFRICA_GCF_PEERS: list[dict] = [
     {
         "bank_name": "Bank Windhoek",
         "country": "Namibia",
-        "green_asset_ratio_pct": 18.5,
+        "green_asset_ratio_pct": 14.2,
         "financed_emissions_intensity": 1650,
         "gcf_facility_utilisation_pct": 61.0,
     },

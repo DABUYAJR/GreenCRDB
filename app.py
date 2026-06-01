@@ -86,7 +86,7 @@ fig_peers.add_vline(
 st.plotly_chart(fig_peers, use_container_width=True)
 
 k1, k2, k3 = st.columns(3)
-k1.metric("Illustrative Green Asset Ratio View", f"{crdb_peer['green_asset_ratio_pct']:.1f}%", f"{peer_count} simulated/proxy peers")
+k1.metric("Illustrative Green Asset Ratio View", f"{crdb_peer['green_asset_ratio_pct']:.1f}%", "2nd of 6 simulated/proxy peers")
 k2.metric(
     "Financed Emissions Intensity",
     f"{crdb_peer['financed_emissions_intensity']:,.0f} tCO₂e / USDm",
@@ -99,7 +99,7 @@ k3.metric(
     "2024 proxy",
 )
 st.markdown(
-    "**This illustrative view is designed to show how peer-style benchmarking could support sustainability discussion, green asset ratio monitoring, and financed-emissions analysis.**"
+    "**This illustrative view is designed to show how peer-style benchmarking could support sustainability discussion, green asset ratio monitoring, and financed-emissions analysis. Figures are simulated/proxy values for demonstration only and should not be interpreted as official rankings or verified bank data.**"
 )
 st.markdown(f"<p style='font-size:12px;color:#6B7280;'><em>{wd.SIMULATED_PEERS_NOTE}</em></p>", unsafe_allow_html=True)
 
