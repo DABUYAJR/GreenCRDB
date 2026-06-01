@@ -325,7 +325,7 @@ with tab_prb:
     st.markdown(
         "The PRB framework (350+ signatory banks, ~50% of global banking assets) requires banks to "
         "align their strategy with the Paris Agreement and UN SDGs, set SMART targets, and report annually. "
-        "CRDB Bank is positioned to become a PRB signatory — this assessment models the current readiness."
+        "This demo models PRB-style readiness using public-report themes and simulated portfolio analytics."
     )
 
     col_prb1, col_prb2 = st.columns([1, 1])

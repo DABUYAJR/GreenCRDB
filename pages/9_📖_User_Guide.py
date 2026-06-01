@@ -587,7 +587,7 @@ with tab_m4:
     st.markdown("### Module 4 — Regulatory & PCAF Reporting Logic Analytics")
     st.markdown(
         "Module 4 is the **compliance and reporting hub**. It brings together all regulatory frameworks "
-        "that CRDB Bank must meet — from the mandatory Bank of Tanzania Climate Risk Guideline to voluntary "
+        "referenced in this demo — from the Bank of Tanzania Climate Risk Guideline to voluntary "
         "frameworks like PRB, SASB, and TNFD — plus social impact and nature-related disclosure readiness."
     )
 

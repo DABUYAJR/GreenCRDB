@@ -243,7 +243,7 @@ with tab_group:
         ("🏦", "FIRST Tanzanian Bank with Moody's B1", "Upgraded 2024 — first local currency B1 rating for any Tanzanian bank; drove USD 567M lender commitments", "#1D9E75"),
         ("🟢", "FIRST East & Central Africa Green Bond", "Kijani Bond USD 65.7M — 429% oversubscribed; 10.25% yield; listed Luxembourg Stock Exchange June 2025", "#D97706"),
         ("🏢", "FIRST EDGE Certified Building in Tanzania", "CRDB HQ — 21% energy saving, 27% water saving, 28% embodied carbon reduction vs baseline", "#2563EB"),
-        ("🤖", "FIRST AI Chatbot in East, Sub-Saharan & West Africa", "Elle Chatbot on website + WhatsApp — deployed 2024 across CRDB Bank digital channels", "#7C3AED"),
+        ("🤖", "AI chatbot reference", "Elle Chatbot on website + WhatsApp — public digital-channel example from 2024 reporting", "#7C3AED"),
     ]
     for i in range(0, len(milestones), 2):
         cols_m = st.columns(2)

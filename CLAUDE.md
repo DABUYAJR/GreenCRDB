@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-TZ-CRIP (Tanzania Climate-Finance Analytics Demonstrator) is a three-module prototype built for a CRDB Bank engagement. It was developed as an MSc Finance & Investment academic prototype. All portfolio values and climate risk scores are **simulated/illustrative**.
+TZ-CRIP (Tanzania Climate-Finance Analytics Demonstrator) is a three-module independent analytics demo built as an MSc Finance & Investment academic prototype. All portfolio values and climate risk scores are **simulated/illustrative**.
 
 ## Running the pipeline
 
