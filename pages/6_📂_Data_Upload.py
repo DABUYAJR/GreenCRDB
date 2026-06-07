@@ -1,4 +1,4 @@
-"""GreenCRDB Data Upload Studio — Excel, CSV, and PDF ingestion with AI review."""
+"""GreenCRDB Data Upload — Excel, CSV, and PDF ingestion with review."""
 from __future__ import annotations
 
 import io
@@ -23,7 +23,8 @@ def _safe_secret(key: str, default: str = "") -> str:
         return default
 
 
-st.set_page_config(page_title="Data Upload | GreenCRDB", page_icon="📂", layout="wide")
+st.set_page_config(page_title="Data Upload | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 require_login()
@@ -36,18 +37,17 @@ if not can_upload_files():
     st.stop()
 
 st.markdown(
-    f'<div style="background:#0F766E;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">📂 Data Upload Studio</h2>'
-    '<p style="color:#ccfbf1;margin:2px 0 0 0;font-size:13px;">'
-    "Upload your own Excel · CSV · PDF files → automatic validation, transformation, "
-    "visualization, and AI-powered data review"
-    "</p></div>",
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Data upload</div>'
+    '<h1 class="greencrdb-title">Data Upload</h1>'
+    '<p class="greencrdb-subtitle">Load sample data for analysis. Demo data remains simulated.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 
 # ── Sidebar controls ──────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### 📂 Upload Settings")
+    st.markdown("### Upload settings")
     upload_mode = st.selectbox(
         "What are you uploading?",
         [
@@ -335,7 +335,7 @@ if not uploaded:
     st.markdown(
         f"""
         <div style="border:2px dashed #ccc;border-radius:12px;padding:40px;text-align:center;background:#fafafa;">
-            <h3 style="color:#888;margin:0;">📂 Upload Your Data</h3>
+            <h3 style="color:#888;margin:0;">Upload your data</h3>
             <p style="color:#aaa;margin:10px 0 0 0;">
                 Drop any Excel, CSV, or PDF file here.<br>
                 Download a template from the sidebar if you need the right column format.
@@ -351,7 +351,7 @@ if not uploaded:
         ("1️⃣", "Download Template", "Get the Excel template for your data type from the sidebar"),
         ("2️⃣", "Fill in Your Data", "Enter your borrower portfolio, sector risk scores, or ESG data"),
         ("3️⃣", "Upload the File", "Drop the file above — Excel, CSV, or PDF all accepted"),
-        ("4️⃣", "Review & Analyse", "Instant validation, charts, ESG scoring, and AI-powered review"),
+        ("4", "Review and analyse", "Validation, charts, ESG scoring and assisted review"),
     ]
     for col, (num, title, desc) in zip([step1, step2, step3, step4], steps):
         with col:
@@ -391,7 +391,7 @@ if upload_mode == "Auto-Detect":
 
 # ── Tabs for the uploaded data ────────────────────────────────────────────────
 tab_preview, tab_validate, tab_transform, tab_visual, tab_ai = st.tabs([
-    "👁 Preview", "✅ Validate", "⚙ Transform & Score", "📊 Visualize", "🤖 AI Review",
+    "Preview", "Validate", "Transform and score", "Charts", "Assisted review",
 ])
 
 # ── TAB 1: Preview ────────────────────────────────────────────────────────────
@@ -506,7 +506,7 @@ with tab_transform:
         st.success("ESG classification complete!")
 
     else:
-        st.info("Custom data mode: no automated transformation applied. Use the AI Review tab for analysis.")
+        st.info("Custom data mode: no automated transformation applied. Use the assisted review tab for analysis.")
 
     st.markdown("#### Transformed Data Preview")
     st.dataframe(transformed, use_container_width=True, hide_index=True)
@@ -611,9 +611,9 @@ with tab_visual:
         if numeric_cols:
             st.dataframe(viz_df[numeric_cols].describe().round(2), use_container_width=True)
 
-# ── TAB 5: AI Review ──────────────────────────────────────────────────────────
+# ── TAB 5: Assisted review ────────────────────────────────────────────────────
 with tab_ai:
-    st.markdown("#### AI-Powered Data Review")
+    st.markdown("#### Assisted Data Review")
 
     with st.sidebar:
         _secret_key = _safe_secret("GEMINI_API_KEY", "")
@@ -625,7 +625,7 @@ with tab_ai:
     use_ai = bool(ai_api_key or ai_claude_key)
 
     if not use_ai:
-        st.warning("Enter a Gemini API key in the sidebar to enable AI-powered data review.")
+        st.warning("Enter a Gemini API key in the sidebar to enable assisted data review.")
     else:
         viz_df2 = st.session_state.get("uploaded_transformed", raw_df)
         mode2 = st.session_state.get("uploaded_mode", effective_mode)

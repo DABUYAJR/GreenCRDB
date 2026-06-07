@@ -11,28 +11,19 @@ import pandas as pd
 import web_data as wd
 from auth import require_login, sidebar_user_card, ROLES, DEMO_CREDENTIALS, USERS
 
-st.set_page_config(page_title="User Guide | GreenCRDB", page_icon="📖", layout="wide")
+st.set_page_config(page_title="User Guide | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 require_login()
 sidebar_user_card()
 
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown(
-    f'<div style="background:linear-gradient(135deg,#1e3a5f 0%,#2563EB 60%,#1D9E75 100%);'
-    f'padding:28px 36px;border-radius:12px;margin-bottom:20px;">'
-    f'<h1 style="color:white;margin:0;font-size:28px;">📖 GreenCRDB User Guide</h1>'
-    f'<p style="color:#bfdbfe;margin:6px 0 0 0;font-size:14px;">'
-    f'Complete guide to every module, feature, workflow, and scoring logic in the demo'
-    f'</p>'
-    f'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">'
-    f'<span style="background:rgba(255,255,255,0.2);color:white;padding:3px 10px;border-radius:12px;font-size:11px;">Getting Started</span>'
-    f'<span style="background:rgba(255,255,255,0.2);color:white;padding:3px 10px;border-radius:12px;font-size:11px;">Module Walkthroughs</span>'
-    f'<span style="background:rgba(255,255,255,0.2);color:white;padding:3px 10px;border-radius:12px;font-size:11px;">Scoring Logic</span>'
-    f'<span style="background:rgba(255,255,255,0.2);color:white;padding:3px 10px;border-radius:12px;font-size:11px;">Role Permissions</span>'
-    f'<span style="background:rgba(255,255,255,0.2);color:white;padding:3px 10px;border-radius:12px;font-size:11px;">Data Entry Workflows</span>'
-    f'<span style="background:rgba(255,255,255,0.2);color:white;padding:3px 10px;border-radius:12px;font-size:11px;">FAQ</span>'
-    f'</div>'
-    f'</div>',
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">User guide</div>'
+    '<h1 class="greencrdb-title">User Guide</h1>'
+    '<p class="greencrdb-subtitle">Quick guide for reviewing the dashboard.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 
@@ -41,17 +32,17 @@ st.markdown(
     tab_m0, tab_m1, tab_m2, tab_m3, tab_m4,
     tab_ai, tab_workflow, tab_faq,
 ) = st.tabs([
-    "🚀 Getting Started",
-    "🗺️ Navigation",
-    "🔑 Roles & Permissions",
-    "🏦 Module 0 · MultiBank",
-    "📊 Module 1 · Sector Risk",
-    "🌱 Module 2 · Borrower ESG",
-    "💡 Module 3 · Decisions",
-    "📋 Module 4 · Regulatory",
-    "🤖 Sustainability Report Drafting Assistant",
-    "📝 Data Entry Workflows",
-    "❓ FAQ",
+    "Getting started",
+    "Navigation",
+    "Roles and permissions",
+    "Benchmark view",
+    "Sector risk",
+    "Borrower ESG",
+    "Finance decisions",
+    "Reporting logic",
+    "Drafting assistant",
+    "Data workflows",
+    "FAQ",
 ])
 
 

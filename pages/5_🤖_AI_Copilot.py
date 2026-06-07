@@ -19,7 +19,8 @@ def _safe_secret(key: str, default: str = "") -> str:
         return default
 
 
-st.set_page_config(page_title="Sustainability Report Drafting Assistant | GreenCRDB", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="Drafting Assistant | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 require_login()
@@ -27,18 +28,17 @@ sidebar_user_card()
 require_module_access("ai_copilot")
 
 st.markdown(
-    '<div style="background:#7C3AED;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">🤖 Sustainability Report Drafting Assistant — Sustainability Intelligence Assistant</h2>'
-    '<p style="color:#e9d5ff;margin:2px 0 0 0;font-size:13px;">'
-    "Ask questions about your portfolio · Generate TCFD · PRB · SASB · SDG reports · "
-    "Analyse climate scenarios · IFC PS guidance · Bank of Tanzania Climate Risk Guideline compliance"
-    "</p></div>",
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Drafting assistant</div>'
+    '<h1 class="greencrdb-title">Drafting Assistant</h1>'
+    '<p class="greencrdb-subtitle">Generate draft language for review. Outputs should always be checked before use.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 
 # ── Sidebar: API Key setup ─────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### 🔑 API Key Setup")
+    st.markdown("### API key setup")
     st.markdown(
         "**Get your FREE Gemini API key:**\n"
         "1. Go to [aistudio.google.com](https://aistudio.google.com/apikey)\n"

@@ -6,7 +6,13 @@ from typing import Any
 
 import streamlit as st
 
-CRDB_GREEN = "#006B3C"
+CRDB_GREEN = "#1FAE3D"
+CRDB_DEEP_GREEN = "#005B2E"
+CRDB_NAVY = "#0B2E3D"
+CRDB_LIGHT = "#EAF7EE"
+CRDB_BORDER = "#D9E2DD"
+BODY_TEXT = "#334155"
+MUTED_TEXT = "#64748B"
 
 
 def _hash(pw: str) -> str:
@@ -33,8 +39,8 @@ USERS: dict[str, dict[str, Any]] = {
 ROLES: dict[str, dict[str, Any]] = {
     "demo_reviewer": {
         "label": "Sustainability Analytics Reviewer",
-        "colour": "#7C3AED",
-        "badge_text": "Demo · Illustrative Access",
+        "colour": CRDB_GREEN,
+        "badge_text": "Demo access",
         "module_access": {
             "sector_risk": "full",
             "borrower_esg": "full",
@@ -149,7 +155,7 @@ ROLES: dict[str, dict[str, Any]] = {
 
 # ── Convenience helpers ────────────────────────────────────────────────────────
 DEMO_CREDENTIALS = [
-    ("demo", "GreenCRDB@2025", "Demo Reviewer", "#7C3AED"),
+    ("demo", "GreenCRDB@2025", "Demo Reviewer", CRDB_GREEN),
 ]
 
 
@@ -245,7 +251,7 @@ def access_level_banner(module_key: str) -> None:
         st.markdown(
             f'<div style="background:#FFFBEB;border-left:4px solid #F59E0B;padding:10px 16px;'
             f'border-radius:0 6px 6px 0;margin-bottom:12px;font-size:13px;">'
-            f'⚠️ <b>Limited access</b> — Your role (<b>{label}</b>) has restricted access to some features on this page.'
+            f'<b>Limited access</b> — Your role (<b>{label}</b>) has restricted access to some features on this page.'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -310,30 +316,40 @@ def sidebar_user_card() -> None:
 
     with st.sidebar:
         st.markdown(
-            f'<div style="background:{colour};color:white;padding:14px;border-radius:10px;margin-bottom:12px;">'
-            f'<div style="display:flex;align-items:center;gap:10px;">'
-            f'<div style="background:rgba(255,255,255,0.25);border-radius:50%;width:38px;height:38px;'
-            f'display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:14px;">'
-            f'{user["avatar"]}</div>'
-            f'<div>'
-            f'<div style="font-weight:bold;font-size:14px;">{user["name"]}</div>'
-            f'<div style="font-size:11px;opacity:0.85;">{user["title"]}</div>'
-            f'</div></div>'
-            f'<div style="margin-top:10px;font-size:11px;opacity:0.85;">'
-            f'<div>📧 {user["email"]}</div>'
-            f'<div>🏢 {user["department"]}</div>'
+            f'<div style="border-bottom:3px solid {CRDB_GREEN};padding:6px 0 12px 0;margin-bottom:14px;">'
+            f'<div style="font-size:18px;font-weight:800;color:{CRDB_DEEP_GREEN};line-height:1.1;">GreenCRDB</div>'
+            f'<div style="font-size:11px;color:{MUTED_TEXT};margin-top:4px;">Independent Sustainability Dashboard Demo</div>'
             f'</div>'
-            f'<div style="margin-top:8px;background:rgba(255,255,255,0.2);padding:5px 10px;'
-            f'border-radius:6px;font-size:11px;font-weight:bold;">'
-            f'🔑 {badge}</div>'
+            f'<div style="font-size:11px;font-weight:800;color:{CRDB_NAVY};text-transform:uppercase;'
+            f'letter-spacing:0.04em;margin-bottom:8px;">Navigation</div>',
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            f'<div style="background:#FFFFFF;color:{BODY_TEXT};padding:14px;border-radius:10px;'
+            f'border:1px solid {CRDB_BORDER};border-top:4px solid {CRDB_GREEN};margin-bottom:12px;">'
+            f'<div style="display:flex;align-items:center;gap:10px;">'
+            f'<div style="background:{CRDB_LIGHT};color:{CRDB_GREEN};border:1px solid {CRDB_BORDER};'
+            f'border-radius:50%;width:38px;height:38px;display:flex;align-items:center;'
+            f'justify-content:center;font-weight:700;font-size:13px;">{user["avatar"]}</div>'
+            f'<div>'
+            f'<div style="font-weight:700;font-size:14px;color:{CRDB_NAVY};">{user["name"]}</div>'
+            f'<div style="font-size:11px;color:{MUTED_TEXT};">{user["title"]}</div>'
+            f'</div></div>'
+            f'<div style="margin-top:10px;font-size:11px;color:{MUTED_TEXT};line-height:1.55;">'
+            f'<div>{user["email"]}</div>'
+            f'<div>{user["department"]}</div>'
+            f'</div>'
+            f'<div style="margin-top:9px;background:{CRDB_LIGHT};color:{CRDB_GREEN};padding:5px 8px;'
+            f'border-radius:6px;font-size:11px;font-weight:700;width:max-content;">'
+            f'{badge}</div>'
             f'</div>',
             unsafe_allow_html=True,
         )
         if sectors != "all":
-            st.caption(f"📊 Sectors: {sector_display}")
+            st.caption(f"Sectors: {sector_display}")
         if regions != "all":
-            st.caption(f"📍 Regions: {region_display}")
-        if st.button("🚪 Logout", use_container_width=True, type="secondary"):
+            st.caption(f"Regions: {region_display}")
+        if st.button("Log out", use_container_width=True, type="secondary"):
             st.session_state.clear()
             st.rerun()
         st.markdown("---")
@@ -344,22 +360,23 @@ def _show_login_page() -> None:
     st.markdown(
         f"""
         <style>
+        .stApp {{background:#F7F9F7;}}
         .main .block-container {{padding-top: 2rem;}}
         </style>
         <div style="max-width:480px;margin:0 auto;padding:40px 0;">
-            <div style="background:{CRDB_GREEN};padding:28px;border-radius:12px 12px 0 0;text-align:center;">
-                <h1 style="color:white;margin:0;font-size:28px;">🌍 GreenCRDB</h1>
-                <p style="color:#c8e6c9;margin:6px 0 0 0;font-size:13px;">
-                    Independent Sustainability Analytics Demo
+            <div style="background:#FFFFFF;padding:30px 28px 20px 28px;border:1px solid {CRDB_BORDER};
+                border-top:5px solid {CRDB_GREEN};
+                border-bottom:none;border-radius:12px 12px 0 0;text-align:center;">
+                <h1 style="color:{CRDB_DEEP_GREEN};margin:0;font-size:30px;">GreenCRDB</h1>
+                <p style="color:{CRDB_NAVY};margin:8px 0 0 0;font-size:14px;font-weight:700;">
+                    Independent Sustainability Dashboard Demo
                 </p>
-                <p style="color:#a5d6a7;margin:4px 0 0 0;font-size:12px;">Independent educational and career portfolio demo</p>
             </div>
-            <div style="background:#f9fafb;border:1px solid #e5e7eb;border-top:none;
+            <div style="background:#FFFFFF;border:1px solid {CRDB_BORDER};border-top:none;
                 padding:28px;border-radius:0 0 12px 12px;">
-                <h3 style="margin:0 0 10px 0;color:#1a1a1a;text-align:center;">Sign in to GreenCRDB</h3>
-                <p style="color:#555;font-size:13px;line-height:1.5;text-align:center;margin:0 0 18px 0;">
-                    This is an independent educational and career portfolio demo built with simulated data and public sustainability-report insights.
-                    It is not an official CRDB Bank system and does not use confidential bank data.
+                <h3 style="margin:0 0 10px 0;color:{CRDB_NAVY};text-align:center;">Sign in</h3>
+                <p style="color:{BODY_TEXT};font-size:13px;line-height:1.55;text-align:center;margin:0 0 18px 0;">
+                    This demo uses simulated data and public-report themes. It is not an official CRDB Bank system.
                 </p>
             </div>
         </div>
@@ -372,7 +389,7 @@ def _show_login_page() -> None:
         with st.form("login_form", clear_on_submit=False):
             username = st.text_input("Username", placeholder="demo")
             password = st.text_input("Password", type="password", placeholder="Demo password")
-            submitted = st.form_submit_button("Sign In →", use_container_width=True, type="primary")
+            submitted = st.form_submit_button("Sign in", use_container_width=True, type="primary")
 
             if submitted:
                 user = authenticate(username, password)
@@ -384,17 +401,17 @@ def _show_login_page() -> None:
                     st.error("Invalid username or password. Please try again.")
 
         st.markdown("---")
-        with st.expander("🔑 Demo credentials"):
+        with st.expander("Demo credentials"):
             for uname, pw, title, colour in DEMO_CREDENTIALS:
                 st.markdown(
                     f'<div style="display:flex;justify-content:space-between;align-items:center;'
-                    f'padding:6px 10px;background:#f0f4f0;border-left:3px solid {colour};'
+                    f'padding:6px 10px;background:{CRDB_LIGHT};border-left:3px solid {colour};'
                     f'border-radius:0 4px 4px 0;margin:4px 0;">'
                     f'<div>'
                     f'<span style="font-family:monospace;font-size:12px;font-weight:bold;">{uname}</span>'
                     f'<span style="font-size:11px;color:#888;margin-left:8px;">/ {pw}</span>'
                     f'</div>'
-                    f'<span style="background:{colour};color:white;font-size:10px;padding:2px 7px;border-radius:8px;">'
+                    f'<span style="background:#FFFFFF;color:{colour};border:1px solid {CRDB_BORDER};font-size:10px;padding:2px 7px;border-radius:8px;">'
                     f'{title.split()[0]}</span>'
                     f'</div>',
                     unsafe_allow_html=True,

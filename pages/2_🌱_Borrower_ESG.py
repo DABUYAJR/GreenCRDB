@@ -14,7 +14,8 @@ import web_data as wd
 from auth import require_login, sidebar_user_card, can_access_module, can_enter_data, get_user, require_module_access, access_level_banner, can_export, user_sectors, user_regions, filter_by_user, mask_sensitive_data
 from data_store import append_borrower, get_entered_borrowers, merge_with_processed
 
-st.set_page_config(page_title="Borrower ESG → Credit Risk Engine | GreenCRDB", page_icon="🌱", layout="wide")
+st.set_page_config(page_title="Borrower ESG | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 user = require_login()
@@ -23,11 +24,11 @@ require_module_access("borrower_esg")
 access_level_banner("borrower_esg")
 
 st.markdown(
-    '<div style="background:#1D9E75;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">🌱 Borrower ESG → Credit Risk Engine</h2>'
-    '<p style="color:#d4ede7;margin:2px 0 0 0;font-size:13px;font-style:italic;">'
-    "PCAF Scope 3 Category 15 at borrower level. Where climate exposure becomes credit-risk signal."
-    "</p></div>",
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Borrower ESG</div>'
+    '<h1 class="greencrdb-title">Borrower ESG</h1>'
+    '<p class="greencrdb-subtitle">Score a borrower using selected ESG and transition-risk indicators.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 wd.render_crdb_finding(
@@ -88,7 +89,7 @@ if bw.empty:
 
 # ── Sidebar filters ───────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### 🌱 ESG Filters")
+    st.markdown("### ESG filters")
     sectors = ["All"] + sorted(bw["sector"].unique().tolist())
     sel_sector = st.selectbox("Sector", sectors)
 
@@ -117,7 +118,7 @@ CLASSIFICATION_ACTIONS = {
 }
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
-tabs = ["🌱 Dashboard", "✏️ Enter Borrower ESG Data"] if can_enter_data("borrower_esg") else ["🌱 Dashboard"]
+tabs = ["Dashboard", "Enter borrower ESG data"] if can_enter_data("borrower_esg") else ["Dashboard"]
 active_tabs = st.tabs(tabs)
 tab_dash = active_tabs[0]
 tab_enter = active_tabs[1] if len(active_tabs) > 1 else None

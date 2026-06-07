@@ -14,7 +14,8 @@ import pandas as pd
 import web_data as wd
 from auth import require_login, sidebar_user_card, require_module_access
 
-st.set_page_config(page_title="Regulatory | GreenCRDB", page_icon="📋", layout="wide")
+st.set_page_config(page_title="Reporting Logic | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 require_login()
@@ -22,12 +23,11 @@ sidebar_user_card()
 require_module_access("regulatory")
 
 st.markdown(
-    '<div style="background:#D97706;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">📋 Module 4 — Regulatory & PCAF Reporting Logic</h2>'
-    '<p style="color:#fef3c7;margin:2px 0 0 0;font-size:13px;">'
-    "Bank of Tanzania Climate Risk Guideline · PCAF Financed Emissions (Scope 3) · "
-    "Portfolio Temperature Alignment · SASB FN-CB · PRB · UN SDG Mapping"
-    "</p></div>",
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Reporting logic</div>'
+    '<h1 class="greencrdb-title">Reporting Logic</h1>'
+    '<p class="greencrdb-subtitle">Map sustainability data into reporting-style outputs.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 wd.render_crdb_finding(

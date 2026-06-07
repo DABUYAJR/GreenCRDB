@@ -9,9 +9,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import pandas as pd
 import streamlit as st
 
+import web_data as wd
 from auth import require_login, sidebar_user_card, can_manage_users, USERS, ROLES
 
-st.set_page_config(page_title="User Management | GreenCRDB", page_icon="👥", layout="wide")
+st.set_page_config(page_title="User Access | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 user = require_login()
@@ -29,11 +31,11 @@ if not can_manage_users():
     st.stop()
 
 st.markdown(
-    '<div style="background:#7C3AED;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">👥 User Management</h2>'
-    '<p style="color:#e9d5ff;margin:2px 0 0 0;font-size:13px;">'
-    "View and manage demo users · Sustainability analytics team · GreenCRDB"
-    "</p></div>",
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Demo access</div>'
+    '<h1 class="greencrdb-title">User Access</h1>'
+    '<p class="greencrdb-subtitle">Review demo user roles and access levels.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 
@@ -71,7 +73,7 @@ for username, udata in USERS.items():
                 f'<span style="font-size:12px;">{udata["title"]}</span><br>'
                 f'<span style="font-size:11px;opacity:0.85;">{udata["department"]}</span><br><br>'
                 f'<span style="background:rgba(255,255,255,0.2);padding:3px 8px;border-radius:10px;font-size:11px;">'
-                f'🔑 {badge}</span>'
+                f'{badge}</span>'
                 f'</div>',
                 unsafe_allow_html=True,
             )
@@ -80,7 +82,7 @@ for username, udata in USERS.items():
             st.markdown(f"📧 {udata['email']}")
             st.markdown(f"👤 Username: `{username}`")
             st.markdown("**Portfolio Scope**")
-            st.markdown(f"📊 Sectors: {sector_display}")
+            st.markdown(f"Sectors: {sector_display}")
             st.markdown(f"📍 Regions: {region_display}")
         with col3:
             st.markdown("**Module Permissions**")

@@ -15,7 +15,8 @@ import web_data as wd
 from auth import require_login, sidebar_user_card, can_access_module, can_enter_data, get_user, require_module_access, access_level_banner, can_export
 from data_store import append_sector, get_entered_sectors, merge_with_processed
 
-st.set_page_config(page_title="Sector Risk | GreenCRDB", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Sector Risk | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 user = require_login()
@@ -24,11 +25,11 @@ require_module_access("sector_risk")
 access_level_banner("sector_risk")
 
 st.markdown(
-    f'<div style="background:{wd.CRDB_GREEN};padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">📊 Module 1 — Sector Climate Risk Analytics</h2>'
-    '<p style="color:#c8e6c9;margin:2px 0 0 0;font-size:13px;">'
-    "Weighted composite scoring across 5 climate hazards · 12 Tanzania sectors · IPCC AR6 / INFORM Risk Index"
-    "</p></div>",
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Sector risk</div>'
+    '<h1 class="greencrdb-title">Sector Risk</h1>'
+    '<p class="greencrdb-subtitle">Review sector-level exposure using illustrative climate-risk assumptions.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 wd.render_crdb_finding(
@@ -63,7 +64,7 @@ if sr.empty:
 
 # ── Sidebar filters ──────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### 📊 Sector Risk Filters")
+    st.markdown("### Sector risk filters")
     tier_opts = ["All"] + sr["risk_tier"].dropna().unique().tolist()
     selected_tier = st.selectbox("Filter by Risk Tier", tier_opts)
     show_table = st.checkbox("Show raw data table", value=False)
@@ -71,7 +72,7 @@ with st.sidebar:
 filtered = sr if selected_tier == "All" else sr[sr["risk_tier"] == selected_tier]
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
-tabs = ["📊 Dashboard", "✏️ Enter Climate Risk Data"] if can_enter_data("sector_risk") else ["📊 Dashboard"]
+tabs = ["Dashboard", "Enter climate risk data"] if can_enter_data("sector_risk") else ["Dashboard"]
 active_tabs = st.tabs(tabs)
 tab_dash = active_tabs[0]
 tab_enter = active_tabs[1] if len(active_tabs) > 1 else None

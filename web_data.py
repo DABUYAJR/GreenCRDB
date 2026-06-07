@@ -10,9 +10,258 @@ import streamlit as st
 _ROOT = Path(__file__).resolve().parent
 
 # ── Brand colours ────────────────────────────────────────────────────────────
-CRDB_GREEN = "#006B3C"
-CRDB_GOLD = "#C8A84B"
-CRDB_LIGHT = "#EEF4EE"
+CRDB_GREEN = "#1FAE3D"
+CRDB_DEEP_GREEN = "#005B2E"
+CRDB_FOREST = "#003B1F"
+CRDB_NAVY = "#0B2E3D"
+CRDB_GOLD = "#B9973B"
+CRDB_LIGHT = "#EAF7EE"
+PAGE_BG = "#F7F9F7"
+BORDER_GREY = "#D9E2DD"
+BODY_TEXT = "#334155"
+MUTED_TEXT = "#64748B"
+
+
+def inject_custom_css() -> None:
+    """Apply the shared GreenCRDB dashboard styling."""
+    st.markdown(
+        f"""
+        <style>
+        :root {{
+            --greencrdb-bg: {PAGE_BG};
+            --greencrdb-card: #FFFFFF;
+            --greencrdb-navy: {CRDB_NAVY};
+            --greencrdb-green: {CRDB_GREEN};
+            --greencrdb-deep-green: {CRDB_DEEP_GREEN};
+            --greencrdb-forest: {CRDB_FOREST};
+            --greencrdb-soft-green: {CRDB_LIGHT};
+            --greencrdb-gold: {CRDB_GOLD};
+            --greencrdb-border: {BORDER_GREY};
+            --greencrdb-body: {BODY_TEXT};
+            --greencrdb-muted: {MUTED_TEXT};
+        }}
+
+        .stApp {{
+            background: var(--greencrdb-bg);
+            color: var(--greencrdb-body);
+        }}
+
+        .main .block-container {{
+            padding-top: 1.35rem;
+            padding-bottom: 2rem;
+            max-width: 1280px;
+        }}
+
+        h1, h2, h3, h4 {{
+            color: var(--greencrdb-navy);
+            letter-spacing: 0;
+        }}
+
+        p, li, label, div[data-testid="stMarkdownContainer"] {{
+            color: var(--greencrdb-body);
+        }}
+
+        section[data-testid="stSidebar"] {{
+            background: #FFFFFF;
+            border-right: 1px solid var(--greencrdb-border);
+        }}
+
+        section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {{
+            font-size: 0.9rem;
+        }}
+
+        [data-testid="stMetric"] {{
+            background: #FFFFFF;
+            border: 1px solid var(--greencrdb-border);
+            border-top: 4px solid var(--greencrdb-green);
+            border-radius: 10px;
+            padding: 14px 16px;
+            box-shadow: 0 1px 2px rgba(11, 46, 61, 0.05);
+        }}
+
+        [data-testid="stMetricLabel"] p {{
+            color: var(--greencrdb-muted);
+            font-size: 0.82rem;
+        }}
+
+        [data-testid="stMetricValue"] {{
+            color: var(--greencrdb-navy);
+            font-weight: 700;
+        }}
+
+        div[data-testid="stAlert"] {{
+            border-radius: 10px;
+            border: 1px solid var(--greencrdb-border);
+            background: var(--greencrdb-soft-green);
+        }}
+
+        div[data-testid="stTabs"] button p {{
+            font-size: 0.9rem;
+        }}
+
+        .greencrdb-topbar {{
+            background: #FFFFFF;
+            border: 1px solid var(--greencrdb-border);
+            border-top: 5px solid var(--greencrdb-green);
+            border-radius: 0 0 12px 12px;
+            padding: 14px 20px;
+            margin: 0 0 16px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: 0 1px 2px rgba(11, 46, 61, 0.05);
+        }}
+
+        .greencrdb-brand {{
+            color: var(--greencrdb-deep-green);
+            font-size: 1.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }}
+
+        .greencrdb-brand-subtitle {{
+            color: var(--greencrdb-muted);
+            font-size: 0.78rem;
+            margin-top: 3px;
+        }}
+
+        .greencrdb-topbar-meta {{
+            color: var(--greencrdb-body);
+            font-size: 0.82rem;
+            font-weight: 650;
+            text-align: right;
+        }}
+
+        .greencrdb-hero {{
+            background: #FFFFFF;
+            border: 1px solid var(--greencrdb-border);
+            border-left: 6px solid var(--greencrdb-green);
+            border-radius: 12px;
+            padding: 28px 30px;
+            margin: 14px 0 18px 0;
+            box-shadow: 0 1px 2px rgba(11, 46, 61, 0.04);
+        }}
+
+        .greencrdb-eyebrow {{
+            color: var(--greencrdb-green);
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+        }}
+
+        .greencrdb-title {{
+            color: var(--greencrdb-navy);
+            font-size: clamp(1.7rem, 3vw, 2.45rem);
+            line-height: 1.08;
+            font-weight: 760;
+            margin: 0;
+        }}
+
+        .greencrdb-subtitle {{
+            color: var(--greencrdb-body);
+            font-size: 1rem;
+            line-height: 1.55;
+            max-width: 760px;
+            margin: 10px 0 0 0;
+        }}
+
+        .greencrdb-note {{
+            color: var(--greencrdb-muted);
+            font-size: 0.86rem;
+            margin-top: 10px;
+        }}
+
+        .greencrdb-action-label {{
+            display: inline-block;
+            margin-top: 18px;
+            background: var(--greencrdb-green);
+            color: #FFFFFF;
+            border-radius: 8px;
+            padding: 9px 14px;
+            font-weight: 750;
+            font-size: 0.9rem;
+        }}
+
+        .greencrdb-card {{
+            background: #FFFFFF;
+            border: 1px solid var(--greencrdb-border);
+            border-top: 3px solid var(--greencrdb-green);
+            border-radius: 10px;
+            padding: 16px;
+            min-height: 112px;
+            box-shadow: 0 1px 2px rgba(11, 46, 61, 0.04);
+        }}
+
+        .greencrdb-card h4 {{
+            margin: 0 0 6px 0;
+            color: var(--greencrdb-navy);
+            font-size: 1rem;
+        }}
+
+        .greencrdb-card p {{
+            margin: 0;
+            color: var(--greencrdb-muted);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }}
+
+        .greencrdb-section {{
+            color: var(--greencrdb-navy);
+            font-size: 1.15rem;
+            font-weight: 720;
+            margin: 24px 0 10px 0;
+            padding-bottom: 8px;
+            border-bottom: 3px solid var(--greencrdb-green);
+            width: fit-content;
+        }}
+
+        .greencrdb-divider {{
+            border-top: 1px solid var(--greencrdb-border);
+            margin: 22px 0;
+        }}
+
+        .stButton > button {{
+            border-radius: 8px;
+            border: 1px solid var(--greencrdb-green);
+            box-shadow: none;
+            color: var(--greencrdb-deep-green);
+        }}
+
+        .stButton > button[kind="primary"],
+        .stFormSubmitButton > button {{
+            background: var(--greencrdb-green);
+            color: #FFFFFF;
+            border: 1px solid var(--greencrdb-green);
+        }}
+
+        .stDownloadButton > button {{
+            border-radius: 8px;
+            box-shadow: none;
+        }}
+
+        div[data-testid="stDataFrame"] {{
+            border: 1px solid var(--greencrdb-border);
+            border-radius: 10px;
+            overflow: hidden;
+        }}
+
+        @media (max-width: 640px) {{
+            .main .block-container {{
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }}
+
+            .greencrdb-hero {{
+                padding: 18px;
+            }}
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def render_crdb_finding(title: str, body: str) -> None:

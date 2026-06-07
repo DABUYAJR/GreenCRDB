@@ -11,15 +11,18 @@ import streamlit as st
 import web_data as wd
 from auth import require_login, sidebar_user_card
 
-st.set_page_config(page_title="Why This Exists | GreenCRDB", page_icon="ℹ️", layout="wide")
+st.set_page_config(page_title="About This Demo | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 require_login()
 sidebar_user_card()
 
 st.markdown(
-    f"""
-    <div style="background:{wd.CRDB_GREEN};padding:24px 30px;border-radius:10px;margin-bottom:22px;">
-        <h1 style="color:white;margin:0;font-size:30px;">Why this exists</h1>
+    """
+    <div class="greencrdb-hero">
+        <div class="greencrdb-eyebrow">About this demo</div>
+        <h1 class="greencrdb-title">About This Demo</h1>
+        <p class="greencrdb-subtitle">Understand the purpose, scope and limitations of this independent project.</p>
     </div>
     """,
     unsafe_allow_html=True,

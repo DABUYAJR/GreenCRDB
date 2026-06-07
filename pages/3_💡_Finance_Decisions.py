@@ -15,7 +15,8 @@ import web_data as wd
 from auth import require_login, sidebar_user_card, can_access_module, can_enter_data, get_user, require_module_access, access_level_banner, can_export, filter_by_user, mask_sensitive_data
 from data_store import append_decision, get_entered_decisions
 
-st.set_page_config(page_title="Finance Decisions | GreenCRDB", page_icon="💡", layout="wide")
+st.set_page_config(page_title="Finance Decisions | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 user = require_login()
@@ -24,11 +25,11 @@ require_module_access("finance_decisions")
 access_level_banner("finance_decisions")
 
 st.markdown(
-    '<div style="background:#2563EB;padding:14px 24px;border-radius:8px;margin-bottom:12px;">'
-    '<h2 style="color:white;margin:0;font-size:22px;">💡 Module 3 — Climate Finance Decision Analytics</h2>'
-    '<p style="color:#bfdbfe;margin:2px 0 0 0;font-size:13px;">'
-    "TCFD framework · IFC Performance Standards · Green Finance Pipeline · Climate Scenario Analysis"
-    "</p></div>",
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Finance decisions</div>'
+    '<h1 class="greencrdb-title">Finance Decisions</h1>'
+    '<p class="greencrdb-subtitle">Compare finance options using simple sustainability and risk signals.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 wd.render_crdb_finding(
@@ -73,7 +74,7 @@ dec = mask_sensitive_data(dec, name_col="borrower_name", id_col="borrower_id")
 gp = mask_sensitive_data(gp, name_col="borrower_name")
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
-tabs = ["💡 Dashboard", "✏️ Record Lending Decision"] if can_enter_data("finance_decisions") else ["💡 Dashboard"]
+tabs = ["Dashboard", "Record lending decision"] if can_enter_data("finance_decisions") else ["Dashboard"]
 active_tabs = st.tabs(tabs)
 tab_dash = active_tabs[0]
 tab_enter = active_tabs[1] if len(active_tabs) > 1 else None

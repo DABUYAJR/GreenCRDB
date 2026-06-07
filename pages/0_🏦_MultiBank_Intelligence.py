@@ -18,7 +18,8 @@ import pandas as pd
 import web_data as wd
 from auth import require_login, sidebar_user_card
 
-st.set_page_config(page_title="MultiBank Intelligence | GreenCRDB", page_icon="🏦", layout="wide")
+st.set_page_config(page_title="Benchmark View | GreenCRDB", page_icon="G", layout="wide")
+wd.inject_custom_css()
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 user = require_login()
@@ -29,23 +30,11 @@ gc = wd.GROUP_CONSOLIDATED
 
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown(
-    f'<div style="background:linear-gradient(135deg,{wd.CRDB_GREEN} 0%,#003d20 100%);'
-    f'padding:20px 28px;border-radius:10px;margin-bottom:16px;">'
-    f'<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">'
-    f'<div>'
-    f'<h1 style="color:white;margin:0;font-size:24px;">🏦 MultiBank Intelligence</h1>'
-    f'<p style="color:#a5d6a7;margin:4px 0 0 0;font-size:13px;">'
-    f'CRDB Group · DFI Facilities · Illustrative African Sustainable-Finance Benchmark · East Africa Benchmark · Entity Onboarding'
-    f'</p>'
-    f'</div>'
-    f'<div style="display:flex;gap:8px;flex-wrap:wrap;">'
-    f'<span style="background:rgba(255,255,255,0.2);color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;">🇹🇿 Tanzania</span>'
-    f'<span style="background:rgba(255,255,255,0.15);color:#FCD34D;padding:4px 12px;border-radius:20px;font-size:11px;">🇧🇮 Burundi</span>'
-    f'<span style="background:rgba(255,255,255,0.1);color:#D1D5DB;padding:4px 12px;border-radius:20px;font-size:11px;">🇨🇩 DR Congo</span>'
-    f'<span style="background:rgba(255,255,255,0.15);color:#a7f3d0;padding:4px 12px;border-radius:20px;font-size:11px;">🛡️ Insurance</span>'
-    f'</div>'
-    f'</div>'
-    f'</div>',
+    '<div class="greencrdb-hero">'
+    '<div class="greencrdb-eyebrow">Benchmark view</div>'
+    '<h1 class="greencrdb-title">Benchmark View</h1>'
+    '<p class="greencrdb-subtitle">Review an illustrative sustainable-finance peer view using simulated values.</p>'
+    '</div>',
     unsafe_allow_html=True,
 )
 wd.render_crdb_finding(
@@ -80,12 +69,12 @@ st.markdown("---")
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tab_group, tab_dfi, tab_africa, tab_ea, tab_global, tab_onboard = st.tabs([
-    "🏦 CRDB Group Entities",
-    "💰 DFI Facilities & Ratios",
-    "🌍 Illustrative African Sustainable-Finance Benchmark",
-    "📊 East Africa Benchmark",
-    "🏆 Global Peer Comparison",
-    "➕ Onboard New Entity",
+    "Group entities",
+    "DFI facilities and ratios",
+    "Illustrative benchmark",
+    "East Africa view",
+    "Global peers",
+    "New entity concept",
 ])
 
 
@@ -236,14 +225,14 @@ with tab_group:
 
     # ── Milestone badges ──────────────────────────────────────────────────────
     st.markdown("---")
-    st.markdown("#### 🏆 CRDB Group — Industry Firsts & Key Milestones (2024)")
+    st.markdown("#### CRDB Group — selected public-report milestones")
     milestones = [
-        ("🌍", "FIRST GCF Accredited Bank in East & Central Africa", "Since 2019 — enables direct access to Green Climate Fund concessional finance", "#1D9E75"),
-        ("📄", "FIRST TCFD Report in Tanzania", "Published 2024 — first commercial bank in Tanzania to publish standalone TCFD climate disclosure", "#1D9E75"),
-        ("🏦", "FIRST Tanzanian Bank with Moody's B1", "Upgraded 2024 — first local currency B1 rating for any Tanzanian bank; drove USD 567M lender commitments", "#1D9E75"),
-        ("🟢", "FIRST East & Central Africa Green Bond", "Kijani Bond USD 65.7M — 429% oversubscribed; 10.25% yield; listed Luxembourg Stock Exchange June 2025", "#D97706"),
-        ("🏢", "FIRST EDGE Certified Building in Tanzania", "CRDB HQ — 21% energy saving, 27% water saving, 28% embodied carbon reduction vs baseline", "#2563EB"),
-        ("🤖", "AI chatbot reference", "Elle Chatbot on website + WhatsApp — public digital-channel example from 2024 reporting", "#7C3AED"),
+        ("", "GCF accreditation in East & Central Africa", "Since 2019 — enables direct access to Green Climate Fund concessional finance", "#1D9E75"),
+        ("", "Standalone TCFD report in Tanzania", "Published 2024 — climate disclosure reference for this demo", "#1D9E75"),
+        ("", "Moody's B1 rating", "Upgraded 2024 — local currency B1 rating noted in public reporting", "#1D9E75"),
+        ("", "Kijani Bond", "TZS 171.8bn tranche under the Medium-Term Note Programme", "#D97706"),
+        ("", "EDGE-certified headquarters", "CRDB HQ — 21% energy saving, 27% water saving, 28% embodied carbon reduction vs baseline", "#2563EB"),
+        ("", "Digital-channel reference", "Elle Chatbot on website and WhatsApp — public digital-channel example from 2024 reporting", "#64748B"),
     ]
     for i in range(0, len(milestones), 2):
         cols_m = st.columns(2)
@@ -273,8 +262,7 @@ with tab_dfi:
     st.markdown("### 💰 DFI Facility Tracker & Financial Performance Dashboard")
     st.markdown(
         "CRDB Bank has secured **over USD 600 million** in medium-to-long-term development finance facilities. "
-        "These commitments are a direct result of the Moody's B1 upgrade and GCF accreditation — "
-        "a virtuous cycle of sustainability credibility unlocking cheaper capital."
+        "These commitments are shown here to connect public funding disclosures with a simple facility-utilisation view."
     )
 
     # ── Financial KPI strip ───────────────────────────────────────────────────
@@ -614,9 +602,9 @@ with tab_africa:
     with col_adv1:
         st.markdown(
             f'<div style="background:#d1fae5;border-left:4px solid {wd.CRDB_GREEN};padding:12px;border-radius:0 6px 6px 0;">'
-            f'<b>🏆 Public-report strengths to discuss</b><br>'
+            f'<b>Public-report strengths to discuss</b><br>'
             f'<ul style="font-size:12px;margin:6px 0;padding-left:16px;">'
-            f'<li>FIRST commercial bank in E&C Africa with GCF direct access</li>'
+            f'<li>GCF direct access in East & Central Africa</li>'
             f'<li>Kijani Bond 429% oversubscribed — highest demand of any EA green bond</li>'
             f'<li>MUFG Japan USD 225M — largest bilateral green facility in Tanzania</li>'
             f'<li>Bank of Tanzania Climate Risk Guideline aligned — ahead of regulatory peers</li>'
